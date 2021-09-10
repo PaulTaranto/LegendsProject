@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MapGenerator
   - Door
+  - Minimap
   layers:
   - Default
   - TransparentFX

@@ -10,13 +10,19 @@ public class Map1 : MonoBehaviour
     private List<Coords> allRoomCoords = new List<Coords>();
     private Dictionary<Coords, Room> rooms = new Dictionary<Coords, Room>();
     public GameObject roomPrefab;
-    public Coords currPlayerCoords;
+    public Coords currPlayerCoords, oldPlayerCoords;
     public Transform[] doorPositions;
     public GameObject door;
     public GameObject playerPrefab;
     GameObject player;
+    MiniMap minimap;
 
     MapManager mapManager;
+
+    public List<Coords> getAllRoomCoords()
+    {
+        return allRoomCoords;
+    }
 
     public Coords GetPlayerCoords()
     {
@@ -25,22 +31,30 @@ public class Map1 : MonoBehaviour
 
     public void SetPlayerCoordsAndMoveRoom(Coords c)
     {
+        oldPlayerCoords = currPlayerCoords;
         currPlayerCoords = c;
+
+        // instead of teleporting to center of room, one solution could be to wait until the player has moved off of the door
+        // in the room they wish to enter before activating the ability to enter doors agian.
+        // prevents player from immediately going through a room again
         player.transform.position = new Vector3(0, 0, 0);
+
         PopulateCurrentRoom(rooms[c]);
     }
 
     void Start()
     {
         mapManager = GetComponent<MapManager>();
+        minimap = GameObject.FindGameObjectWithTag("Minimap").GetComponent<MiniMap>();
         //rooms = new Room[numberOfRooms];
         try
         {
+            // TODO I THINK A RANDOM CHANCE TECHNICALLY EXISTS TO CREATE A ROOM WITH NO DOORS ACTIVE
             GenerateDungeon();
         }
         catch (System.ArgumentException)
         {
-            //potential fix is just to set all doors to true, do the logic, then continue as normal.
+            // potential fix is just to set all doors to true, do the logic, then continue as normal.
             // no more fucky wucky
             Debug.Log("oops");
         }
@@ -67,14 +81,29 @@ public class Map1 : MonoBehaviour
             rooms[allRoomCoords[i]].roomType = mapManager.SetRandomRoomType();
         }
 
-        //Creates initial room
-        GameObject room = Instantiate(roomPrefab);
+        // Creates initial room
+        GameObject room = Instantiate(roomPrefab, new Vector3(0, 0f, 0), Quaternion.identity);
     }
-
-    //assign types of rooms from mapmanager to each room
-    //can be random
+    bool firstTime = true;
+    // assign types of rooms from mapmanager to each room
+    // can be random
     private void PopulateCurrentRoom(Room currentRoom)
     {
+        //oldPlayerCoords = currPlayerCoords;
+        //TODO figure out how to set a good initial oldplayer coords???
+        currPlayerCoords = currentRoom.coordinates;
+        Debug.Log("Current room: " + currentRoom.coordinates);
+
+        if (firstTime)
+        {
+            firstTime = false;
+            minimap.SpawnMinimap(currPlayerCoords, oldPlayerCoords);
+        }
+
+        Debug.Log("d");
+
+        minimap.UpdateMiniMap(currPlayerCoords, oldPlayerCoords);
+
         //remove old doors
         GameObject[] doorObjects = GameObject.FindGameObjectsWithTag("Door");
         foreach(GameObject g in doorObjects)
@@ -82,12 +111,10 @@ public class Map1 : MonoBehaviour
             Destroy(g);
         }
 
-        currPlayerCoords = currentRoom.coordinates;
-        Debug.Log("Current room: " + currentRoom.coordinates);
-        //spawn in doors and assign them ability to switch between correct rooms
-        for(int i = 0; i < 4; i++)
+        // spawn in doors and assign them ability to switch between correct rooms
+        for (int i = 0; i < 4; i++)
         {
-            //If the room has a door in the desired position
+            // If the room has a door in the desired position
             if(currentRoom.doors[i])
             {
                 GameObject doorInstance = Instantiate(door, doorPositions[i].position, Quaternion.identity);
@@ -119,6 +146,7 @@ public class Map1 : MonoBehaviour
     public void GenerateDungeon()
     {
         //GameObject room = Instantiate(roomPrefab, new Vector3(0,0,0), Quaternion.identity);
+        
         //all true as first room has all doors open
         bool[] roomDoors = { true, true, true, true};
         Room[] connectedRooms = new Room[4];
