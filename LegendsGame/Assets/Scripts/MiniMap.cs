@@ -37,7 +37,34 @@ public class MiniMap : MonoBehaviour
             nodes[i] = Instantiate(minimapNode, new Vector3(minimapCenter.position.x + minimapNode.transform.localScale.x * xmultiplier * (roomCoords[i].X - center), minimapCenter.position.y + minimapNode.transform.localScale.y * ymultiplier * (roomCoords[i].Y - center), 0), Quaternion.identity);
         }
 
-        UpdateMiniMap(currentPlayerCoordinate, oldPlayerCoords);
+        InitialisePlayerToCenter(currentPlayerCoordinate);
+        //UpdateMiniMap(currentPlayerCoordinate, oldPlayerCoords);
+    }
+
+    public void InitialisePlayerToCenter(Coords currentPlayerCoords)
+    {
+        Coords centerCoord = new Coords(center, center);
+
+        //shift the map to have the current room in the center
+
+        //get distance from currentplayer coord to int center variable
+        //TODO issue is that it keeps comparing to center, i think there's an issue with 
+        float distanceX = (minimapNode.transform.localScale.x * xmultiplier) * (centerCoord.X - currentPlayerCoords.X/*TODO perhaps do desired room???*/);
+        float distanceY = (minimapNode.transform.localScale.y * ymultiplier) * (centerCoord.Y - currentPlayerCoords.Y);
+
+        //distanceX += minimapCenter.position.x;
+        //distanceY += minimapCenter.position.y;
+
+        //Debug.Log(distanceX);
+
+        //shift all nodes by this amount to trend the current room to center
+        for (int i = 0; i < roomCoords.Count; i++)
+        {
+            Vector3 move = nodes[i].transform.position;
+            move.x += distanceX;
+            move.y += distanceY;
+            nodes[i].transform.position = move;
+        }
     }
 
     public void UpdateMiniMap(Coords currentPlayerCoords, Coords oldPlayerCoords)

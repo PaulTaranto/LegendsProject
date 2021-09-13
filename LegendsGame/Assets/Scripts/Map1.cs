@@ -17,6 +17,13 @@ public class Map1 : MonoBehaviour
     GameObject player;
     MiniMap minimap;
 
+    public GameObject[] doorSprites;
+    public GameObject[] wallSprites;
+    public GameObject[] cornerSprites;
+
+    [Range(0.0f, 1.0f)]
+    public float xyzScaleSpriteTile;
+
     MapManager mapManager;
 
     public List<Coords> getAllRoomCoords()
@@ -102,11 +109,18 @@ public class Map1 : MonoBehaviour
 
         Debug.Log("d");
 
-        minimap.UpdateMiniMap(currPlayerCoords, oldPlayerCoords);
+       // minimap.UpdateMiniMap(currPlayerCoords, oldPlayerCoords);
 
         //remove old doors
-        GameObject[] doorObjects = GameObject.FindGameObjectsWithTag("Door");
-        foreach(GameObject g in doorObjects)
+        GameObject[] environmentObjects = GameObject.FindGameObjectsWithTag("Door");
+        foreach(GameObject g in environmentObjects)
+        {
+            Destroy(g);
+        }
+
+        //remove old walls
+        environmentObjects = GameObject.FindGameObjectsWithTag("Wall");
+        foreach (GameObject g in environmentObjects)
         {
             Destroy(g);
         }
@@ -117,7 +131,7 @@ public class Map1 : MonoBehaviour
             // If the room has a door in the desired position
             if(currentRoom.doors[i])
             {
-                GameObject doorInstance = Instantiate(door, doorPositions[i].position, Quaternion.identity);
+                GameObject doorInstance = Instantiate(doorSprites[i], doorPositions[i].position, Quaternion.identity);
                 Door doortemp = doorInstance.GetComponent<Door>();
                 switch(i)
                 {
@@ -140,6 +154,92 @@ public class Map1 : MonoBehaviour
                 }
                 //TODO populate door script to connect rooms together   
             }
+        }
+
+        Vector3 position = new Vector3();
+        float distance;
+        // Spawn in walls
+        for (int i = 0; i < 4; i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    position = new Vector3(-8.27715969f, 4.3151598f, 0);
+                    //Fuck it we're hardcoding
+                    distance = 1.37389f;
+                    //float distanceX = 0.6309826f * 2.56f;
+                    for (int j = 0; j < 13; j++)
+                    {
+                        //position.x += distance;
+                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+                    }
+                    break;
+                case 1:
+                    position = new Vector3(8.2495594f, 4.28755856f, 0);
+                    distance = 1.37389f;
+                    //float distanceX = 0.6309826f * 2.56f;
+                    for (int j = 0; j < 13; j++)
+                    {
+                        //position.x += distance;
+                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+                    }
+                    //put east walls
+                    break;
+                case 2:
+                    position = new Vector3(-8.27715969f, -3.6282148f, 0);
+                    //Fuck it we're hardcoding
+                    distance = 1.37389f;
+                    //float distanceX = 0.6309826f * 2.56f;
+                    for (int j = 0; j < 13; j++)
+                    {
+                        //position.x += distance;
+                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+                    }
+                    //put south walls
+                    break;
+                case 3:
+                    //put west walls
+                    position = new Vector3(-8.2495594f, 4.28755856f, 0);
+                    distance = 1.37389f;
+                    //float distanceX = 0.6309826f * 2.56f;
+                    for (int j = 0; j < 13; j++)
+                    {
+                        //position.x += distance;
+                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+                    }
+                    break;
+
+            }
+            //Vector2 pos = new Vector2();
+            //GameObject wallinstance = Instantiate(wallSprites[i], pos, Quaternion.identity);
+        }
+
+        //Spawn in Corners
+        for (int i = 0; i < 4; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    //top left
+                    position = new Vector3(-8.27715969f, 4.3151598f, 0);
+                    //Fuck it we're hardcoding
+                    break;
+                case 1:
+                    //top right
+                    position = new Vector3(8.19779968f, 4.3151598f, 0);
+                    break;
+                case 2:
+                    //bottom right
+                    position = new Vector3(8.19779968f, -3.6282148f, 0);
+                    break;
+                case 3:
+                    //bottom left
+                    position = new Vector3(-8.2495594f, -3.6282148f, 0);
+                    break;
+            }
+            Instantiate(cornerSprites[i], position, Quaternion.identity);
+            //Vector2 pos = new Vector2();
+            //GameObject wallinstance = Instantiate(wallSprites[i], pos, Quaternion.identity);
         }
     }
 
