@@ -435,6 +435,8 @@ public class Map1 : MonoBehaviour
             rooms.Add(coords, roomToCreate);
         }
         //Purge any unused doors
+
+        //potential slow down with checking all rooms to 
         for (int roomToPurge = 0; roomToPurge < allRoomCoords.Count; roomToPurge++)
         {
             for (int doorCount = 0; doorCount < 4; doorCount++)

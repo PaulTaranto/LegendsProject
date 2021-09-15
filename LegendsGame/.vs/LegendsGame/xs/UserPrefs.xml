@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{00945EC6-0021-B609-A472-4ADC99602836}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Map1.cs">
     <Files>
-      <File FileName="Assets/Scripts/Coords.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Coords.cs" Line="15" Column="58" />
       <File FileName="Assets/Scripts/Map.cs" />
-      <File FileName="Assets/Scripts/Map1.cs" Line="107" Column="16" />
+      <File FileName="Assets/Scripts/Map1.cs" Line="35" Column="6" />
       <File FileName="Assets/Scripts/MiniMap.cs" />
       <File FileName="Assets/Scripts/Room.cs" />
       <File FileName="Assets/Scripts/MapManager.cs" />
       <File FileName="Assets/Scripts/Door.cs" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" />
+      <File FileName="Assets/Scripts/ArraySpawn.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,7 +27,6 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e341dde9-c641-4368-89a0-6a93d5a9c483" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

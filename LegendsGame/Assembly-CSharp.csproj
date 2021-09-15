@@ -62,6 +62,7 @@
     <Compile Include="Assets/Scripts/Map.cs" />
     <Compile Include="Assets/Scripts/Door.cs" />
     <Compile Include="Assets/Scripts/Coords.cs" />
+    <Compile Include="Assets/Scripts/ArraySpawn.cs" />
     <Compile Include="Assets/Scripts/MiniMap.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
   </ItemGroup>

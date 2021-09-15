@@ -16,6 +16,12 @@ public class Room
     public Room[] connectedRooms { get; }
     public int roomType;
 
+    // There are 4 total non-corner floor tiles.  So this array stores the order at which each is drawn in per room
+    // Each index stores a number from 0-3 (or 1-4 i guess) dictating which tile to draw.  This number can be passed
+    // back to a class inheriting from monobehaviour and used as an index in a floorTile array I guess to draw the correct
+    // tiles to the room such that each rooms floor is persistent.
+    public int[] floorTiles;
+
     public override string ToString()
     {
         string s = $"";
