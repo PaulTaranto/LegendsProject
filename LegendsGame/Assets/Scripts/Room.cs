@@ -1,7 +1,4 @@
 
-
-using System.Collections.Generic;
-
 public class Room
 {
     public Room(Coords coords, bool[] doorArray, Room[] connectedRoomsArray)

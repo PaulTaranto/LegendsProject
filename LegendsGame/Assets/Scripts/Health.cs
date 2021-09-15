@@ -53,7 +53,6 @@ public class Health : MonoBehaviour
             }
         }
 
-        
         //Check if health is 0
         if (health == 0) {
             isGameOver = true;
@@ -62,8 +61,6 @@ public class Health : MonoBehaviour
         if (isGameOver) {
             gameOverScreen.SetActive(true);
         }
-
-        
     }
 
     //Take damage

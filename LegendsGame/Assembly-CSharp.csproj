@@ -65,6 +65,7 @@
     <Compile Include="Assets/Scripts/ArraySpawn.cs" />
     <Compile Include="Assets/Scripts/MiniMap.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
+    <Compile Include="Assets/Scripts/Health.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

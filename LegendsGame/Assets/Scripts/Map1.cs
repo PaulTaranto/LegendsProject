@@ -107,9 +107,9 @@ public class Map1 : MonoBehaviour
             minimap.SpawnMinimap(currPlayerCoords, oldPlayerCoords);
         }
 
-        Debug.Log("d");
+        minimap.UpdateMiniMap(currPlayerCoords);
 
-       // minimap.UpdateMiniMap(currPlayerCoords, oldPlayerCoords);
+        Debug.Log("d");
 
         //remove old doors
         GameObject[] environmentObjects = GameObject.FindGameObjectsWithTag("Door");
