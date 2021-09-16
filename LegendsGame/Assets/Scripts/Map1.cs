@@ -26,6 +26,10 @@ public class Map1 : MonoBehaviour
 
     MapManager mapManager;
 
+    GameObject wallInstance;
+
+    public Transform environmentParent;
+
     public List<Coords> getAllRoomCoords()
     {
         return allRoomCoords;
@@ -96,6 +100,8 @@ public class Map1 : MonoBehaviour
     // can be random
     private void PopulateCurrentRoom(Room currentRoom)
     {
+        mapManager.PopulateRoom(currentRoom.roomType);
+
         //oldPlayerCoords = currPlayerCoords;
         //TODO figure out how to set a good initial oldplayer coords???
         currPlayerCoords = currentRoom.coordinates;
@@ -159,6 +165,7 @@ public class Map1 : MonoBehaviour
         Vector3 position = new Vector3();
         float distance;
         // Spawn in walls
+        //TODO drawing in walls probably only needs to be done once
         for (int i = 0; i < 4; i++)
         {
             switch(i)
@@ -171,7 +178,8 @@ public class Map1 : MonoBehaviour
                     for (int j = 0; j < 13; j++)
                     {
                         //position.x += distance;
-                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+                        wallInstance.transform.SetParent(environmentParent);
                     }
                     break;
                 case 1:
@@ -181,7 +189,8 @@ public class Map1 : MonoBehaviour
                     for (int j = 0; j < 13; j++)
                     {
                         //position.x += distance;
-                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+                        wallInstance.transform.SetParent(environmentParent);
                     }
                     //put east walls
                     break;
@@ -193,7 +202,8 @@ public class Map1 : MonoBehaviour
                     for (int j = 0; j < 13; j++)
                     {
                         //position.x += distance;
-                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+                        wallInstance.transform.SetParent(environmentParent);
                     }
                     //put south walls
                     break;
@@ -205,7 +215,8 @@ public class Map1 : MonoBehaviour
                     for (int j = 0; j < 13; j++)
                     {
                         //position.x += distance;
-                        GameObject wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+                        wallInstance.transform.SetParent(environmentParent);
                     }
                     break;
 
@@ -237,7 +248,8 @@ public class Map1 : MonoBehaviour
                     position = new Vector3(-8.2495594f, -3.6282148f, 0);
                     break;
             }
-            Instantiate(cornerSprites[i], position, Quaternion.identity);
+            GameObject corner = Instantiate(cornerSprites[i], position, Quaternion.identity);
+            corner.transform.SetParent(environmentParent);
             //Vector2 pos = new Vector2();
             //GameObject wallinstance = Instantiate(wallSprites[i], pos, Quaternion.identity);
         }

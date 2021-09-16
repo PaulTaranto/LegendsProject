@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    //TODO ask if prefabs better or to draw in code
     public void PopulateRoom(int roomType)
     {
         switch(roomType)

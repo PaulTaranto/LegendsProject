@@ -41,6 +41,7 @@ public class MiniMap : MonoBehaviour
             //nodes[i] =
             minimapNode.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
             nodes.Add(roomCoords[i], Instantiate(minimapNode, new Vector3(minimapCenter.position.x + minimapNode.transform.localScale.x * xmultiplier * (roomCoords[i].X - center), minimapCenter.position.y + minimapNode.transform.localScale.y * ymultiplier * (roomCoords[i].Y - center), 0), Quaternion.identity));
+            nodes[roomCoords[i]].transform.SetParent(gameObject.transform);
         }
 
         currentRoom = new Coords(center, center);
@@ -54,9 +55,9 @@ public class MiniMap : MonoBehaviour
 
     float flashOverTime = 1f;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        flash += flashOverTime * Time.deltaTime;
+        flash += flashOverTime * Time.fixedDeltaTime;
 
         flashColour.r = flash;
         flashColour.g = flash;

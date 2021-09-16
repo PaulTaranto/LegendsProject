@@ -63,9 +63,11 @@
     <Compile Include="Assets/Scripts/Door.cs" />
     <Compile Include="Assets/Scripts/Coords.cs" />
     <Compile Include="Assets/Scripts/ArraySpawn.cs" />
+    <Compile Include="Assets/Scripts/Health.cs" />
     <Compile Include="Assets/Scripts/MiniMap.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
-    <Compile Include="Assets/Scripts/Health.cs" />
+    <Compile Include="Assets/Scripts/IK/IKJoint.cs" />
+    <Compile Include="Assets/Scripts/IK/IKManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
