@@ -82,10 +82,6 @@ public class Map : MonoBehaviour
                     // if by some fucken miracle all rooms are unavailable, set a random door which is closed to open and generate a room there
                 }
 
-
-
-
-
                 // put roomDoors logic here (edit the already randomised bool to make sure the doors don't conflict with already created rooms)
                 //put connectedRooms logic here
             }

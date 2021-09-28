@@ -9,10 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6714223596431356394}
-  - component: {fileID: 3123580019444123801}
+  - component: {fileID: 5954562568569378764}
+  - component: {fileID: 330329462307636558}
+  - component: {fileID: 529399898522618555}
+  - component: {fileID: -6817674122620736498}
+  - component: {fileID: 7062009146900533092}
+  - component: {fileID: -2138316669095374566}
   m_Layer: 0
   m_Name: HeadPivot
-  m_TagString: Untagged
+  m_TagString: Dragon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,15 +29,48 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4775722724840595214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.773548, w: 0.63373774}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 3358771520630685119}
+  - {fileID: 1424520157778017752}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3123580019444123801
+--- !u!114 &5954562568569378764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775722724840595214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a1634b904cf49518c290621165e0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 0}
+  joints: []
+  angles: []
+--- !u!114 &330329462307636558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775722724840595214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16da41ed7023c4b1cb807987dd421a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragonTarget: {fileID: 0}
+  baseOfNeck: {fileID: 0}
+  player: {fileID: 0}
+  fireBreath: {fileID: 8409400674212669620, guid: d7d6fa756eab04146abaffffdff72adb, type: 3}
+  touchDamage: 1
+--- !u!114 &529399898522618555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,9 +82,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3bf0301d0404c109fb88ea39b318ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationAxis: {x: 0, y: 0, z: 1}
-  StartOffset: {x: 0, y: 0, z: 0}
-  _rotationAxis: 122
+  rotationAxis: {x: 0, y: 0, z: 0}
+  startOffset: {x: 0, y: 0, z: 0}
+  minAngle: 0
+  maxAngle: 0
+--- !u!114 &-6817674122620736498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775722724840595214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a1634b904cf49518c290621165e0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 0}
+  joints: []
+  angles: []
+--- !u!114 &7062009146900533092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775722724840595214}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e4f4349e5f1494ba49d31ba02c950c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragonTarget: {fileID: 0}
+  baseOfNeck: {fileID: 0}
+  player: {fileID: 0}
+  fireBreath: {fileID: 8409400674212669620, guid: d7d6fa756eab04146abaffffdff72adb, type: 3}
+--- !u!114 &-2138316669095374566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4775722724840595214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af05be97a1d977f4bb28d78a1e9852f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  numberOfHearts: 10
+  hearts: []
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+--- !u!1 &7141319412354986385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1424520157778017752}
+  m_Layer: 0
+  m_Name: FireBreathLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1424520157778017752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141319412354986385}
+  m_LocalRotation: {x: -0, y: -0, z: 0.773548, w: 0.63373774}
+  m_LocalPosition: {x: -1.7, y: -0.16, z: 1.7871675}
+  m_LocalScale: {x: 0.66666657, y: 0.66666657, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6714223596431356394}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7192406166292899350
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,9 +175,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3358771520630685119}
   - component: {fileID: 8011535442783153644}
+  - component: {fileID: 3831312779711772734}
   m_Layer: 0
   m_Name: DragonHead
-  m_TagString: Untagged
+  m_TagString: Dragon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +216,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 26816af67877448c28b11e999b38807c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,9 +242,35 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.11, y: 1.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3831312779711772734
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7192406166292899350}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03171414, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.11, y: 1.3}
+    newSize: {x: 2.11, y: 1.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0465717, y: 1.3}
+  m_EdgeRadius: 0

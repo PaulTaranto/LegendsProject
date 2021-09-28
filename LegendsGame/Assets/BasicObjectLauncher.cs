@@ -8,17 +8,19 @@ public class BasicObjectLauncher : MonoBehaviour
     //just spwns objects on left click
 
     public GameObject projectilePrefab;
-    public float ReloadSpeed = 1;
+    public float ReloadSpeed = 0.5f;
 
     private bool TriggerDown = false;
     private bool Shooting = false;
 
     public Transform Firepoint;
     public float Spread;
+
     private void Start()
     {
         InvokeRepeating("Shoot", 0f, 0f);
     }
+
     void Update()
     {
         InvokeRepeating("Shoot", 0f, 0f);
@@ -33,6 +35,7 @@ public class BasicObjectLauncher : MonoBehaviour
             TriggerDown = false;
         }
     }
+
     //Shooting
     private void Shoot()
     {
@@ -50,3 +53,4 @@ public class BasicObjectLauncher : MonoBehaviour
         Shooting = false;
     }
 }
+

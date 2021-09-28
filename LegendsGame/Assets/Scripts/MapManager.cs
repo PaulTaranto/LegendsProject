@@ -15,6 +15,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
+    //Dragon boss
     private void Room1()
     {
 

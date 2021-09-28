@@ -45,7 +45,7 @@ public class Map1 : MonoBehaviour
         oldPlayerCoords = currPlayerCoords;
         currPlayerCoords = c;
 
-        // instead of teleporting to center of room, one solution could be to wait until the player has moved off of the door
+        // TODO (Aiden) instead of teleporting to center of room, one solution could be to wait until the player has moved off of the door
         // in the room they wish to enter before activating the ability to enter doors agian.
         // prevents player from immediately going through a room again
         player.transform.position = new Vector3(0, 0, 0);
@@ -60,7 +60,7 @@ public class Map1 : MonoBehaviour
         //rooms = new Room[numberOfRooms];
         try
         {
-            // TODO I THINK A RANDOM CHANCE TECHNICALLY EXISTS TO CREATE A ROOM WITH NO DOORS ACTIVE
+            // TODO (Aiden) I THINK A RANDOM CHANCE TECHNICALLY EXISTS TO CREATE A ROOM WITH NO DOORS ACTIVE
             GenerateDungeon();
         }
         catch (System.ArgumentException)
@@ -77,10 +77,10 @@ public class Map1 : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        for(int i = 0; i < allRoomCoords.Count; i++)
-        {
-            Debug.Log(rooms[allRoomCoords[i]].ToString());
-        }
+        //for(int i = 0; i < allRoomCoords.Count; i++)
+        //{
+        //    Debug.Log(rooms[allRoomCoords[i]].ToString());
+        //}
 
         player = Instantiate(playerPrefab);
     }
@@ -96,14 +96,13 @@ public class Map1 : MonoBehaviour
         GameObject room = Instantiate(roomPrefab, new Vector3(0, 0f, 0), Quaternion.identity);
     }
     bool firstTime = true;
-    // assign types of rooms from mapmanager to each room
+
+    // TODO assign types of rooms from mapmanager script to each room
     // can be random
     private void PopulateCurrentRoom(Room currentRoom)
     {
         mapManager.PopulateRoom(currentRoom.roomType);
 
-        //oldPlayerCoords = currPlayerCoords;
-        //TODO figure out how to set a good initial oldplayer coords???
         currPlayerCoords = currentRoom.coordinates;
         Debug.Log("Current room: " + currentRoom.coordinates);
 
@@ -115,9 +114,9 @@ public class Map1 : MonoBehaviour
 
         minimap.UpdateMiniMap(currPlayerCoords);
 
-        Debug.Log("d");
+//        Debug.Log("d");
 
-        //remove old doors
+        //remove old door gameobjects
         GameObject[] environmentObjects = GameObject.FindGameObjectsWithTag("Door");
         foreach(GameObject g in environmentObjects)
         {
@@ -158,7 +157,6 @@ public class Map1 : MonoBehaviour
                         doortemp.SetFromTo(currentRoom, rooms[new Coords(currentRoom.coordinates.X - 1, currentRoom.coordinates.Y)]);
                         break;
                 }
-                //TODO populate door script to connect rooms together   
             }
         }
 
@@ -168,6 +166,8 @@ public class Map1 : MonoBehaviour
         //TODO drawing in walls probably only needs to be done once
         for (int i = 0; i < 4; i++)
         {
+            //TODO (Aiden) i hate how hard coded heaps of these values are
+            // TODO (Aiden) investigate wall spawning issues
             switch(i)
             {
                 case 0:
@@ -255,6 +255,9 @@ public class Map1 : MonoBehaviour
         }
     }
 
+    //TODO Next time, generate the rooms such that they connect to each other... THEN add doors.
+    // the below function does the opposite: Generates a room based on an available door
+    // this eventually causes slowdown at the end of the function when any unused doors have to be culled 
     public void GenerateDungeon()
     {
         //GameObject room = Instantiate(roomPrefab, new Vector3(0,0,0), Quaternion.identity);
@@ -272,10 +275,10 @@ public class Map1 : MonoBehaviour
             //if not creating the initial room
             if(i!=0)
             {
-                //logic to add doors, connect rooms, etc
+                //TODO this way of setting the roomdoors could become problematic
+                //randomise door bool
                 roomDoors = randomiseDoors();
 
-                //TODO this way of setting the roomdoors could become problematic
                 //for loop to try all possible rooms
                 //pick random room
                 int roomIndex = Random.Range(0, allRoomCoords.Count);

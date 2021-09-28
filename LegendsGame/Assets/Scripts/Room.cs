@@ -22,7 +22,7 @@ public class Room
     public override string ToString()
     {
         string s = $"";
-        s += $"Room at {coordinates.X}, {coordinates.Y}.";
+        s += $"Room at {coordinates.ToString()}";
         s += $"North: ({doors[0]}), ";//, ({connectedRooms[0].coordinates.X==-1})";
                                    //},{connectedRooms[0].coordinates.Y})),";
         s += $"East: ({doors[1]}), ";//, ({connectedRooms[1].coordinates.X},{connectedRooms[1].coordinates.Y})), ";
@@ -38,35 +38,35 @@ public class Room
         return false;
     }
 
-    public static bool operator ==(Room lhs, Room rhs)
-    {
-        if(lhs.doors == rhs.doors)
-        {
-            if(lhs.coordinates == rhs.coordinates)
-            {
-                if(lhs.connectedRooms == rhs.connectedRooms)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+    //public static bool operator ==(Room lhs, Room rhs)
+    //{
+    //    if(lhs.doors == rhs.doors)
+    //    {
+    //        if(lhs.coordinates == rhs.coordinates)
+    //        {
+    //            if(lhs.connectedRooms == rhs.connectedRooms)
+    //            {
+    //                return true;
+    //            }
+    //        }
+    //    }
+    //    return false;
+    //}
 
-    public static bool operator !=(Room lhs, Room rhs)
-    {
-        if (lhs.doors == rhs.doors)
-        {
-            if (lhs.coordinates == rhs.coordinates)
-            {
-                if (lhs.connectedRooms == rhs.connectedRooms)
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
+    //public static bool operator !=(Room lhs, Room rhs)
+    //{
+    //    if (lhs.doors == rhs.doors)
+    //    {
+    //        if (lhs.coordinates == rhs.coordinates)
+    //        {
+    //            if (lhs.connectedRooms == rhs.connectedRooms)
+    //            {
+    //                return false;
+    //            }
+    //        }
+    //    }
+    //    return true;
+    //}
 }
 /*
 public class Room

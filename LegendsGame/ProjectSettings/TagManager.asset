@@ -8,6 +8,12 @@ TagManager:
   - Door
   - Minimap
   - Wall
+  - DragonTarget
+  - test
+  - Dragon
+  - Bullet
+  - DragonController
+  - Final Item
   layers:
   - Default
   - TransparentFX
@@ -15,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
