@@ -5,7 +5,7 @@ using UnityEngine;
 public class Script : MonoBehaviour
 {
     // Script format
-    // PERS (4 digit code): text
+    // PLAY (4 digit code): text
     // i.e
     // PLAY(ER): blah blah blah
     // when editing script, the game works out who is talking by the first 4 characters.
@@ -16,13 +16,54 @@ public class Script : MonoBehaviour
     // if the text rendered gets to a {, it could stop writing to figure out the effect, play the effect, then continue past the closing }
     // ability to change speed of text drawing from script {TEXT_SPEED:0.01}
     // ability to have 2 characters talking at once, i.e one at top, one at bottom
-        // in the case of the final script the player could be whispering to themself while the master is yelling about how much better they feel
+    // in the case of the final script the player could be whispering to themself while the master is yelling about how much better they feel
     // ability to have text automatically go to next line of script... useful for sarcastic situations where the text really isn't useful
-        // also, similarly to the above point, the master's text could be automatically going through multiple lines, while the player controls the bottom text
+    // also, similarly to the above point, the master's text could be automatically going through multiple lines, while the player controls the bottom text
     // ability to play sfx from script i.e {SFX:bang}
     // ability to pause the rendering of text i.e {PAUSE}
-        //requiring player input to continue
+    //requiring player input to continue mid line
     //The effects should keep whoever was currently talking on screen
+    //The ability to change level/scene {LVL:CREDITS} or {LVL:GAME}
+
+    public static string[] getOpeningScript()
+    {
+        string[] script =
+        {
+            "MAST: KEITH!!!!!!!",
+            "MAST: Come hither!",
+            //TODO if time, anim of main character walking in
+            "PLAY: Yes master?",
+            "MAST: The world is in danger, Keith!",
+            "MAST: I have been incapacitated...{EFX:PAUSE} subdued...{EFX:PAUSE} poisoned!",
+            "MAST: I... {EFX:PAUSE} fear I don't have much time left!",
+            "PLAY: What!?!  Who?",
+            "PLAY: Who could have done such a thing?",
+            "MAST: {EFX:PAUSE}.{EFX:PAUSE}.{EFX:PAUSE}.",
+            "MAST: I uhh, have no clue..",
+            "MAST: Annyyywaayy, I need you to venture into the dungeons and fetch ingredients to make a cure.",
+            "MAST: Bring me the following: One apple, {EFX:PAUSE} One goblin’s toe, big toe of course, from the right foot!",
+            "PLAY: wha-",
+            "MAST: -A white spotted red mushroom, NOT a red spotted white mushroom! I do so much despise those.",
+            "PLAY: I don't{EFX:PAUSE} see how these items make a 'cure'",
+            "MAST: -and some fresh blue essence crystal, finely crushed, for that most delectable texture",
+            "PLAY: Master, you never cease to amaze me with your wealth of knowledge. I'll go fetch those from the caves at once.",
+            "MAST: Time is of the essence, Keith! Do hurry!",
+            "{LVL:GAME}"
+        };
+
+        return script;
+    }
+
+    public static string[] getOpeningDragonFightScript()
+    {
+        string[] script =
+        {
+
+        };
+
+        return script;
+    }
+
     public static string[] getfinalScript()
     {
         string[] script =
@@ -58,7 +99,8 @@ public class Script : MonoBehaviour
         "MAST: Thank you so much! Now, I feel just about ready to give old mate dragon a visit",
         "MAST: Would be fun to fight and defeat them once and for all!",
         "PLAY: ..................",
-        "{EFX:FADE_TO_BLACK}"
+        "{LVL:CREDITS}"
+       //"{EFX:FADE_TO_BLACK_CREDITS}"
         };
         return script;
     }

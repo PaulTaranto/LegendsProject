@@ -59,13 +59,16 @@
     <Compile Include="Assets/Scripts/MapManager.cs" />
     <Compile Include="Assets/Scripts/Bosses/DragonController.cs" />
     <Compile Include="Assets/Scripts/Room.cs" />
+    <Compile Include="Assets/Scripts/Cinematics and Dialogue/FinalCinematicManager.cs" />
     <Compile Include="Assets/Scripts/Map1.cs" />
+    <Compile Include="Assets/Scripts/PauseMenu.cs" />
     <Compile Include="Assets/Scripts/Map.cs" />
     <Compile Include="Assets/Scripts/Bosses/Dragon.cs" />
     <Compile Include="Assets/BasicObjectLauncher.cs" />
     <Compile Include="Assets/Scripts/IK/IKJoint.cs" />
     <Compile Include="Assets/Scripts/Bosses/DragonController1.cs" />
     <Compile Include="Assets/Scripts/Door.cs" />
+    <Compile Include="Assets/Scripts/Script.cs" />
     <Compile Include="Assets/Scripts/Bullet.cs" />
     <Compile Include="Assets/Scripts/Bosses/Dragon1.cs" />
     <Compile Include="Assets/Scripts/Bosses/FireBreath.cs" />
@@ -77,9 +80,10 @@
     <Compile Include="Assets/Scripts/MiniMap.cs" />
     <Compile Include="Assets/testbullet.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
+    <Compile Include="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs" />
     <Compile Include="Assets/Scripts/ArraySpawn1.cs" />
-    <Compile Include="Assets/Scripts/FinalCinematicManager.cs" />
-    <Compile Include="Assets/Scripts/Script.cs" />
+    <Compile Include="Assets/Scripts/MainMenu.cs" />
+    <Compile Include="Assets/Scripts/Cinematics and Dialogue/OpeningCinematicManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
