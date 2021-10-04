@@ -44,6 +44,7 @@ public class Map1 : MonoBehaviour
     {
         oldPlayerCoords = currPlayerCoords;
         currPlayerCoords = c;
+        Debug.Log(currPlayerCoords);
 
         // TODO (Aiden) instead of teleporting to center of room, one solution could be to wait until the player has moved off of the door
         // in the room they wish to enter before activating the ability to enter doors agian.
@@ -61,6 +62,7 @@ public class Map1 : MonoBehaviour
         try
         {
             // TODO (Aiden) I THINK A RANDOM CHANCE TECHNICALLY EXISTS TO CREATE A ROOM WITH NO DOORS ACTIVE
+            // would be highly unlikely if so
             GenerateDungeon();
         }
         catch (System.ArgumentException)
@@ -89,7 +91,12 @@ public class Map1 : MonoBehaviour
     {
         for (int i = 0; i < allRoomCoords.Count; i++)
         {
-            rooms[allRoomCoords[i]].roomType = mapManager.SetRandomRoomType();
+            //First assign all rooms except the boss room.
+            //Then afterwards, make the boss room a room at the end of the dungeon in a room which is NOT the players initial spawn room
+            rooms[allRoomCoords[i]].roomType = mapManager.GetRandomRoomType();
+            //TODO assign one of the rooms to be a boss room
+            Debug.Log("wanker");
+            mapManager.InstantiateAllRooms(allRoomCoords[i], rooms[allRoomCoords[i]].roomType);
         }
 
         // Creates initial room
@@ -101,7 +108,7 @@ public class Map1 : MonoBehaviour
     // can be random
     private void PopulateCurrentRoom(Room currentRoom)
     {
-        mapManager.PopulateRoom(currentRoom.roomType);
+        mapManager.PopulateRoom(currentRoom.coordinates, oldPlayerCoords);
 
         currPlayerCoords = currentRoom.coordinates;
         Debug.Log("Current room: " + currentRoom.coordinates);
@@ -170,6 +177,7 @@ public class Map1 : MonoBehaviour
             // TODO (Aiden) investigate wall spawning issues
             switch(i)
             {
+                //north
                 case 0:
                     position = new Vector3(-8.27715969f, 4.3151598f, 0);
                     //Fuck it we're hardcoding
@@ -182,7 +190,7 @@ public class Map1 : MonoBehaviour
                         wallInstance.transform.SetParent(environmentParent);
                     }
                     break;
-                case 1:
+                case 1://east
                     position = new Vector3(8.2495594f, 4.28755856f, 0);
                     distance = 1.37389f;
                     //float distanceX = 0.6309826f * 2.56f;
@@ -194,8 +202,8 @@ public class Map1 : MonoBehaviour
                     }
                     //put east walls
                     break;
-                case 2:
-                    position = new Vector3(-8.27715969f, -3.6282148f, 0);
+                case 2://south
+                    position = new Vector3(-8.27715969f, -4.3151598f, 0);// - 3.6282148f, 0);
                     //Fuck it we're hardcoding
                     distance = 1.37389f;
                     //float distanceX = 0.6309826f * 2.56f;
@@ -205,7 +213,6 @@ public class Map1 : MonoBehaviour
                         wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
                         wallInstance.transform.SetParent(environmentParent);
                     }
-                    //put south walls
                     break;
                 case 3:
                     //put west walls
@@ -241,11 +248,11 @@ public class Map1 : MonoBehaviour
                     break;
                 case 2:
                     //bottom right
-                    position = new Vector3(8.19779968f, -3.6282148f, 0);
+                    position = new Vector3(8.19779968f, -4.3151598f, 0);
                     break;
                 case 3:
                     //bottom left
-                    position = new Vector3(-8.2495594f, -3.6282148f, 0);
+                    position = new Vector3(-8.2495594f, -4.3151598f, 0);
                     break;
             }
             GameObject corner = Instantiate(cornerSprites[i], position, Quaternion.identity);
