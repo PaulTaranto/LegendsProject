@@ -32,5 +32,11 @@ public class testbullet : MonoBehaviour
             health.GiveDamage(bulletDamage);
             Destroy(gameObject);//Destrosy the bullet
         }
+        if (collision.gameObject.tag == "slime")
+        {
+            Health health = collision.transform.root.GetComponentInChildren<Health>();
+            health.GiveDamage(bulletDamage);
+            Destroy(gameObject);
+        }
     }
 }

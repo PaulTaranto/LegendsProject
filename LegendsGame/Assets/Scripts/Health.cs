@@ -134,6 +134,12 @@ public class Health : MonoBehaviour
                 GetComponent<Dragon>().dragonController.HandleDragonDeath();
                 Destroy(transform.root.gameObject);
                 break;
+            case "slime":
+                Destroy(transform.root.gameObject);
+                break;    
+            case "goblin":
+                Destroy(transform.root.gameObject);
+                break;            
         }
     }
 }
