@@ -17,7 +17,11 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject playerHeadSprite;
     public GameObject masterHeadSprite;
+    public GameObject dragonheadSprite;
+    public GameObject dragonheadSpriteMystery;
     AudioSource audio;
+
+    public bool isFinishedDialogue = false;
 
     public void InitialiseDialogueManager()
     {
@@ -36,6 +40,11 @@ public class DialogueManager : MonoBehaviour
     //Call this from another scripts update function when ready
     public void UpdateLogic()
     {
+        if(currentScriptCount == currentScript.Length)
+        {
+            isFinishedDialogue = true;
+        }
+
         if (!isFinishedWritingText)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -89,12 +98,32 @@ public class DialogueManager : MonoBehaviour
                             talking = "PLAY";
                             playerHeadSprite.SetActive(true);
                             masterHeadSprite.SetActive(false);
+                            dragonheadSprite.SetActive(false);
+                            dragonheadSpriteMystery.SetActive(false);
                             currentLine = currentLine.Substring(6);
                             break;
                         case "MAST":
                             talking = "MAST";
                             playerHeadSprite.SetActive(false);
                             masterHeadSprite.SetActive(true);
+                            dragonheadSprite.SetActive(false);
+                            dragonheadSpriteMystery.SetActive(false);
+                            currentLine = currentLine.Substring(6);
+                            break;
+                        case "DRAG":
+                            talking = "DRAG";
+                            playerHeadSprite.SetActive(false);
+                            masterHeadSprite.SetActive(false);
+                            dragonheadSprite.SetActive(true);
+                            dragonheadSpriteMystery.SetActive(false);
+                            currentLine = currentLine.Substring(6);
+                            break;
+                        case "????":
+                            talking = "????";
+                            playerHeadSprite.SetActive(false);
+                            masterHeadSprite.SetActive(false);
+                            dragonheadSprite.SetActive(false);
+                            dragonheadSpriteMystery.SetActive(true);
                             currentLine = currentLine.Substring(6);
                             break;
                     }
@@ -133,10 +162,10 @@ public class DialogueManager : MonoBehaviour
     void EffectHandler(string effect)
     {
         //mebbe make this if a swithc too
-        if(effect.Substring(0,3).Equals("EFX"))
+        if (effect.Substring(0, 3).Equals("EFX"))
         {
             Debug.Log("Playing effect: " + effect.Substring(4));
-            switch(effect.Substring(4))
+            switch (effect.Substring(4))
             {
                 // Hardcoded to only work in final cinematic, if a fadetoblack in the script is needed elsewhere,
                 // mebbe have like "FADE_TO_BLACK_CREDITS"
@@ -151,7 +180,7 @@ public class DialogueManager : MonoBehaviour
                     break;
             }
         }
-        else if(effect.Substring(0, 3).Equals("LVL"))
+        else if (effect.Substring(0, 3).Equals("LVL"))
         {
             //TODO if time, really only need to get the fade to level here if we choose to switch level
             //also switching level ALWAYS has a fade effect which shouldn't be an issue for our project but nyeh not happy with the lack of freedom
@@ -164,6 +193,13 @@ public class DialogueManager : MonoBehaviour
                 case "GAME":
                     levelChanger.FadeToLevel("Game");
                     break;
+            }
+        }
+        else if (effect.Substring(0, 3).Equals("SFX"))
+        {
+            switch (effect.Substring(4))
+            {
+
             }
         }
     }

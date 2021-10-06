@@ -69,6 +69,7 @@ MonoBehaviour:
   baseOfNeck: {fileID: 0}
   player: {fileID: 0}
   fireBreath: {fileID: 8409400674212669620, guid: d7d6fa756eab04146abaffffdff72adb, type: 3}
+  dragonController: {fileID: 0}
   touchDamage: 1
 --- !u!114 &529399898522618555
 MonoBehaviour:
@@ -261,7 +262,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03171414, y: 0}
+  m_Offset: {x: -0.3319317, y: -0.0018225908}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -272,5 +273,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0465717, y: 1.3}
+  m_Size: {x: 1.3364103, y: 1.3543274}
   m_EdgeRadius: 0

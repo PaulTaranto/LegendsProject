@@ -79,11 +79,12 @@
     <Compile Include="Assets/Scripts/IK/IKManager.cs" />
     <Compile Include="Assets/Scripts/MiniMap.cs" />
     <Compile Include="Assets/testbullet.cs" />
+    <Compile Include="Assets/Scripts/Cinematics and Dialogue/OpeningCinematicManager.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs" />
     <Compile Include="Assets/Scripts/ArraySpawn1.cs" />
     <Compile Include="Assets/Scripts/MainMenu.cs" />
-    <Compile Include="Assets/Scripts/Cinematics and Dialogue/OpeningCinematicManager.cs" />
+    <Compile Include="Assets/Scripts/Cinematics and Dialogue/DragonCinematicManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

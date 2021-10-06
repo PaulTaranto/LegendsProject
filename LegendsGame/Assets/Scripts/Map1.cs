@@ -44,7 +44,6 @@ public class Map1 : MonoBehaviour
     {
         oldPlayerCoords = currPlayerCoords;
         currPlayerCoords = c;
-        Debug.Log(currPlayerCoords);
 
         // TODO (Aiden) instead of teleporting to center of room, one solution could be to wait until the player has moved off of the door
         // in the room they wish to enter before activating the ability to enter doors agian.
@@ -85,6 +84,7 @@ public class Map1 : MonoBehaviour
         //}
 
         player = Instantiate(playerPrefab);
+        player.name = "Player";
     }
 
     private void AssignRooms()
@@ -95,7 +95,6 @@ public class Map1 : MonoBehaviour
             //Then afterwards, make the boss room a room at the end of the dungeon in a room which is NOT the players initial spawn room
             rooms[allRoomCoords[i]].roomType = mapManager.GetRandomRoomType();
             //TODO assign one of the rooms to be a boss room
-            Debug.Log("wanker");
             mapManager.InstantiateAllRooms(allRoomCoords[i], rooms[allRoomCoords[i]].roomType);
         }
 

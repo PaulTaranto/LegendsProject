@@ -7,11 +7,20 @@ public class DragonController1 : MonoBehaviour
 {
     public GameObject dragonTarget;
 
+    public GameObject dragonDialogueManagerPrefab;
+    public GameObject dialogueManagerPrefab;
+    GameObject dialogueManagerInstance;
+
+
+    bool hasGeneratedDragons = false;
+    //bool isFinishedTalking = false;
+
     public GameObject headPrefab, neckPrefab;
     Dragon[] dragons;
 
-    //13 to 17 are like the only values actually work
-    [Range(13,17)]
+    //10 to 17 are like the only values actually work
+    //NOTE: this is an 
+    [Range(10,17)]
     public int numberOfNeckSegments;
 
     //Don't put max above 3.  Untested, will likely produce shit yet interesting results
@@ -31,8 +40,8 @@ public class DragonController1 : MonoBehaviour
     bool endingCinematic = false;
     void Start()
     {
+        dialogueManagerInstance = Instantiate(dialogueManagerPrefab);
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        GenerateDragons();
         aliveDragonCount = numberOfDragons;
     }
 
@@ -42,7 +51,9 @@ public class DragonController1 : MonoBehaviour
 
         if (aliveDragonCount <= 0)
         {
-            //TODO finish this 
+            //TODO finish this...
+            //but what needs doing??? Why don't i explain more to myself??
+            //I think it's to implement a death animation
             endingCinematic = true;
             timer = 2;
             player.SetPlayerControl(false);
@@ -52,6 +63,13 @@ public class DragonController1 : MonoBehaviour
 
     private void Update()
     {
+        //the getcomponent should optimally be cached in a variable as its taxing on the system but its fine for now until it works... optimising later
+        if(!hasGeneratedDragons && dialogueManagerInstance.GetComponentInChildren<DialogueManager>().isFinishedDialogue)
+        {
+            GenerateDragons();
+            hasGeneratedDragons = true;
+        }
+
         if(endingCinematic)
         {
             PlayEndingCinematic();
@@ -115,7 +133,7 @@ public class DragonController1 : MonoBehaviour
 
             //determine initial spawn pos for head
             // I don't like that we hard code a few values here (e.g 8 being a value which causes nice positioning determined through trial and error)
-            spawnPos = new Vector3(8 - numberOfNeckSegments * neckPrefab.GetComponentInChildren<BoxCollider2D>().transform.lossyScale.x * neckPrefab.GetComponentInChildren<BoxCollider2D>().size.x
+            spawnPos = new Vector3(8 - numberOfNeckSegments * neckPrefab.GetComponentInChildren<BoxCollider2D>().size.x * neckPrefab.GetComponentInChildren<BoxCollider2D>().transform.lossyScale.x 
                                     , 0 + yOffset, 0);
 
             //spawn dragon head and set to first index in array
@@ -137,7 +155,7 @@ public class DragonController1 : MonoBehaviour
             for (int j = 1; j < numberOfNeckSegments; j++)
             {
                 //Do math to edit the x position's spawn pos
-                spawnPos.x = temporaryDragonSegments[0].transform.position.x + j * neckPrefab.GetComponentInChildren<BoxCollider2D>().transform.lossyScale.x * neckPrefab.GetComponentInChildren<BoxCollider2D>().size.x;
+                spawnPos.x = temporaryDragonSegments[0].transform.position.x + j * neckPrefab.GetComponentInChildren<BoxCollider2D>().size.x * neckPrefab.GetComponentInChildren<BoxCollider2D>().transform.lossyScale.x;
 
                 //Instantiate and store the neck segment
                 temporaryDragonSegments[j] = Instantiate(neckPrefab, spawnPos, neckPrefab.transform.localRotation);
@@ -188,13 +206,13 @@ public class DragonController1 : MonoBehaviour
             {
                 temporaryDragonSegments[j].GetComponent<IKJoint>().SetStartOffset();
             }
-
             //Set dragon head IK to current IK setup
             temporaryDragonSegments[0].GetComponents<IKManager>()[0].joints = iKManager.joints;
 
             //Set the target transform of the IK system to the head of the dragon
             temporaryDragonSegments[0].GetComponents<IKManager>()[0].targetTransform = Instantiate(dragonTarget);
             temporaryDragonSegments[0].GetComponents<IKManager>()[0].StartDragon();
+
             //Store the new dragon in the dragons array
             dragons[i] = temporaryDragonSegments[0].GetComponent<Dragon>();
             dragons[i].dragonTarget = temporaryDragonSegments[0].GetComponents<IKManager>()[0].targetTransform;

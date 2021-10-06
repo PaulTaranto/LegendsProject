@@ -54,11 +54,20 @@ public class Script : MonoBehaviour
         return script;
     }
 
+    //Only use if time, would certainly help open the fight a little though
     public static string[] getOpeningDragonFightScript()
     {
         string[] script =
         {
-
+            "PLAY: There's nothing here? {EFX:PAUSE} Has this whole journey been a waste?!",
+            "PLAY: Where's the blue essence crystal? I thought for sure this cave would have one!",
+            "????: Who's THERE?!",
+            "PLAY: It is I! The great Keith! Don't suppose you can give me blue essence crystal for a laugh?",
+            "????: {EFX:PAUSE}.{EFX:PAUSE}.{EFX:PAUSE}.",
+            "PLAY: {EFX:PAUSE}.{EFX:PAUSE}.{EFX:PAUSE}.",
+            "????: {SFX:DRAGON_BUILDUP} YOU HORRIBLE CHILD.  HOW DARE YOU COME INTO OUR LARE AND MAKE DEMANDS!",
+            "????: IT'LL BE THE LAST THING YOU EVER DO!",
+            "PLAY: wh-who goes there?"
         };
 
         return script;

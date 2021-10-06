@@ -12,7 +12,6 @@ public class MapManager : MonoBehaviour
     
     public void InstantiateAllRooms(Coords coord, int roomType)
     {
-        Debug.Log("wank");
         roomInstances.Add(coord, Instantiate(roomPrefabs[roomType-1]));
         roomInstances[coord].SetActive(false);
         roomInstances[coord].name = coord.ToString();
@@ -26,7 +25,8 @@ public class MapManager : MonoBehaviour
             roomInstances[oldRoomCoords].SetActive(false);
         }catch(KeyNotFoundException e)
         {
-            Debug.Log(e);
+            Debug.Log("Technically a KeyNotFoundException was just thrown in MapManager but its fine if it only throws it once at the start. " +
+                "If this is thrown more than once, look into it.");
         }
         
     }
