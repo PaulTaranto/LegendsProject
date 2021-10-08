@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     bool isInvulnerable = false;
-    float invulnerableTimer, maxInvulnerableTimer = 2;
+    float invulnerableTimer, maxInvulnerableTimer = 0.5f;
 
     public int health;
     public int numberOfHearts;
@@ -42,9 +42,9 @@ public class Health : MonoBehaviour
         }
 
         //Test if lose heart when damaged
-        //if (Input.GetKeyDown(KeyCode.Space)) {
-        //    TakeDamage(1);
-        //}
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            TakeDamage(1);
+        }
 
         for (int i = 0; i < hearts.Length; i++) {
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wings : MonoBehaviour
 {
-    public float time = 6;
+    /*public float time = 6;
     public float ActiveT = 10;
     private bool BLJ = true;
     private float Minb = 0;
@@ -41,5 +41,5 @@ public class Wings : MonoBehaviour
             Bar.gameObject.transform.localScale = new Vector3(Minb / 100, Minb / 100, Minb / 100);
         }
         BLJ = true;
-    }
+    }*/
 }

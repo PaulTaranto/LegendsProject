@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     
     //Resume game
     public void Resume() {
+        Debug.Log("Unpaused");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
@@ -37,6 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     //Pause game
     void Pause() {
+        Debug.Log("Paused");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;

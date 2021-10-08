@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
-    public float speed = 6;
+    /*public float speed = 6;
     private float DestroyTime;
 
     public GameObject explosion;
@@ -29,5 +29,5 @@ public class FireBall : MonoBehaviour
     {
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
-    }
+    }*/
 }

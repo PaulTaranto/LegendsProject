@@ -14,6 +14,8 @@ public class Pickup : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
+    //Runs through the inventory and checks if there is any free slots if collision with item occurs
+    //Item is added to Wand slot if free
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             Debug.Log("Collision");
