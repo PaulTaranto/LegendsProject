@@ -15,6 +15,12 @@ TagManager:
   - DragonController
   - Final Item
   - Wand Slot
+  - Heart1
+  - Heart2
+  - Heart3
+  - Heart4
+  - Heart5
+  - Wand Slot 2
   layers:
   - Default
   - TransparentFX
