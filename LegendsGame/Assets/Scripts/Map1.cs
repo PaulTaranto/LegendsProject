@@ -5,7 +5,7 @@ using UnityEngine;
 public class Map1 : MonoBehaviour
 {
     public int numberOfRooms = 1;
-    private int roomCount = 0;
+//    private int roomCount = 0;
     //public Room[] rooms;
     private List<Coords> allRoomCoords = new List<Coords>();
     private Dictionary<Coords, Room> rooms = new Dictionary<Coords, Room>();
@@ -96,6 +96,7 @@ public class Map1 : MonoBehaviour
             rooms[allRoomCoords[i]].roomType = mapManager.GetRandomRoomType();
             //TODO assign one of the rooms to be a boss room
             mapManager.InstantiateAllRooms(allRoomCoords[i], rooms[allRoomCoords[i]].roomType);
+            
         }
 
         // Creates initial room
@@ -110,7 +111,7 @@ public class Map1 : MonoBehaviour
         mapManager.PopulateRoom(currentRoom.coordinates, oldPlayerCoords);
 
         currPlayerCoords = currentRoom.coordinates;
-        Debug.Log("Current room: " + currentRoom.coordinates);
+//        Debug.Log("Current room: " + currentRoom.coordinates);
 
         if (firstTime)
         {

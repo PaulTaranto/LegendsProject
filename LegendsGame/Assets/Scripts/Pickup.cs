@@ -9,11 +9,19 @@ public class Pickup : MonoBehaviour
     public GameObject itemB;
 
     // Start is called before the first frame update
-    private void Start()
+    /*private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-    }
+    }*/
 
+
+    private void Update()
+    {
+        if(inventory == null)
+        {
+            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        }
+    }
     //Runs through the inventory and checks if there is any free slots if collision with item occurs
     //Item is added to Wand slot if free
     void OnTriggerEnter2D(Collider2D other) {

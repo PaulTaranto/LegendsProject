@@ -78,7 +78,7 @@ public class Script : MonoBehaviour
         string[] script =
         {
         "MAST: Oh, you're back",
-        //Lights flick on
+        //TODO Lights flick on
         "MAST: GAHH!  Turn off the lights!",
         "PLAY: Master! Master! I've returned! How are you feeling?",
         "MAST: WHAT DOES IT LOOK LIKE YOU SILLY BUFFOON!?!?",
@@ -94,7 +94,7 @@ public class Script : MonoBehaviour
         "MAST: You've always been my star pupil, I'm so proud of the work you've done for me today.",
         "MAST: This quest was of utmost importance!",
         "PLAY: Was it?  These items seem so random, what could you possibly need them for?",
-        //MIX ALL INTO BOWL, THEN PLAY DRINKING ANIMATION AND SFX
+        //TODO MIX ALL INTO BOWL, THEN PLAY DRINKING ANIMATION AND SFX
         "MAST: ...",
         "PLAY: ...",
         "MAST: ...",

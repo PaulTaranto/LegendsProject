@@ -21,7 +21,12 @@ public class Health : MonoBehaviour
     void Start()
     {
         invulnerableTimer = maxInvulnerableTimer;
-//        gameOverScreen.SetActive(false);
+        hearts[0] = GameObject.Find("Heart1").GetComponent<Image>();
+        hearts[1] = GameObject.Find("Heart2").GetComponent<Image>();
+        hearts[2] = GameObject.Find("Heart3").GetComponent<Image>();
+        hearts[3] = GameObject.Find("Heart4").GetComponent<Image>();
+        hearts[4] = GameObject.Find("Heart5").GetComponent<Image>();
+        //        gameOverScreen.SetActive(false);
     }
 
     //TODO (Aiden) potentially refactor slightly... probably not great to do this for loop every frame

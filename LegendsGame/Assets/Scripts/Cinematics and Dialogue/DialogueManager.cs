@@ -199,7 +199,8 @@ public class DialogueManager : MonoBehaviour
         {
             switch (effect.Substring(4))
             {
-
+                case "DRAGON_BUILDUP":
+                    break;
             }
         }
     }

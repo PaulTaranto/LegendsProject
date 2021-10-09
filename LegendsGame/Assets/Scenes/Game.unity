@@ -1622,70 +1622,6 @@ Transform:
   m_Father: {fileID: 1213753274}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &271176310 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3222757319498409027, guid: 8329821e9acae4911b8e122608d07930, type: 3}
-  m_PrefabInstance: {fileID: 296062496}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &271176311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271176310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f51f3f46b5cfe4dad634ef0c46dba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 00
-  slots:
-  - {fileID: 1694825299}
---- !u!114 &271176315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271176310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af05be97a1d977f4bb28d78a1e9852f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  numberOfHearts: 5
-  hearts:
-  - {fileID: 1912945068}
-  - {fileID: 572037585}
-  - {fileID: 619297676}
-  - {fileID: 1315684885}
-  - {fileID: 1903751773}
-  fullHeart: {fileID: 21300000, guid: 9cb1fff01e8c54546a6a4ea6836ed86a, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 92f67acdc54d1a24b8b1442bc8753006, type: 3}
-  gameOverScreen: {fileID: 0}
---- !u!50 &271176316
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271176310}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!4 &272113361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7905296448584020531, guid: 768f530d0d71d4c0dbd02a7d3218f0f1, type: 3}
@@ -1836,6 +1772,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 271176311, guid: 8329821e9acae4911b8e122608d07930, type: 3}
+      propertyPath: slots.Array.data[0]
+      value: 
+      objectReference: {fileID: 1694825299}
+    - target: {fileID: 271176315, guid: 8329821e9acae4911b8e122608d07930, type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1912945068}
+    - target: {fileID: 271176315, guid: 8329821e9acae4911b8e122608d07930, type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 572037585}
+    - target: {fileID: 271176315, guid: 8329821e9acae4911b8e122608d07930, type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 619297676}
+    - target: {fileID: 271176315, guid: 8329821e9acae4911b8e122608d07930, type: 3}
+      propertyPath: hearts.Array.data[3]
+      value: 
+      objectReference: {fileID: 1315684885}
+    - target: {fileID: 271176315, guid: 8329821e9acae4911b8e122608d07930, type: 3}
+      propertyPath: hearts.Array.data[4]
+      value: 
+      objectReference: {fileID: 1903751773}
     - target: {fileID: 458652011385033086, guid: 8329821e9acae4911b8e122608d07930, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1886,19 +1846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3222757319498409027, guid: 8329821e9acae4911b8e122608d07930, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9134755176255467161, guid: 8329821e9acae4911b8e122608d07930, type: 3}
-      propertyPath: Firepoint
-      value: 
-      objectReference: {fileID: 593021637}
-    - target: {fileID: 9134755176255467161, guid: 8329821e9acae4911b8e122608d07930, type: 3}
-      propertyPath: firepoint
-      value: 
-      objectReference: {fileID: 593021637}
-    - target: {fileID: 9134755176255467161, guid: 8329821e9acae4911b8e122608d07930, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8329821e9acae4911b8e122608d07930, type: 3}
@@ -3182,11 +3130,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &593021637 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 593021637, guid: 8329821e9acae4911b8e122608d07930, type: 3}
-  m_PrefabInstance: {fileID: 296062496}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &603590983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7905296448584020531, guid: 768f530d0d71d4c0dbd02a7d3218f0f1, type: 3}
@@ -3462,7 +3405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235611c3aa7ea49a8a6c01e8cadddd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRooms: 15
+  numberOfRooms: 7
   roomPrefab: {fileID: 7729598459240103604, guid: bcb2c93465df3401d99590f6e36c6e77, type: 3}
   doorPositions:
   - {fileID: 1399891913}
@@ -3501,9 +3444,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 8247910468810538017, guid: 86a9521169f894710a6e2e18805dd282, type: 3}
+  - {fileID: 2732234107869752998, guid: 8321b1f87251949b6b4db710ec4a11e1, type: 3}
   - {fileID: 4491362669844223807, guid: dc727bfdc62d4488c8f48ef4ad7dbafc, type: 3}
   - {fileID: 828195109643184322, guid: a95e7532fdc00467389a063cdd9579fe, type: 3}
+  bossroomPrefabs: []
 --- !u!4 &664433951
 Transform:
   m_ObjectHideFlags: 0
@@ -6827,7 +6771,7 @@ GameObject:
   - component: {fileID: 1694825301}
   m_Layer: 5
   m_Name: Wand_slot
-  m_TagString: Untagged
+  m_TagString: Wand Slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

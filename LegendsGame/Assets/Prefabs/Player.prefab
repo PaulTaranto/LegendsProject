@@ -43,6 +43,9 @@ GameObject:
   - component: {fileID: 4332616654698017399}
   - component: {fileID: -2341982484615834106}
   - component: {fileID: 9134755176255467161}
+  - component: {fileID: 271176316}
+  - component: {fileID: 271176311}
+  - component: {fileID: 271176315}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -168,5 +171,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 5513855770089061233, guid: 9ac589eea0f9f4ebf8e586650f891119, type: 3}
   ReloadSpeed: 1
-  Firepoint: {fileID: 0}
+  Firepoint: {fileID: 593021637}
   Spread: 0
+--- !u!50 &271176316
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222757319498409027}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &271176311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222757319498409027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2f51f3f46b5cfe4dad634ef0c46dba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 00
+  slots:
+  - {fileID: 0}
+--- !u!114 &271176315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222757319498409027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af05be97a1d977f4bb28d78a1e9852f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  numberOfHearts: 5
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 21300000, guid: 9cb1fff01e8c54546a6a4ea6836ed86a, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 92f67acdc54d1a24b8b1442bc8753006, type: 3}
+  gameOverScreen: {fileID: 0}

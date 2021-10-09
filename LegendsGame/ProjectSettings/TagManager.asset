@@ -14,6 +14,7 @@ TagManager:
   - Bullet
   - DragonController
   - Final Item
+  - Wand Slot
   layers:
   - Default
   - TransparentFX

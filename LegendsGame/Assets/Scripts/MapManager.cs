@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public GameObject[] roomPrefabs;
+    public GameObject[] bossroomPrefabs;
     //GameObject[] roomInstances;
     Dictionary<Coords, GameObject> roomInstances = new Dictionary<Coords, GameObject>(); 
     int[] roomTypes = {1,2,3};//normal rooms are > 1
@@ -23,7 +24,7 @@ public class MapManager : MonoBehaviour
         try
         {
             roomInstances[oldRoomCoords].SetActive(false);
-        }catch(KeyNotFoundException e)
+        }catch(KeyNotFoundException)
         {
             Debug.Log("Technically a KeyNotFoundException was just thrown in MapManager but its fine if it only throws it once at the start. " +
                 "If this is thrown more than once, look into it.");
@@ -34,7 +35,8 @@ public class MapManager : MonoBehaviour
     public int GetRandomRoomType()
     {
         //return type of rooms which are NOT Boss rooms
-        return roomTypes[Random.Range(0, roomTypes.Length)];
+        //TODO uncomment the rest in below line after debugging
+        return roomTypes[0];//Random.Range(0, roomTypes.Length)];
     }
 
     public int GetRandomBossRoomType()
