@@ -30,9 +30,21 @@ public class Pickup : MonoBehaviour
             for (int i = 0; i < inventory.slots.Length; i++) {
                 if (inventory.isFull[i] == false) {
                     inventory.isFull[i] = true;
-                    Instantiate(itemB, inventory.slots[i].transform, false);
-                    Destroy(gameObject);
-                    break;
+                    //Check if item is going into second slot.
+                    //Changes size of item in slot to match the box.
+                    if (i == 1) {
+                        itemB = (GameObject)Instantiate(itemB, inventory.slots[i].transform, false);
+                        itemB.transform.localScale = new Vector2(0.6f, 0.6f);
+                        Destroy(gameObject);
+                        break;
+                        
+                    }
+                    else {
+                        itemB = (GameObject)Instantiate(itemB, inventory.slots[i].transform, false);
+                        Destroy(gameObject);
+                        break;
+                    }
+                    
                 }
             }
         }
