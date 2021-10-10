@@ -13,11 +13,11 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-43277
+32797
 Successfully changed project path to: /mnt/A6D67FE0D67FAF65/UNI/- MASTERS -/Game dev/Main Project/LegendsProject/LegendsGame
 /mnt/A6D67FE0D67FAF65/UNI/- MASTERS -/Game dev/Main Project/LegendsProject/LegendsGame
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 43.30 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 38.09 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.2f1 (8fd9074bf66c)
 [Subsystems] Discovering subsystems at path /home/jason/Unity/Editors/2020.3.2f1/Editor/Data/Resources/UnitySubsystems
@@ -38,12 +38,12 @@ blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffe
 der_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture
 _footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap
  GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 888165160
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 1651369288
 Initialize mono
 Mono path[0] = '/home/jason/Unity/Editors/2020.3.2f1/Editor/Data/Managed'
 Mono path[1] = '/home/jason/Unity/Editors/2020.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/home/jason/Unity/Editors/2020.3.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56200
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56374
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Trying to register platform support module: /home/jason/Unity/Editors/2020.3.2f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll (that doesn't exist). Retrying without overrides.
@@ -51,132 +51,53 @@ Platform support module is not available: /home/jason/Unity/Editors/2020.3.2f1/E
 Trying to register platform support module: /home/jason/Unity/Editors/2020.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll (that doesn't exist). Retrying without overrides.
 Platform support module is not available: /home/jason/Unity/Editors/2020.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/jason/Unity/Editors/2020.3.2f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.001314 seconds.
+Registered in 0.001620 seconds.
 Native extension for LinuxStandalone target not found
-Refreshing native plugins compatible for Editor in 35.36 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 34.51 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.967 seconds
+- Completed reload, in  0.979 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003089 seconds.
+Registered in 0.002210 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
-Refreshing native plugins compatible for Editor in 34.98 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 37.73 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.871 seconds
+- Completed reload, in  0.858 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1820 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 80.1 MB.
 System memory in use after: 80.1 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2268.
-Total: 2.700105 ms (FindLiveObjects: 0.197554 ms CreateObjectMapping: 0.070476 ms MarkObjects: 2.256883 ms  DeleteObjects: 0.173551 ms)
+Total: 3.574930 ms (FindLiveObjects: 0.278992 ms CreateObjectMapping: 0.100859 ms MarkObjects: 2.983059 ms  DeleteObjects: 0.210619 ms)
 
 ========================================================================
 Received Import Request.
-  path: Packages/com.unity.2d.animation
-  artifactKey: Guid(bb5c94055a953b6081dfc49350569eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation using Guid(bb5c94055a953b6081dfc49350569eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b309bf74f5fe69dcb9ad16d9b4fb88c8') in 0.006135 seconds
-  Import took 0.009993 seconds .
+  path: Assets/Scenes/ArtTestScene.unity
+  artifactKey: Guid(35df1e0c1456a3b60a0ec38ca34ac37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/ArtTestScene.unity using Guid(35df1e0c1456a3b60a0ec38ca34ac37a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2926271e1f181f6be2d6a2a91bd269ef') in 0.014304 seconds
+  Import took 0.019417 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Packages/com.unity.2d.animation/package.json
-  artifactKey: Guid(9e83c20a8293f44ec8a375d3805f477d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.2d.animation/package.json using Guid(9e83c20a8293f44ec8a375d3805f477d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7ea69136f1f2383f90d5b9e3cd1995d') in 4.574379 seconds
-  Import took 4.577393 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.909731 seconds.
-  path: Assets/Sprites/Character/slime.psb
-  artifactKey: Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Character/slime.psb using Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f887ac39a9c24dd73bbe2e4a5cd4dd2c') in 0.120489 seconds
-  Import took 0.123806 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002476 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.803 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1813 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 81.2 MB.
-System memory in use after: 81.2 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 2284.
-Total: 3.009514 ms (FindLiveObjects: 0.179251 ms CreateObjectMapping: 0.071188 ms MarkObjects: 2.681567 ms  DeleteObjects: 0.075944 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 34741.285869 seconds.
-  path: Assets/Sprites/Character/slime.psb
-  artifactKey: Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Character/slime.psb using Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84cca463092db7b0d508dc5d7799e290') in 0.107254 seconds
-  Import took 0.110637 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 843.805858 seconds.
-  path: Assets/Sprites/Character/slime.psb
-  artifactKey: Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Character/slime.psb using Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b94f3ed7e42b1fbe085a9098389d54e4') in 0.023440 seconds
-  Import took 0.026675 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 802.939839 seconds.
-  path: Assets/Sprites/Character/slime.psb
-  artifactKey: Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Character/slime.psb using Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c5e94536c59606764ac2e13b9cf0bbd') in 0.029145 seconds
-  Import took 0.032446 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 130.120866 seconds.
-  path: Assets/Sprites/Character/slime.psb
-  artifactKey: Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Character/slime.psb using Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f3603608f5c74e5dcf4e38d4e4a5690') in 0.023101 seconds
-  Import took 0.026182 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 60.500620 seconds.
-  path: Assets/Sprites/Character/slime.psb
-  artifactKey: Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Character/slime.psb using Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09d1518e704e1561968e7b9d81ac2ea9') in 0.025279 seconds
-  Import took 0.028567 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 318.782936 seconds.
-  path: Assets/Sprites/Character/slime.psb
-  artifactKey: Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Character/slime.psb using Guid(9b1e83593c19d9aa9845bb7c8932972e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3efa1945dfb9e288c688c7d2c3114e0c') in 0.025387 seconds
-  Import took 0.029445 seconds .
+  Time since last request: 1396.517045 seconds.
+  path: Assets/Sprites/Character/PlayerCharacter.psb
+  artifactKey: Guid(8881b914578d04268b74bce99cd71958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Character/PlayerCharacter.psb using Guid(8881b914578d04268b74bce99cd71958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec7862ad737eacf9de0c35b860081716') in 0.131086 seconds
+  Import took 0.134296 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
