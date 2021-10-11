@@ -41,4 +41,9 @@ public class GoblinScript : MonoBehaviour
      transform.position.y + (movementPerSecond.y * Time.deltaTime));     
 
     }
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.CompareTag("Player")){
+            GetComponent<Health>().GiveDamage(2);            
+        }
+    }
 }

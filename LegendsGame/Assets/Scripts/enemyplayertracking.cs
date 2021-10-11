@@ -5,27 +5,27 @@ using UnityEngine;
 public class enemyplayertracking : MonoBehaviour
 {
 
-    private Transform player;
-
-    public int touchDamage = 1;
     public float speed = 0.7f;
+    private Transform player;
+   private Vector2 target;    
 
     void Start()
     {
-        
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
+        target = new Vector2(player.position.x, player.position.y);    
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        Vector3 delta = player.position - transform.position;
-        delta.Normalize();
-        float slimeSpeed = speed * Time.deltaTime;
-        transform.position = transform.position + (delta*slimeSpeed);
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
     }
-
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        if(other.CompareTag("Player")){
+            GetComponent<Health>().GiveDamage(2);
+        }    
+    }    
 }
