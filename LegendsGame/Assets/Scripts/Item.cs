@@ -5,15 +5,23 @@ using UnityEngine;
 public class Item
 {
     
-    public enum ItemType {
+    /*public enum ItemType {
         Apple,
         GoblinToe,
         SlimeBladder,
         Crystal,
         Egg,
         Potion,
-    }
+    }*/
 
-    public ItemType itemType;
+    public string[] collectbleItems = {
+        "Apple",
+        "GoblinToe",
+        "SlimeBladder",
+        "Crystal",
+        "Egg",
+    };
+
+    //public ItemType itemType;
 
 }

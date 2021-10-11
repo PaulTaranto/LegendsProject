@@ -6,7 +6,7 @@ public class Pickup : MonoBehaviour
 {
 
     private Inventory inventory;
-    public GameObject itemB;
+    public GameObject itemPickup;
     private bool canPickupWand;
 
     // Start is called before the first frame update
@@ -23,9 +23,13 @@ public class Pickup : MonoBehaviour
             inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         }
 
-        //if button pressed pickup wand (currently set to Z)
+        //if button pressed pickup itemPickup (currently set to Z)
         if (Input.GetKeyDown(KeyCode.Z)) {
             PickupWand();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P)) {
+            SwapSlots();
         }
     }
     
@@ -41,14 +45,14 @@ public class Pickup : MonoBehaviour
                     //Check if item is going into second slot.
                     //Changes size of item in slot to match the box.
                     if (i == 1) {
-                        itemB = (GameObject)Instantiate(itemB, inventory.slots[i].transform, false);
-                        itemB.transform.localScale = new Vector2(0.6f, 0.6f);
+                        itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
+                        itemPickup.transform.localScale = new Vector2(0.6f, 0.6f);
                         Destroy(gameObject);
                         break;
                         
                     }
                     else {
-                        itemB = (GameObject)Instantiate(itemB, inventory.slots[i].transform, false);
+                        itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
                         Destroy(gameObject);
                         break;
                     }
@@ -62,7 +66,23 @@ public class Pickup : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             Debug.Log("Collison Active");
-            canPickupWand = true;
+            if (itemPickup.CompareTag("Wand")) {
+                Debug.Log("Wand");
+                canPickupWand = true;
+            }
+            else {
+                //string s = itemPickup.tag;
+                //Debug.Log(s);
+                inventory.AddItem(itemPickup.tag);
+                Debug.Log(inventory.collectibles.Count);
+                Destroy(gameObject);
+                //break;
+                for (int i = 0; i < inventory.collectibles.Count; i++) {
+                    Debug.Log(inventory.collectibles[i]);
+                }
+                
+            }
+            
         }
     }
 
@@ -70,7 +90,11 @@ public class Pickup : MonoBehaviour
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             Debug.Log("Collision Not Active");
-            canPickupWand = false;
+            if (itemPickup.CompareTag("Wand")) {
+                Debug.Log("Wand Gone");
+                canPickupWand = false;
+            }
+            
         }
     }
     
@@ -84,20 +108,27 @@ public class Pickup : MonoBehaviour
                     //Check if item is going into second slot.
                     //Changes size of item in slot to match the box.
                     if (i == 1) {
-                        itemB = (GameObject)Instantiate(itemB, inventory.slots[i].transform, false);
-                        itemB.transform.localScale = new Vector2(0.6f, 0.6f);
+                        itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
+                        itemPickup.transform.localScale = new Vector2(0.6f, 0.6f);
                         Destroy(gameObject);
                         break;
                         
                     }
                     else {
-                        itemB = (GameObject)Instantiate(itemB, inventory.slots[i].transform, false);
+                        itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
                         Destroy(gameObject);
                         break;
                     }
                     
                 }
             }
+        }
+        
+    }
+
+    void SwapSlots() {
+        for (int i = 0; i < inventory.slots.Length; i++) {
+            Debug.Log(inventory.slots[i]);
         }
         
     }
