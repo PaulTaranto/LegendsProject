@@ -61,7 +61,7 @@ public class Map1 : MonoBehaviour
         try
         {
             // TODO (Aiden) I THINK A RANDOM CHANCE TECHNICALLY EXISTS TO CREATE A ROOM WITH NO DOORS ACTIVE
-            // would be highly unlikely if so
+            // would be highly unlikely if it does occur but like its possible
             GenerateDungeon();
         }
         catch (System.ArgumentException)
@@ -117,6 +117,10 @@ public class Map1 : MonoBehaviour
         {
             firstTime = false;
             minimap.SpawnMinimap(currPlayerCoords, oldPlayerCoords);
+        }
+        else
+        {
+            mapManager.StartCameraTransition("North");
         }
 
         minimap.UpdateMiniMap(currPlayerCoords);
@@ -194,7 +198,7 @@ public class Map1 : MonoBehaviour
                     position = new Vector3(8.2495594f, 4.28755856f, 0);
                     distance = 1.37389f;
                     //float distanceX = 0.6309826f * 2.56f;
-                    for (int j = 0; j < 13; j++)
+                    for (int j = 0; j < 7; j++)
                     {
                         //position.x += distance;
                         wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
@@ -219,7 +223,7 @@ public class Map1 : MonoBehaviour
                     position = new Vector3(-8.2495594f, 4.28755856f, 0);
                     distance = 1.37389f;
                     //float distanceX = 0.6309826f * 2.56f;
-                    for (int j = 0; j < 13; j++)
+                    for (int j = 0; j < 7; j++)
                     {
                         //position.x += distance;
                         wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);

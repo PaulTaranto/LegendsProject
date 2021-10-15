@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float moveSpeed = 10f;
+    private float moveSpeed = 7f;
     bool hasControl = true;
-    void Update()
+
+    void FixedUpdate()
     {
         if(hasControl)
         {
             Vector2 move = transform.position;
-            move.x += Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-            move.y += Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
+            move.x += Input.GetAxisRaw("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+            move.y += Input.GetAxisRaw("Vertical") * moveSpeed * Time.fixedDeltaTime;
             transform.position = move;
         }
         //Vector2 move = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime);

@@ -1,20 +1,14 @@
 ﻿<Properties StartupConfiguration="{00945EC6-0021-B609-A472-4ADC99602836}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Map1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Pickup.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Health.cs" Line="141" Column="1" />
-      <File FileName="Assets/Scripts/Inventory.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/Pickup.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/MapManager.cs" Line="18" Column="51" />
-      <File FileName="Assets/Scripts/Map1.cs" Line="98" Column="94" />
-      <File FileName="Assets/Scripts/Script.cs" Line="68" Column="39" />
-      <File FileName="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs" Line="203" Column="21" />
-      <File FileName="Assets/Scripts/Room.cs" Line="14" Column="25" />
+      <File FileName="Assets/Scripts/Pickup.cs" Line="89" Column="6" />
+      <File FileName="Assets/Scripts/Inventory.cs" Line="26" Column="52" />
+      <File FileName="Assets/Scripts/Item.cs" Line="24" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d5569abe-e484-402f-b87d-f169949b338c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="54e36729-1a92-456d-b2bc-485c8b846349" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

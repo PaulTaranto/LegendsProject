@@ -23,12 +23,15 @@ public class DialogueManager : MonoBehaviour
 
     public bool isFinishedDialogue = false;
 
-    public void InitialiseDialogueManager()
+    public void InitialiseDialogueManager(bool spawnPlayer)
     {
         audio = GetComponent<AudioSource>();
         levelChanger = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
         //TODO make spawn in better position if it doesn't look good
-        playerInstance = Instantiate(player);
+        if(spawnPlayer)
+        {
+            playerInstance = Instantiate(player);
+        }
         //Hardcoded 0 value to ensure no bullshit
         scriptText.text = "";
         currentLine = currentScript[0];
@@ -40,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     //Call this from another scripts update function when ready
     public void UpdateLogic()
     {
-        if(currentScriptCount == currentScript.Length)
+        if (currentScriptCount == currentScript.Length)
         {
             isFinishedDialogue = true;
         }
@@ -52,6 +55,7 @@ public class DialogueManager : MonoBehaviour
                 timeInbetweenChar = 0;
                 //set the time to wait to 0 to write the script immediately to screen
             }
+
             RenderScript();
         }
 
@@ -64,7 +68,10 @@ public class DialogueManager : MonoBehaviour
             scriptText.text = "";
             talking = "";
             timeInbetweenChar = maxTimeInBetweenChar;
-            currentLine = currentScript[currentScriptCount];
+            if(currentScriptCount < currentScript.Length)
+            {
+                currentLine = currentScript[currentScriptCount];
+            }
         }
 
         if (timeInbetweenChar > 0)

@@ -155,7 +155,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.174317, y: 5.0786276}
   m_EdgeRadius: 0
 --- !u!114 &9134755176255467161
 MonoBehaviour:
@@ -209,6 +209,7 @@ MonoBehaviour:
   isFull: 0000
   slots:
   - {fileID: 0}
+  collectibles: []
 --- !u!114 &271176315
 MonoBehaviour:
   m_ObjectHideFlags: 0

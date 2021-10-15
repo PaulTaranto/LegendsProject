@@ -18,6 +18,8 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(canPickupWand);
+
         if(inventory == null)
         {
             inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -65,16 +67,16 @@ public class Pickup : MonoBehaviour
     //Allow pickup when on object
     void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            Debug.Log("Collison Active");
-            if (itemPickup.CompareTag("Wand")) {
-                Debug.Log("Wand");
+            //Debug.Log("Collison Active");
+            if (this.CompareTag("Wand")) {
+                //Debug.Log("Wand");
                 canPickupWand = true;
             }
             else {
                 //string s = itemPickup.tag;
                 //Debug.Log(s);
-                inventory.AddItem(itemPickup.tag);
-                Debug.Log(inventory.collectibles.Count);
+                inventory.AddItem(this.tag);
+                //Debug.Log(inventory.collectibles.Count);
                 Destroy(gameObject);
                 //break;
                 for (int i = 0; i < inventory.collectibles.Count; i++) {
@@ -89,9 +91,9 @@ public class Pickup : MonoBehaviour
     //Turn off pickup when not on object
     void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            Debug.Log("Collision Not Active");
-            if (itemPickup.CompareTag("Wand")) {
-                Debug.Log("Wand Gone");
+            //Debug.Log("Collision Not Active");
+            if (this.CompareTag("Wand")) {
+                //Debug.Log("Wand Gone");
                 canPickupWand = false;
             }
             
@@ -108,6 +110,7 @@ public class Pickup : MonoBehaviour
                     //Check if item is going into second slot.
                     //Changes size of item in slot to match the box.
                     if (i == 1) {
+                        Debug.Log("asa");
                         itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
                         itemPickup.transform.localScale = new Vector2(0.6f, 0.6f);
                         Destroy(gameObject);

@@ -27,8 +27,10 @@ public class LevelChanger : MonoBehaviour
             //Load from string
             SceneManager.LoadScene(levelToLoad);
         }
-        //Load from int
-        SceneManager.LoadScene(levelToLoadInt);
-
+        else
+        {
+            //Load from int
+            SceneManager.LoadScene(levelToLoadInt);
+        }
     }
 }

@@ -21,11 +21,14 @@ public class Health : MonoBehaviour
     void Start()
     {
         invulnerableTimer = maxInvulnerableTimer;
-        hearts[0] = GameObject.Find("Heart1").GetComponent<Image>();
-        hearts[1] = GameObject.Find("Heart2").GetComponent<Image>();
-        hearts[2] = GameObject.Find("Heart3").GetComponent<Image>();
-        hearts[3] = GameObject.Find("Heart4").GetComponent<Image>();
-        hearts[4] = GameObject.Find("Heart5").GetComponent<Image>();
+        if(gameObject.tag=="Player")
+        {
+            hearts[0] = GameObject.Find("Heart1").GetComponent<Image>();
+            hearts[1] = GameObject.Find("Heart2").GetComponent<Image>();
+            hearts[2] = GameObject.Find("Heart3").GetComponent<Image>();
+            hearts[3] = GameObject.Find("Heart4").GetComponent<Image>();
+            hearts[4] = GameObject.Find("Heart5").GetComponent<Image>();
+        }
         //        gameOverScreen.SetActive(false);
     }
 

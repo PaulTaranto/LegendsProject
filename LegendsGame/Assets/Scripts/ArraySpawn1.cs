@@ -35,7 +35,7 @@ public class ArraySpawn1 : MonoBehaviour
 
     public void SpawnEnemy(Entity entity)
     {
-        Instantiate(toSpawn[(int)entity], toSpawn[(int)entity].transform.position, Quaternion.identity);
+        Instantiate(toSpawn[(int)entity], toSpawn[(int)entity].transform.position, toSpawn[(int)entity].transform.rotation);
     }
 
     public void SpawnEnemy(Entity entity, Vector3 position)

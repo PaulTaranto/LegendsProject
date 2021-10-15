@@ -10,7 +10,7 @@ public class OpeningCinematicManager : MonoBehaviour
     {
         dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
         dialogueManager.setcurrentScript(Script.getOpeningScript());
-        dialogueManager.InitialiseDialogueManager();
+        dialogueManager.InitialiseDialogueManager(true);
     }
 
     private void Update()

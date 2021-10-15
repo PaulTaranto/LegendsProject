@@ -10,7 +10,7 @@ public class DragonController1 : MonoBehaviour
     public GameObject dragonDialogueManagerPrefab;
     public GameObject dialogueManagerPrefab;
     GameObject dialogueManagerInstance;
-
+    GameObject dragonDialogueManagerInstance;
 
     bool hasGeneratedDragons = false;
     //bool isFinishedTalking = false;
@@ -41,7 +41,14 @@ public class DragonController1 : MonoBehaviour
     void Start()
     {
         dialogueManagerInstance = Instantiate(dialogueManagerPrefab);
+        //The below line of code, as bad as it is.  Sets the transform of the dialogue canvas instantiated above to the empty gameobject representing the currentroom
+        //Its only run once so it's fine.
+        dialogueManagerInstance.transform.SetParent(GameObject.Find(GameObject.Find("generators").GetComponent<Map1>().GetPlayerCoords().ToString()).transform);
+        dragonDialogueManagerInstance = Instantiate(dragonDialogueManagerPrefab);
+        dragonDialogueManagerInstance.GetComponent<DragonCinematicManager>().StartDragonDialogue();
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        finalItemPosition = GameObject.Find("FinalItemPosition").transform;
         aliveDragonCount = numberOfDragons;
     }
 
@@ -63,9 +70,14 @@ public class DragonController1 : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log("dragons:" + hasGeneratedDragons);
+        //Debug.Log("dioagloe" + dialogueManagerInstance.GetComponentInChildren<DialogueManager>().isFinishedDialogue);
+
         //the getcomponent should optimally be cached in a variable as its taxing on the system but its fine for now until it works... optimising later
-        if(!hasGeneratedDragons && dialogueManagerInstance.GetComponentInChildren<DialogueManager>().isFinishedDialogue)
+        if (!hasGeneratedDragons && dialogueManagerInstance.GetComponentInChildren<DialogueManager>().isFinishedDialogue)
         {
+            Destroy(dialogueManagerInstance);
+            Destroy(dragonDialogueManagerInstance);
             GenerateDragons();
             hasGeneratedDragons = true;
         }

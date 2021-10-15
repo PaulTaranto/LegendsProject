@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item
 {
-    
+
     /*public enum ItemType {
         Apple,
         GoblinToe,
@@ -21,7 +21,7 @@ public class Item
         "Crystal",
         "Egg",
     };
-
+    //askudhuyaishd
     //public ItemType itemType;
 
 }

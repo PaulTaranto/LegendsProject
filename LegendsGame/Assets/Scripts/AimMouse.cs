@@ -7,9 +7,7 @@ public class AimMouse : MonoBehaviour
     private float angle = 0;
     public GameObject fliped;
     public bool isFacingRight = true;
-    private void Start()
-    {
-    }
+
     void Update()
     {
         //rotation

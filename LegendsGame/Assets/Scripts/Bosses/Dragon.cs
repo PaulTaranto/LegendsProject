@@ -173,7 +173,7 @@ public class Dragon : MonoBehaviour
                 return;
             }
             repeatedStateCount = 0;
-            Debug.Log("Set state to: " + dragonState);
+            //Debug.Log("Set state to: " + dragonState);
             return;
         }
 
@@ -183,7 +183,7 @@ public class Dragon : MonoBehaviour
             setState((DragonState)Random.Range(0, numberOfStates));
             repeatedStateCount = 0;
         }
-        Debug.Log("Set state to: " + dragonState);
+        //Debug.Log("Set state to: " + dragonState);
     }
 
     GameObject fire;

@@ -25,6 +25,17 @@ public class Script : MonoBehaviour
     //The effects should keep whoever was currently talking on screen
     //The ability to change level/scene {LVL:CREDITS} or {LVL:GAME}
 
+    public static string[] getShortTestScript()
+    {
+        string[] script =
+        {
+            "PLAY: Short test script"
+        };
+
+        return script;
+    }
+
+
     public static string[] getOpeningScript()
     {
         string[] script =
@@ -60,14 +71,15 @@ public class Script : MonoBehaviour
         string[] script =
         {
             "PLAY: There's nothing here? {EFX:PAUSE} Has this whole journey been a waste?!",
-            "PLAY: Where's the blue essence crystal? I thought for sure this cave would have one!",
+            "PLAY: Where's the blue essence crystal? I thought for sure this cave would have some!",
             "????: Who's THERE?!",
             "PLAY: It is I! The great Keith! Don't suppose you can give me blue essence crystal for a laugh?",
             "????: {EFX:PAUSE}.{EFX:PAUSE}.{EFX:PAUSE}.",
             "PLAY: {EFX:PAUSE}.{EFX:PAUSE}.{EFX:PAUSE}.",
             "????: {SFX:DRAGON_BUILDUP} YOU HORRIBLE CHILD.  HOW DARE YOU COME INTO OUR LARE AND MAKE DEMANDS!",
             "????: IT'LL BE THE LAST THING YOU EVER DO!",
-            "PLAY: wh-who goes there?"
+            "PLAY: wh-who goes there?",
+            "DRAG: boo"
         };
 
         return script;
