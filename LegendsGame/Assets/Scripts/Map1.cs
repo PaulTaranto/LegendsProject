@@ -17,6 +17,8 @@ public class Map1 : MonoBehaviour
     GameObject player;
     MiniMap minimap;
 
+    public GameObject wallsPrefab;
+
     public GameObject[] doorSprites;
     public GameObject[] wallSprites;
     public GameObject[] cornerSprites;
@@ -26,9 +28,14 @@ public class Map1 : MonoBehaviour
 
     MapManager mapManager;
 
-    GameObject wallInstance;
+    GameObject wallsInstance;
+    GameObject oldWallInstance;
+    public GameObject floorPrefab;
+    GameObject floorInstance;
+    GameObject oldFloorInstance;
 
-    public Transform environmentParent;
+    public GameObject environmentParent;
+    GameObject[] oldDoors;
 
     public List<Coords> getAllRoomCoords()
     {
@@ -48,7 +55,32 @@ public class Map1 : MonoBehaviour
         // TODO (Aiden) instead of teleporting to center of room, one solution could be to wait until the player has moved off of the door
         // in the room they wish to enter before activating the ability to enter doors agian.
         // prevents player from immediately going through a room again
-        player.transform.position = new Vector3(0, 0, 0);
+
+        int x = currPlayerCoords.X - oldPlayerCoords.X;
+        int y = currPlayerCoords.Y - oldPlayerCoords.Y;
+        Vector2 teleportPos = new Vector2(0,0);
+        if (y == 1)
+        {
+            //Should be near the south door relative to the transitino, hence the +12s and +
+            teleportPos = new Vector2(doorPositions[2].position.x, doorPositions[2].position.y + 12);
+        }
+        else if (x == 1)
+        {
+            //should be near west door
+            teleportPos = new Vector2(doorPositions[3].position.x + 20, doorPositions[3].position.y);
+        }
+        else if (y == -1)
+        {
+            //should be near north
+            teleportPos = new Vector2(doorPositions[0].position.x, doorPositions[0].position.y - 12);
+        }
+        else if (x == -1)
+        {
+            //should be near east door
+            teleportPos = new Vector2(doorPositions[1].position.x - 20, doorPositions[1].position.y);
+        }
+
+        player.transform.position = teleportPos;
 
         PopulateCurrentRoom(rooms[c]);
     }
@@ -82,9 +114,22 @@ public class Map1 : MonoBehaviour
         //{
         //    Debug.Log(rooms[allRoomCoords[i]].ToString());
         //}
-
         player = Instantiate(playerPrefab);
         player.name = "Player";
+    }
+
+    public void DeleteOldEnvironment()
+    {
+        Destroy(oldFloorInstance);
+        Destroy(oldWallInstance);
+        mapManager.DisableRoom(oldPlayerCoords);
+
+        Destroy(oldDoors[0].transform.parent.gameObject);
+
+        foreach (GameObject g in oldDoors)
+        {
+            Destroy(g);
+        }
     }
 
     private void AssignRooms()
@@ -94,9 +139,14 @@ public class Map1 : MonoBehaviour
             //First assign all rooms except the boss room.
             //Then afterwards, make the boss room a room at the end of the dungeon in a room which is NOT the players initial spawn room
             rooms[allRoomCoords[i]].roomType = mapManager.GetRandomRoomType();
-            //TODO assign one of the rooms to be a boss room
+            //TODO after last item is collected.  Spawn boss rom next
             mapManager.InstantiateAllRooms(allRoomCoords[i], rooms[allRoomCoords[i]].roomType);
             
+        }
+
+        for (int i = 0; i < allRoomCoords.Count; i++)
+        {
+            mapManager.DisableRoom(allRoomCoords[i]);
         }
 
         // Creates initial room
@@ -104,15 +154,32 @@ public class Map1 : MonoBehaviour
     }
     bool firstTime = true;
 
-    // TODO assign types of rooms from mapmanager script to each room
-    // can be random
     private void PopulateCurrentRoom(Room currentRoom)
     {
         mapManager.PopulateRoom(currentRoom.coordinates, oldPlayerCoords);
 
-        currPlayerCoords = currentRoom.coordinates;
-//        Debug.Log("Current room: " + currentRoom.coordinates);
+        GameObject environmentInstance = Instantiate(environmentParent);
+        environmentInstance.transform.SetParent(GameObject.Find(currentRoom.coordinates.ToString()).transform);
 
+        if(floorInstance != null)
+        {
+            oldFloorInstance = floorInstance;
+        }
+        floorInstance = Instantiate(floorPrefab);
+        floorInstance.transform.SetParent(GameObject.Find(currentRoom.coordinates.ToString()).transform);
+
+        currPlayerCoords = currentRoom.coordinates;
+        //        Debug.Log("Current room: " + currentRoom.coordinates);
+        if (wallsInstance != null)
+        {
+            oldWallInstance = wallsInstance;
+        }
+        wallsInstance = Instantiate(wallsPrefab);
+        wallsInstance.transform.SetParent(GameObject.Find(currentRoom.coordinates.ToString()).transform);
+
+        Vector3 doorPos = new Vector3(0,0,0);
+        int x = 0;
+        int y = 0;
         if (firstTime)
         {
             firstTime = false;
@@ -120,34 +187,85 @@ public class Map1 : MonoBehaviour
         }
         else
         {
-            mapManager.StartCameraTransition("North");
+            x = currPlayerCoords.X - oldPlayerCoords.X;
+            y = currPlayerCoords.Y - oldPlayerCoords.Y;
+            player.GetComponent<PlayerMovement>().SetPlayerControl(false);
+            if(y == 1)
+            {
+                floorInstance.transform.position = new Vector2(floorInstance.transform.position.x, floorInstance.transform.position.y + 10);
+                wallsInstance.transform.position = new Vector2(wallsInstance.transform.position.x, wallsInstance.transform.position.y + 10);
+                mapManager.StartCameraTransition("North");
+            }
+            else if (x == 1)
+            {
+                floorInstance.transform.position = new Vector2(floorInstance.transform.position.x + 18, floorInstance.transform.position.y);
+                wallsInstance.transform.position = new Vector2(wallsInstance.transform.position.x + 18, wallsInstance.transform.position.y);
+                mapManager.StartCameraTransition("East");
+            }
+            else if (y == -1)
+            {
+                floorInstance.transform.position = new Vector2(floorInstance.transform.position.x, floorInstance.transform.position.y - 10);
+                wallsInstance.transform.position = new Vector2(wallsInstance.transform.position.x, wallsInstance.transform.position.y - 10);
+                mapManager.StartCameraTransition("South");
+            }
+            else if (x == -1)
+            {
+                floorInstance.transform.position = new Vector2(floorInstance.transform.position.x - 18, floorInstance.transform.position.y);
+                wallsInstance.transform.position = new Vector2(wallsInstance.transform.position.x - 18, wallsInstance.transform.position.y);
+                mapManager.StartCameraTransition("West");
+            }
         }
 
         minimap.UpdateMiniMap(currPlayerCoords);
 
-//        Debug.Log("d");
+        //        Debug.Log("d");
 
+
+        //TODO Don't do this until after transition
         //remove old door gameobjects
-        GameObject[] environmentObjects = GameObject.FindGameObjectsWithTag("Door");
-        foreach(GameObject g in environmentObjects)
-        {
-            Destroy(g);
-        }
 
+
+        //TODO do we really need to destory the walls?
         //remove old walls
-        environmentObjects = GameObject.FindGameObjectsWithTag("Wall");
-        foreach (GameObject g in environmentObjects)
-        {
-            Destroy(g);
-        }
+        //environmentObjects = GameObject.FindGameObjectsWithTag("Wall");
+        //foreach (GameObject g in environmentObjects)
+        //{
+        //    Destroy(g);
+        //}
 
         // spawn in doors and assign them ability to switch between correct rooms
+
+        oldDoors = GameObject.FindGameObjectsWithTag("Door");
+
         for (int i = 0; i < 4; i++)
         {
             // If the room has a door in the desired position
-            if(currentRoom.doors[i])
+            if (currentRoom.doors[i])
             {
-                GameObject doorInstance = Instantiate(doorSprites[i], doorPositions[i].position, Quaternion.identity);
+                if (y == 1)
+                {
+                    doorPos = new Vector3(doorPositions[i].position.x, doorPositions[i].position.y + 10);
+                }
+                else if (x == 1)
+                {
+                    doorPos = new Vector3(doorPositions[i].position.x + 18, doorPositions[i].position.y);
+                }
+                else if (y == -1)
+                {
+                    doorPos = new Vector3(doorPositions[i].position.x, doorPositions[i].position.y - 10);
+                }
+                else if (x == -1)
+                {
+                    doorPos = new Vector3(doorPositions[i].position.x - 18, doorPositions[i].position.y);
+                }
+                else if (x == 0 && y == 0)
+                {
+                    doorPos = new Vector3(doorPositions[i].position.x, doorPositions[i].position.y);
+                }
+
+                GameObject doorInstance = Instantiate(doorSprites[i], doorPos, Quaternion.identity);
+                doorInstance.transform.SetParent(environmentInstance.transform);
+                //environmentParent.SetParent(GameObject.Find(currPlayerCoords.ToString()).transform);
                 Door doortemp = doorInstance.GetComponent<Door>();
                 switch(i)
                 {
@@ -175,95 +293,94 @@ public class Map1 : MonoBehaviour
         float distance;
         // Spawn in walls
         //TODO drawing in walls probably only needs to be done once
-        for (int i = 0; i < 4; i++)
-        {
-            //TODO (Aiden) i hate how hard coded heaps of these values are
-            // TODO (Aiden) investigate wall spawning issues
-            switch(i)
-            {
-                //north
-                case 0:
-                    position = new Vector3(-8.27715969f, 4.3151598f, 0);
-                    //Fuck it we're hardcoding
-                    distance = 1.37389f;
-                    //float distanceX = 0.6309826f * 2.56f;
-                    for (int j = 0; j < 13; j++)
-                    {
-                        //position.x += distance;
-                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
-                        wallInstance.transform.SetParent(environmentParent);
-                    }
-                    break;
-                case 1://east
-                    position = new Vector3(8.2495594f, 4.28755856f, 0);
-                    distance = 1.37389f;
-                    //float distanceX = 0.6309826f * 2.56f;
-                    for (int j = 0; j < 7; j++)
-                    {
-                        //position.x += distance;
-                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
-                        wallInstance.transform.SetParent(environmentParent);
-                    }
-                    //put east walls
-                    break;
-                case 2://south
-                    position = new Vector3(-8.27715969f, -4.3151598f, 0);// - 3.6282148f, 0);
-                    //Fuck it we're hardcoding
-                    distance = 1.37389f;
-                    //float distanceX = 0.6309826f * 2.56f;
-                    for (int j = 0; j < 13; j++)
-                    {
-                        //position.x += distance;
-                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
-                        wallInstance.transform.SetParent(environmentParent);
-                    }
-                    break;
-                case 3:
-                    //put west walls
-                    position = new Vector3(-8.2495594f, 4.28755856f, 0);
-                    distance = 1.37389f;
-                    //float distanceX = 0.6309826f * 2.56f;
-                    for (int j = 0; j < 7; j++)
-                    {
-                        //position.x += distance;
-                        wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
-                        wallInstance.transform.SetParent(environmentParent);
-                    }
-                    break;
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    switch(i)
+        //    {
+        //        //north
+        //        case 0:
+        //            position = new Vector3(-8.27715969f, 4.3151598f, 0);
+        //            //Fuck it we're hardcoding
+        //            distance = 1.37389f;
+        //            //float distanceX = 0.6309826f * 2.56f;
+        //            for (int j = 0; j < 13; j++)
+        //            {
+        //                //position.x += distance;
+        //                wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+        //                wallInstance.transform.SetParent(environmentParent);
+        //            }
+        //            break;
+        //        case 1://east
+        //            position = new Vector3(8.2495594f, 4.28755856f, 0);
+        //            distance = 1.37389f;
+        //            //float distanceX = 0.6309826f * 2.56f;
+        //            for (int j = 0; j < 7; j++)
+        //            {
+        //                //position.x += distance;
+        //                wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+        //                wallInstance.transform.SetParent(environmentParent);
+        //            }
+        //            //put east walls
+        //            break;
+        //        case 2://south
+        //            position = new Vector3(-8.27715969f, -4.3151598f, 0);// - 3.6282148f, 0);
+        //            //Fuck it we're hardcoding
+        //            distance = 1.37389f;
+        //            //float distanceX = 0.6309826f * 2.56f;
+        //            for (int j = 0; j < 13; j++)
+        //            {
+        //                //position.x += distance;
+        //                wallInstance = Instantiate(wallSprites[i], new Vector3(position.x + distance * j, position.y, position.z), Quaternion.identity);
+        //                wallInstance.transform.SetParent(environmentParent);
+        //            }
+        //            break;
+        //        case 3:
+        //            //put west walls
+        //            position = new Vector3(-8.2495594f, 4.28755856f, 0);
+        //            distance = 1.37389f;
+        //            //float distanceX = 0.6309826f * 2.56f;
+        //            for (int j = 0; j < 7; j++)
+        //            {
+        //                //position.x += distance;
+        //                wallInstance = Instantiate(wallSprites[i], new Vector3(position.x, position.y - distance * j, position.z), Quaternion.identity);
+        //                wallInstance.transform.SetParent(environmentParent);
+        //            }
+        //            break;
 
-            }
-            //Vector2 pos = new Vector2();
-            //GameObject wallinstance = Instantiate(wallSprites[i], pos, Quaternion.identity);
-        }
+        //    }
+        //    //environmentParent.SetParent(GameObject.Find(currPlayerCoords.ToString()).transform);
+        //    //Vector2 pos = new Vector2();
+        //    //GameObject wallinstance = Instantiate(wallSprites[i], pos, Quaternion.identity);
+        //}
 
         //Spawn in Corners
-        for (int i = 0; i < 4; i++)
-        {
-            switch (i)
-            {
-                case 0:
-                    //top left
-                    position = new Vector3(-8.27715969f, 4.3151598f, 0);
-                    //Fuck it we're hardcoding
-                    break;
-                case 1:
-                    //top right
-                    position = new Vector3(8.19779968f, 4.3151598f, 0);
-                    break;
-                case 2:
-                    //bottom right
-                    position = new Vector3(8.19779968f, -4.3151598f, 0);
-                    break;
-                case 3:
-                    //bottom left
-                    position = new Vector3(-8.2495594f, -4.3151598f, 0);
-                    break;
-            }
-            GameObject corner = Instantiate(cornerSprites[i], position, Quaternion.identity);
-            corner.transform.SetParent(environmentParent);
-            //Vector2 pos = new Vector2();
-            //GameObject wallinstance = Instantiate(wallSprites[i], pos, Quaternion.identity);
-        }
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    switch (i)
+        //    {
+        //        case 0:
+        //            //top left
+        //            position = new Vector3(-8.27715969f, 4.3151598f, 0);
+        //            //Fuck it we're hardcoding
+        //            break;
+        //        case 1:
+        //            //top right
+        //            position = new Vector3(8.19779968f, 4.3151598f, 0);
+        //            break;
+        //        case 2:
+        //            //bottom right
+        //            position = new Vector3(8.19779968f, -4.3151598f, 0);
+        //            break;
+        //        case 3:
+        //            //bottom left
+        //            position = new Vector3(-8.2495594f, -4.3151598f, 0);
+        //            break;
+        //    }
+        //    GameObject corner = Instantiate(cornerSprites[i], position, Quaternion.identity);
+        //    corner.transform.SetParent(environmentParent);
+        //    //Vector2 pos = new Vector2();
+        //    //GameObject wallinstance = Instantiate(wallSprites[i], pos, Quaternion.identity);
+        //}
     }
 
     //TODO Next time, generate the rooms such that they connect to each other... THEN add doors.

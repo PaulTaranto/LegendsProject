@@ -11,10 +11,10 @@ public class ArraySpawn1 : MonoBehaviour
     //    spawnEnemy(Entity.DRAGON, new Vector3(0, 0, 0));
     //}
 
-    public void SpawnRandomEnemy()
+    public void SpawnRandomEnemy(Vector3 position)
     {
         int index = Random.Range(0, toSpawn.Length);
-        Instantiate(toSpawn[index], toSpawn[index].transform.position, toSpawn[index].transform.rotation);
+        Instantiate(toSpawn[index], position, toSpawn[index].transform.rotation);
     }
 
     #region SpawnEnemy

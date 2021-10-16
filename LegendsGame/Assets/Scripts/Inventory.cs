@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Inventory : MonoBehaviour
     private List<Item> itemList;
     public bool[] isFull;
     public GameObject[] slots;
+
+    public GameObject currentWand;
+
     //private Inventory inventory;
     
     public List<string> collectibles = new List<string>();
@@ -27,8 +31,22 @@ public class Inventory : MonoBehaviour
         //inventory = this;
     }
 
-    void swapWandSlot() {
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SwapSlots();
+        }
 
+        currentWand = slots[0].transform.GetChild(0).gameObject;
+    }
+
+    void SwapSlots()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            Debug.Log(slots[i]);
+        }
     }
 
     /*//Adds item to list when picked up

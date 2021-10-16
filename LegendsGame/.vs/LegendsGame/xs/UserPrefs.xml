@@ -1,14 +1,18 @@
 ﻿<Properties StartupConfiguration="{00945EC6-0021-B609-A472-4ADC99602836}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Pickup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Map1.cs">
     <Files>
-      <File FileName="Assets/Scripts/Pickup.cs" Line="89" Column="6" />
-      <File FileName="Assets/Scripts/Inventory.cs" Line="26" Column="52" />
-      <File FileName="Assets/Scripts/Item.cs" Line="24" Column="20" />
+      <File FileName="Assets/Scripts/LevelChanger.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MapManager.cs" Line="149" Column="47" />
+      <File FileName="Assets/Scripts/Map1.cs" Line="114" Column="1" />
+      <File FileName="Assets/Scripts/AimMouse.cs" />
+      <File FileName="Assets/Scripts/Inventory.cs" Line="41" Column="1" />
+      <File FileName="Assets/Scripts/Door.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/Pickup.cs" Line="77" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="54e36729-1a92-456d-b2bc-485c8b846349" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f6a30357-57e7-4e47-ac06-23001cb1bca3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

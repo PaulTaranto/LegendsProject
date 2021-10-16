@@ -18,8 +18,6 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(canPickupWand);
-
         if(inventory == null)
         {
             inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -28,10 +26,6 @@ public class Pickup : MonoBehaviour
         //if button pressed pickup itemPickup (currently set to Z)
         if (Input.GetKeyDown(KeyCode.Z)) {
             PickupWand();
-        }
-
-        if (Input.GetKeyDown(KeyCode.P)) {
-            SwapSlots();
         }
     }
     
@@ -99,41 +93,37 @@ public class Pickup : MonoBehaviour
             
         }
     }
-    
+
     //Runs through the inventory and checks if there is any free slots if collision with item occurs
     //Item is added to Wand slot if free
-    void PickupWand() {
-        if (canPickupWand) {
-            for (int i = 0; i < inventory.slots.Length; i++) {
-                if (inventory.isFull[i] == false) {
+    void PickupWand()
+    {
+        if (canPickupWand)
+        {
+            for (int i = 0; i < inventory.slots.Length; i++)
+            {
+                if (inventory.isFull[i] == false)
+                {
                     inventory.isFull[i] = true;
                     //Check if item is going into second slot.
                     //Changes size of item in slot to match the box.
-                    if (i == 1) {
-                        Debug.Log("asa");
+                    if (i == 1)
+                    {
                         itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
                         itemPickup.transform.localScale = new Vector2(0.6f, 0.6f);
                         Destroy(gameObject);
                         break;
-                        
+
                     }
-                    else {
+                    else
+                    {
                         itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
                         Destroy(gameObject);
                         break;
                     }
-                    
+
                 }
             }
         }
-        
     }
-
-    void SwapSlots() {
-        for (int i = 0; i < inventory.slots.Length; i++) {
-            Debug.Log(inventory.slots[i]);
-        }
-        
-    }
-
 }

@@ -12,9 +12,11 @@ public class Door : MonoBehaviour
     //public Dictionary<Coords, Room> fromTo = new Dictionary<Coords, Room>();
     public Room[] fromTo = new Room[2];
     public void SetFromTo(Room fromRoom, Room toRoom)
-    {
+    {        
         fromTo[0] = fromRoom;
         fromTo[1] = toRoom;
+
+//        Debug.Log(fromTo[0] + ", " + fromTo[1]);
         //fromTo.Add(fromRoom.coordinates, fromRoom);
         //fromTo.Add(toRoom.coordinates, toRoom);
     }

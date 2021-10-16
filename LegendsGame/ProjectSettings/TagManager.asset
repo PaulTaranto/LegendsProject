@@ -22,6 +22,12 @@ TagManager:
   - Heart5
   - Wand Slot 2
   - Goblin
+  - Wand
+  - Apple
+  - Heart
+  - Crate
+  - Egg
+  - Environment
   layers:
   - Default
   - TransparentFX

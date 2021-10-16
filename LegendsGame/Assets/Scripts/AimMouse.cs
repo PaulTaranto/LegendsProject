@@ -20,7 +20,8 @@ public class AimMouse : MonoBehaviour
         mousePos.y = mousePos.y - objectPos.y;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        
+
+//        Debug.Log(angle);
         //for the set dirrection
         if (angle <= 22.5 && angle > -22.5)
         {
@@ -64,11 +65,11 @@ public class AimMouse : MonoBehaviour
         {
             fliped.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        if (angle <= 180 && angle > 90)
+        else if (angle <= 180 && angle > 90)
         {
             fliped.transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        if (angle >= -180 && angle < -90)
+        else if (angle >= -180 && angle < -90)
         {
             fliped.transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
