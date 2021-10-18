@@ -43,10 +43,20 @@ public class Inventory : MonoBehaviour
 
     void SwapSlots()
     {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            Debug.Log(slots[i]);
-        }
+        GameObject temp = Instantiate(slots[1].transform.GetChild(0).gameObject, slots[0].transform, false);
+        GameObject beans = Instantiate(slots[0].transform.GetChild(0).gameObject, slots[1].transform, false);
+
+        temp.transform.localScale = new Vector2(1f, 1f);
+        beans.transform.localScale = new Vector2(0.6f, 0.6f);
+        Destroy(slots[0].transform.GetChild(0).gameObject);
+        Destroy(slots[1].transform.GetChild(0).gameObject);
+
+        temp.name = temp.name.Substring(0, temp.name.Length - 7);
+        beans.name = beans.name.Substring(0, beans.name.Length - 7);
+
+        //temp = slots[1];
+        //slots[1] = slots[0];
+        //slots[0] = temp;        
     }
 
     /*//Adds item to list when picked up

@@ -289,8 +289,8 @@ public class Map1 : MonoBehaviour
             }
         }
 
-        Vector3 position = new Vector3();
-        float distance;
+        //Vector3 position = new Vector3();
+        //float distance;
         // Spawn in walls
         //TODO drawing in walls probably only needs to be done once
         //for (int i = 0; i < 4; i++)

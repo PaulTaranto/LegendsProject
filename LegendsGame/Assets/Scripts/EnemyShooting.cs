@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-    private float angle = 0;
+//    private float angle = 0;
     public GameObject fliped;
     public bool isFacingRight = true;
 

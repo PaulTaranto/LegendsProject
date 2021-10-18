@@ -6,16 +6,25 @@ public class Crate : MonoBehaviour
 {
     bool isDestroyed = false;
 
-    public void SetDestoryed(bool b)
+    private void FixedUpdate()
     {
-        isDestroyed = b;
+        //TODO give collision with bullet functionality
+        if(Input.GetKey(KeyCode.A))
+        {
+            SetDestroyed();
+        }
     }
 
-    private void Update()
+    public void SetDestroyed()
     {
-        if(isDestroyed)
+        if(!isDestroyed)
         {
             GameObject.Find("ArraySpawner").GetComponent<ArraySpawn1>().SpawnRandomEnemy(this.gameObject.transform.position);
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().sortingOrder = -1;
+            GetComponent<Animator>().SetBool("destroyed", true);
+
+            isDestroyed = true;
         }
     }
 }

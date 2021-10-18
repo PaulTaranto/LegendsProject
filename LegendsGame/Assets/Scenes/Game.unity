@@ -3481,6 +3481,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1765437439088949342, guid: e323678616cde4354a0ed8470dcdb08b, type: 3}
   m_PrefabInstance: {fileID: 246607649}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &991337095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4814429736649060638, guid: b4e342eb98ef74d46b331936f68b7fa6, type: 3}
+  m_PrefabInstance: {fileID: 2844995224198972078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &991337096
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991337095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15e92072f4c584132ab8fd4c37823a1c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &991337100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991337095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce77cc9d274749689d1762d4ecaf32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &993898207
 GameObject:
   m_ObjectHideFlags: 0
@@ -6099,7 +6135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 301022469577160571, guid: aba48cb19140b48d0abccfc81672b7b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aba48cb19140b48d0abccfc81672b7b5, type: 3}
@@ -6307,7 +6343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4814429736649060638, guid: b4e342eb98ef74d46b331936f68b7fa6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7680636693228500433, guid: b4e342eb98ef74d46b331936f68b7fa6, type: 3}
       propertyPath: m_RootOrder
@@ -6782,7 +6818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9086489731568387169, guid: 23d97658e7ea04f1fb4fced51ea468b0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9086489731568387173, guid: 23d97658e7ea04f1fb4fced51ea468b0, type: 3}
       propertyPath: m_RootOrder

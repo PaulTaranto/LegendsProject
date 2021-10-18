@@ -60,6 +60,7 @@
     <Compile Include="Assets/Scripts/Bosses/DragonController.cs" />
     <Compile Include="Assets/Scripts/Room.cs" />
     <Compile Include="Assets/Scripts/Cinematics and Dialogue/FinalCinematicManager.cs" />
+    <Compile Include="Assets/Scripts/Crate.cs" />
     <Compile Include="Assets/Scripts/Weapons/spells/EarthBullet.cs" />
     <Compile Include="Assets/Scripts/Map1.cs" />
     <Compile Include="Assets/Scripts/PauseMenu.cs" />
@@ -100,7 +101,7 @@
     <Compile Include="Assets/Scripts/MainMenu.cs" />
     <Compile Include="Assets/Scripts/GoblinBullet.cs" />
     <Compile Include="Assets/Scripts/Weapons/spells/Wings.cs" />
-    <Compile Include="Assets/Scripts/Crate.cs" />
+    <Compile Include="Assets/Scripts/MoveFoward.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

@@ -15,18 +15,18 @@ public class MapManager : MonoBehaviour
     public GameObject levelPrefab;
     private Transform transitionPosition;
     public Transform[] cameraTransitionPosition;
-    GameObject camera;
-    bool hasFinishedTransition = false;
+    GameObject mainCamera;
+//    bool hasFinishedTransition = false;
     bool isTransitioning = false;
     string transitionDirection = "";
-    float transitionSpeed;
+ //   float transitionSpeed;
 
     Coords currentRoom;
     GameObject player;
 
     private void Start()
     {
-        camera = Camera.main.gameObject;
+        mainCamera = Camera.main.gameObject;
         map = GetComponent<Map1>();
     }
 
@@ -45,13 +45,13 @@ public class MapManager : MonoBehaviour
             TransitionCamera(transitionDirection);
 
             float threshold = 0.15f;
-            if (Mathf.Abs(transitionPosition.position.x - camera.transform.position.x) < threshold && Mathf.Abs(transitionPosition.position.y - camera.transform.position.y) < threshold)
+            if (Mathf.Abs(transitionPosition.position.x - mainCamera.transform.position.x) < threshold && Mathf.Abs(transitionPosition.position.y - mainCamera.transform.position.y) < threshold)
             {
-                camera.transform.position = transitionPosition.position;
+                mainCamera.transform.position = transitionPosition.position;
                 isTransitioning = false;
                 player.transform.position = new Vector2(player.transform.position.x - transitionPosition.position.x, player.transform.position.y - transitionPosition.position.y);
                 player.GetComponent<PlayerMovement>().SetPlayerControl(true);
-                camera.transform.position = new Vector3(0, 0, camera.transform.position.z);
+                mainCamera.transform.position = new Vector3(0, 0, mainCamera.transform.position.z);
                 roomInstances[currentRoom].transform.position = new Vector3(0, 0, roomInstances[currentRoom].transform.position.z + 1);//DONT REMOVE THIS +1
                 map.DeleteOldEnvironment();
             }
@@ -64,7 +64,7 @@ public class MapManager : MonoBehaviour
         transitionDirection = dir;
     }
 
-    float totalDistance = -1, currentDistanceNormalised = -1;
+//    float totalDistance = -1, currentDistanceNormalised = -1;
 
     void SetTransPos(Transform transform)
     {
@@ -73,7 +73,7 @@ public class MapManager : MonoBehaviour
 
     private void TransitionCamera(string dir)
     {
-        Vector3 move = camera.transform.position;
+        Vector3 move = mainCamera.transform.position;
         float rate = 1.5f;
         switch(dir)
         {
@@ -94,7 +94,7 @@ public class MapManager : MonoBehaviour
         move.x = Mathf.Lerp(move.x, transitionPosition.position.x, rate * Time.deltaTime);
         move.y = Mathf.Lerp(move.y, transitionPosition.position.y, rate * Time.deltaTime);
 
-        camera.transform.position = move;
+        mainCamera.transform.position = move;
     }
     //    switch(dir)
     //    {
@@ -180,7 +180,7 @@ public class MapManager : MonoBehaviour
         roomInstances[roomToSetActive].SetActive(true);
         try
         {
-            Debug.Log("test");
+            //This try catch is probably no longer needed.   Leaving just in case.
             //roomInstances[oldRoomCoords].SetActive(false);
         }
         catch (KeyNotFoundException)
