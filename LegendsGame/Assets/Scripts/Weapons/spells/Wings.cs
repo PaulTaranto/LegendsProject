@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Wings : MonoBehaviour
 {
-    /*public float time = 6;
+    public float time = 6;
     public float ActiveT = 10;
     private bool BLJ = true;
     private float Minb = 0;
     public GameObject Bar;
 
     public GameObject player;
-    private Movement movement; //Needs to be the movement script
+    private PlayerMovement movement; //Needs to be the movement script
 
     private void Start()
     {
-        movement = player.GetComponent<Movement>();
+        movement = player.GetComponent<PlayerMovement>();
     }
     void Update()
     {
@@ -26,9 +26,9 @@ public class Wings : MonoBehaviour
         }
     }
     private IEnumerator Activ() {
-        movement.speed *= 2;
+        movement.moveSpeed *= 2;
         yield return new WaitForSeconds(time / 100);
-        movement.speed /= 2;
+        movement.moveSpeed /= 2;
         StartCoroutine(Reloading());
     }
     private IEnumerator Reloading()
@@ -41,5 +41,5 @@ public class Wings : MonoBehaviour
             Bar.gameObject.transform.localScale = new Vector3(Minb / 100, Minb / 100, Minb / 100);
         }
         BLJ = true;
-    }*/
+    }
 }
