@@ -9,7 +9,9 @@ public class SwapWeapons : MonoBehaviour
 
     public GameObject[] Weapons;
     public int WeaponNumber;
-    
+
+    public Inventory inventory;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +31,14 @@ public class SwapWeapons : MonoBehaviour
         {
             Selected += 1;
         }
+
+
+        if (inventory.currentWand == Equiped[Selected % 2])
+        {
+            //your wand creation logic goes here
+            Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
+            Equiped[Selected % 2].transform.SetParent(transform);
+        }
     }
     
     public void Change()
@@ -38,6 +48,7 @@ public class SwapWeapons : MonoBehaviour
         if (Equiped[0] != Weapons[WeaponNumber] || Equiped[Equiped.Length] != Weapons[WeaponNumber])
         {
             Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
+            Equiped[Selected % 2].transform.SetParent(transform);
         }
         
     }
