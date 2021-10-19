@@ -27,21 +27,6 @@ public class enemyplayertracking : MonoBehaviour
         if(other.CompareTag("Player")){
             other.gameObject.GetComponent<Health>().GiveDamage(2);
         }
-        if (other.CompareTag("WallNorth"))
-        {
-            calcuateNewMovementVector();
-        }
-        if (other.CompareTag("WallEast"))
-        {
-            calcuateNewMovementVector();
-        }
-        if (other.CompareTag("WallSouth"))
-        {
-            calcuateNewMovementVector();
-        }
-        if (other.CompareTag("WallWest"))
-        {
-            calcuateNewMovementVector();
-        }
+
     }    
 }
