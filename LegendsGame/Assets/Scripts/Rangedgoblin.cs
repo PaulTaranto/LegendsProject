@@ -33,6 +33,24 @@ public class Rangedgoblin : MonoBehaviour
      movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
      movementPerSecond = movementDirection * characterVelocity;
  }
+void OnTriggerEnter2D(Collider2D other){
+    if (other.CompareTag("WallNorth"))
+    {
+        calcuateNewMovementVector();
+    }
+    if (other.CompareTag("WallEast"))
+    {
+        calcuateNewMovementVector();
+    }
+    if (other.CompareTag("WallSouth"))
+    {
+        calcuateNewMovementVector();
+    }
+    if (other.CompareTag("WallWest"))
+    {
+        calcuateNewMovementVector();
+    }
+}
 
     // Update is called once per frame
     void Update()
@@ -42,9 +60,10 @@ public class Rangedgoblin : MonoBehaviour
          latestDirectionChangeTime = Time.time;
          calcuateNewMovementVector();
      }
-     
-     //move the goblin 
-     transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime), 
+    
+
+            //move the goblin 
+            transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime), 
      transform.position.y + (movementPerSecond.y * Time.deltaTime));     
 
         if(timeBtwShots <=0 ){

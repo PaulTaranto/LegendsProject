@@ -7,7 +7,7 @@ public class enemyplayertracking : MonoBehaviour
 
     public float speed = 0.7f;
     private Transform player;
-   private Vector2 target;    
+    private Vector2 target;    
 
     void Start()
     {
@@ -25,7 +25,23 @@ public class enemyplayertracking : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other)
     {
         if(other.CompareTag("Player")){
-            GetComponent<Health>().GiveDamage(2);
-        }    
+            other.gameObject.GetComponent<Health>().GiveDamage(2);
+        }
+        if (other.CompareTag("WallNorth"))
+        {
+            calcuateNewMovementVector();
+        }
+        if (other.CompareTag("WallEast"))
+        {
+            calcuateNewMovementVector();
+        }
+        if (other.CompareTag("WallSouth"))
+        {
+            calcuateNewMovementVector();
+        }
+        if (other.CompareTag("WallWest"))
+        {
+            calcuateNewMovementVector();
+        }
     }    
 }
