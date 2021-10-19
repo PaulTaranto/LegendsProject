@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 7f;
     bool hasControl = true;
+    public Animator animator;
 
     void FixedUpdate()
     {
@@ -14,6 +15,13 @@ public class PlayerMovement : MonoBehaviour
             Vector2 move = transform.position;
             move.x += Input.GetAxisRaw("Horizontal") * moveSpeed * Time.fixedDeltaTime;
             move.y += Input.GetAxisRaw("Vertical") * moveSpeed * Time.fixedDeltaTime;
+
+            if(move.Equals(transform.position)) {
+                animator.SetBool("Moving", false);
+            } else {
+                animator.SetBool("Moving", true);
+            }
+
             transform.position = move;
         }
         //Vector2 move = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime);
