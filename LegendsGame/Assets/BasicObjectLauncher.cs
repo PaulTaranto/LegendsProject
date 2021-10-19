@@ -16,6 +16,8 @@ public class BasicObjectLauncher : MonoBehaviour
     public Transform Firepoint;
     public float Spread;
 
+    public Animator animator;
+
     private void Start()
     {
         InvokeRepeating("Shoot", 0f, 0f);
@@ -41,6 +43,7 @@ public class BasicObjectLauncher : MonoBehaviour
     {
         if (TriggerDown == true && Shooting == false) {
             StartCoroutine(Blam());
+            animator.SetTrigger("Shoot");
         }
     }
 
