@@ -10,23 +10,42 @@ public class WeaponRecharge : MonoBehaviour
     private float Minb = 0;
     public GameObject Bar;
     public GameObject projectilePrefab;
+    AimMouse aim;
+    BasicObjectLauncher objectLauncher;
+    private void Start()
+    {
+        aim = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AimMouse>();
+        objectLauncher = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<BasicObjectLauncher>();
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && BLJ)
+        if (Input.GetMouseButtonDown(1))
         {
-            BLJ = false;
-            StartCoroutine(Reloading());
+
+            Shoot();
+            //BLJ = false;
+            //StartCoroutine(Reloading());
         }
     }
+
+    void Shoot()
+    {
+        Instantiate(projectilePrefab, objectLauncher.Firepoint.transform.position, aim.GetAngle());
+
+    }
+
+
     private IEnumerator Reloading()
     {
         Minb = 0;
         while (Minb < 100)
         {
+            Debug.Log("est");
             Instantiate(projectilePrefab, Firepoint.transform.position, transform.rotation);
             yield return new WaitForSeconds(time / 100);
             Minb = Minb + 1;
-            Bar.gameObject.transform.localScale = new Vector3(Minb / 100, Minb / 100, Minb / 100);
+//            Bar.gameObject.transform.localScale = new Vector3(Minb / 100, Minb / 100, Minb / 100);
         }
         BLJ = true;
     }

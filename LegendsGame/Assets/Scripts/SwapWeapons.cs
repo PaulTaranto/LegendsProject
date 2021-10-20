@@ -12,32 +12,43 @@ public class SwapWeapons : MonoBehaviour
 
     public Inventory inventory;
 
+    bool spawned = false;
+    
+
     // Update is called once per frame
     void Update()
     {
-        if (Selected % 2 == 0)
+        if(inventory == null)
         {
-            Equiped[0].SetActive(true);
-            Equiped[1].SetActive(false);
+            inventory = GetComponent<Inventory>();
         }
-        if (Selected % 2 == 1)
-        {
-            Equiped[0].SetActive(false);
-            Equiped[1].SetActive(true);
-        }
+
+        //if (Selected % 2 == 0)
+        //{
+        //    Equiped[0].SetActive(true);
+        //    Equiped[1].SetActive(false);
+        //}
+        //if (Selected % 2 == 1)
+        //{
+        //    Equiped[0].SetActive(false);
+        //    Equiped[1].SetActive(true);
+        //}
 
         //When Tab it put down
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            Selected += 1;
-        }
+        //if (Input.GetKeyDown(KeyCode.Tab))
+        //{
+        //    Selected += 1;
+        //}
 
 
-        if (inventory.currentWand == Equiped[Selected % 2])
+        if (!spawned && inventory.currentWand.name == "Fire_wand(Clone)")// == Equiped[Selected % 2])
         {
-            //your wand creation logic goes here
-            Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
-            Equiped[Selected % 2].transform.SetParent(transform);
+            Instantiate(Weapons[0]);
+            spawned = true;
+            //WeaponNumber = Selected % 2;
+            ////your wand creation logic goes here
+            //Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
+            //Equiped[Selected % 2].transform.SetParent(transform);
         }
     }
     

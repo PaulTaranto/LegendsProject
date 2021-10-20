@@ -4,9 +4,15 @@ using UnityEngine;
  
 public class AimMouse : MonoBehaviour
 {
-    private float angle = 0;
+    //private float angle = 0;
     public GameObject fliped;
     public bool isFacingRight = true;
+    public float angle = 0;
+
+    public Quaternion GetAngle()
+    {
+        return Quaternion.Euler(new Vector3(0, 0, angle));
+    }
 
     void Update()
     {
@@ -19,46 +25,47 @@ public class AimMouse : MonoBehaviour
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 
-        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
 //        Debug.Log(angle);
         //for the set dirrection
-        if (angle <= 22.5 && angle > -22.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
-        if (angle <= 67.5 && angle > 22.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 45));
-        }
-        if (angle <= 112.5 && angle > 67.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
-        }
-        if (angle <= 157.5 && angle > 112.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 135));
-        }
-        if (angle <= 180 && angle > 157.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
-        }
-        if (angle >= -180 && angle < -157.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
-        }
-        if (angle >= -157.5 && angle < -112.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 225));
-        }
-        if (angle >= -112.5 && angle < -67.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
-        }
-        if (angle >= -67.5 && angle < -22.5)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 315));
-        }
+
+        //if (angle <= 22.5 && angle > -22.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        //}
+        //if (angle <= 67.5 && angle > 22.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 45));
+        //}
+        //if (angle <= 112.5 && angle > 67.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+        //}
+        //if (angle <= 157.5 && angle > 112.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 135));
+        //}
+        //if (angle <= 180 && angle > 157.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+        //}
+        //if (angle >= -180 && angle < -157.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+        //}
+        //if (angle >= -157.5 && angle < -112.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 225));
+        //}
+        //if (angle >= -112.5 && angle < -67.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 270));
+        //}
+        //if (angle >= -67.5 && angle < -22.5)
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 315));
+        //}
 
         //Flip
         if (angle <= 90 && angle > -90)

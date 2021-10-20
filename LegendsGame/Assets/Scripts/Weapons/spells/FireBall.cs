@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
-    /*public float speed = 6;
-    private float DestroyTime;
+    public float speed = 6;
+    private float DestroyTime = 10;
 
     public GameObject explosion;
     // Update is called once per frame
@@ -15,7 +15,7 @@ public class FireBall : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(Shoot());
+        //StartCoroutine(Shoot());
         StartCoroutine(Delete());
     }
 
@@ -29,5 +29,5 @@ public class FireBall : MonoBehaviour
     {
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
-    }*/
+    }
 }
