@@ -16,9 +16,12 @@ public class BasicObjectLauncher : MonoBehaviour
     public Transform Firepoint;
     public float Spread;
 
+<<<<<<< Updated upstream
 
     public Animator animator;
 
+=======
+>>>>>>> Stashed changes
     AimMouse aim;
     PlayerMovement playerMovement;
 

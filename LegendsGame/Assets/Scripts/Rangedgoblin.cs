@@ -28,6 +28,7 @@ public class Rangedgoblin : MonoBehaviour
 
     }
 
+<<<<<<< Updated upstream
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("WallNorth"))
@@ -48,11 +49,17 @@ public class Rangedgoblin : MonoBehaviour
         }
     }
 //=======
+=======
+>>>>>>> Stashed changes
     void calcuateNewMovementVector()
     {
         movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
         movementPerSecond = movementDirection * characterVelocity;
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     // Update is called once per frame
     void Update()
     {
@@ -67,12 +74,21 @@ public class Rangedgoblin : MonoBehaviour
             //move the goblin 
             transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
             transform.position.y + (movementPerSecond.y * Time.deltaTime));
+<<<<<<< Updated upstream
 
             if (timeBtwShots <= 0)
             {
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 timeBtwShots = startTimeBtwShots;
 
+=======
+
+            if (timeBtwShots <= 0)
+            {
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                timeBtwShots = startTimeBtwShots;
+
+>>>>>>> Stashed changes
             }
             else
             {
