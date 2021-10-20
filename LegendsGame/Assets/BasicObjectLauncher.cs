@@ -16,28 +16,21 @@ public class BasicObjectLauncher : MonoBehaviour
     public Transform Firepoint;
     public float Spread;
 
-<<<<<<< Updated upstream
-
     public Animator animator;
 
-=======
->>>>>>> Stashed changes
     AimMouse aim;
-    PlayerMovement playerMovement;
+
 
     private void Start()
     {
-        aim = GetComponent<AimMouse>();
-        playerMovement = transform.root.GetComponent<PlayerMovement>();
         InvokeRepeating("Shoot", 0f, 0f);
+        aim = GetComponent<AimMouse>();
+
     }
 
     void Update()
     {
-        if (playerMovement.GetPlayerControl())
-        {
-            InvokeRepeating("Shoot", 0f, 0f);
-        }
+        InvokeRepeating("Shoot", 0f, 0f);
 
         //trigger
         if (Input.GetMouseButtonDown(0))
@@ -55,14 +48,14 @@ public class BasicObjectLauncher : MonoBehaviour
     {
         if (TriggerDown == true && Shooting == false) {
             StartCoroutine(Blam());
-            animator.SetTrigger("Shoot");
+//            animator.SetTrigger("Shoot");
         }
     }
 
     //Reload
     private IEnumerator Blam()
     {
-        Instantiate(projectilePrefab, Firepoint.transform.position, aim.GetAngle());//transform.rotation);
+        Instantiate(projectilePrefab, Firepoint.transform.position, aim.GetAngle());
         Shooting = true;
         yield return new WaitForSeconds(ReloadSpeed);
         Shooting = false;

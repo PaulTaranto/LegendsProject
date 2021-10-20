@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
     public float speed = 6;
-    private float DestroyTime = 10;
+    public float DestroyTime = 10;
 
     public GameObject explosion;
     // Update is called once per frame
@@ -27,7 +27,11 @@ public class FireBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(explosion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        if(collision.tag != "Player")
+        {
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        
     }
 }

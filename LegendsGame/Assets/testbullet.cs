@@ -6,7 +6,7 @@ public class testbullet : MonoBehaviour
 {
     float timeToLive = 5;
     float moveRate = 30;
-    int bulletDamage = 1;
+    int bulletDamage = 10;
 
     private void Update()
     {
@@ -32,18 +32,11 @@ public class testbullet : MonoBehaviour
             health.GiveDamage(bulletDamage);
             Destroy(gameObject);//Destrosy the bullet
         }
-        //if (collision.gameObject.tag == "Slime")
-        //{
-        //    Health health = collision.transform.root.GetComponentInChildren<Health>();
-        //    health.GiveDamage(bulletDamage);
-        //    Destroy(gameObject);
-        //}
-
-        //if (collision.gameObject.tag == "Goblin")
-        //{
-        //    Health health = collision.transform.root.GetComponentInChildren<Health>();
-        //    health.GiveDamage(bulletDamage);
-        //    Destroy(gameObject);
-        //}
+        if (collision.gameObject.tag == "slime")
+        {
+            Health health = collision.transform.root.GetComponentInChildren<Health>();
+            health.GiveDamage(bulletDamage);
+            Destroy(gameObject);
+        }
     }
 }

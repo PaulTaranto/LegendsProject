@@ -40,15 +40,21 @@ public class SwapWeapons : MonoBehaviour
         //    Selected += 1;
         //}
 
-
-        if (!spawned && inventory.currentWand.name == "Fire_wand(Clone)")// == Equiped[Selected % 2])
+        try
         {
-            Instantiate(Weapons[0]);
-            spawned = true;
-            //WeaponNumber = Selected % 2;
-            ////your wand creation logic goes here
-            //Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
-            //Equiped[Selected % 2].transform.SetParent(transform);
+            if (!spawned && inventory.currentWand.name == "Fire_wand(Clone)")// == Equiped[Selected % 2])
+            {
+                Instantiate(Weapons[0]);
+                spawned = true;
+                //WeaponNumber = Selected % 2;
+                ////your wand creation logic goes here
+                //Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
+                //Equiped[Selected % 2].transform.SetParent(transform);
+            }
+        }
+        catch
+        {
+            Debug.Log("Nothing in inventory");
         }
     }
     

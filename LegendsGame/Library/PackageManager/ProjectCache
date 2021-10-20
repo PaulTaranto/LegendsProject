@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637693482270000000
+      ticks: 637703254980000000
     m_Hash: 2204306383
   m_LockFileStatus:
     m_FilePath: /Users/aidenmazik/Documents/GitHub/LegendsProject/LegendsGame/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637693482270000000
+      ticks: 637703254980000000
     m_Hash: 3394294237
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

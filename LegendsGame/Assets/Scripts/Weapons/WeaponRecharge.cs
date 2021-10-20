@@ -22,7 +22,6 @@ public class WeaponRecharge : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-
             Shoot();
             //BLJ = false;
             //StartCoroutine(Reloading());
@@ -32,7 +31,6 @@ public class WeaponRecharge : MonoBehaviour
     void Shoot()
     {
         Instantiate(projectilePrefab, objectLauncher.Firepoint.transform.position, aim.GetAngle());
-
     }
 
 
