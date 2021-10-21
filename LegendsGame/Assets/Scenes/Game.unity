@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235611c3aa7ea49a8a6c01e8cadddd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRooms: 7
+  numberOfRooms: 50
   roomPrefab: {fileID: 7729598459240103604, guid: bcb2c93465df3401d99590f6e36c6e77, type: 3}
   doorPositions:
   - {fileID: 1399891913}
