@@ -17,6 +17,8 @@ public class Rangedgoblin : MonoBehaviour
 
     public GameObject projectile;
 
+    public Animator animator;
+
 
     void Start()
     {
@@ -63,17 +65,20 @@ public class Rangedgoblin : MonoBehaviour
             {
                 latestDirectionChangeTime = Time.time;
                 calcuateNewMovementVector();
+                // animator.SetBool("Moving", true);
             }
 
             //move the goblin 
             transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
             transform.position.y + (movementPerSecond.y * Time.deltaTime));
+            // animator.SetBool("Moving", true);
 
 
             if (timeBtwShots <= 0)
             {
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 timeBtwShots = startTimeBtwShots;
+                // animator.SetTrigger("Attack");
             }
             else
             {
