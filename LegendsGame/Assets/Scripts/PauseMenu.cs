@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -32,15 +33,24 @@ public class PauseMenu : MonoBehaviour
         //Debug.Log("Unpaused");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+
+        //re-enable AimMouse and BasicobjectLauncher scripts
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AimMouse>().enabled = true;
+        //GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<BasicObjectLauncher>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(1).gameObject.GetComponent<BasicObjectLauncher>().enabled = true;
         IsPaused = false;
 
     }
 
     //Pause game
     void Pause() {
-//        Debug.Log("Paused");
+        //Debug.Log("Paused");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+
+        //disable AimMouse and BasicObjectLauncher scripts, since 'Time.timescale = 0f' does not
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AimMouse>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").transform.GetChild(1).gameObject.GetComponent<BasicObjectLauncher>().enabled = false;
         IsPaused = true;
     }
 
