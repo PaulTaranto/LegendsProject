@@ -5,20 +5,20 @@
       <File FileName="Assets/Scripts/Map1.cs" />
       <File FileName="Assets/Scripts/enemyplayertracking.cs" />
       <File FileName="Assets/Scripts/Rangedgoblin.cs" Line="41" Column="45" />
-      <File FileName="Assets/Scripts/SwapWeapons.cs" Line="58" Column="1" />
+      <File FileName="Assets/Scripts/SwapWeapons.cs" />
       <File FileName="Assets/Scripts/Health.cs" />
       <File FileName="Assets/Scripts/MapManager.cs" />
-      <File FileName="Assets/Scripts/AimMouse.cs" Line="14" Column="50" />
-      <File FileName="Assets/BasicObjectLauncher.cs" Line="51" Column="3" />
-      <File FileName="Assets/Scripts/Weapons/WeaponRecharge.cs" Line="33" Column="98" />
-      <File FileName="Assets/Scripts/Weapons/spells/FireBall.cs" Line="31" Column="29" />
-      <File FileName="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs" Line="22" Column="1" />
-      <File FileName="Assets/Scripts/MoveFoward.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AimMouse.cs" />
+      <File FileName="Assets/BasicObjectLauncher.cs" />
+      <File FileName="Assets/Scripts/Weapons/WeaponRecharge.cs" />
+      <File FileName="Assets/Scripts/Weapons/spells/FireBall.cs" />
+      <File FileName="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs" />
+      <File FileName="Assets/Scripts/MoveFoward.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d24dc720-6440-4a42-9eca-7871c1675645" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fffa1623-e6f3-4392-8d5b-6723106588bb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/aidenmazik/Documents/GitHub/LegendsProject/LegendsGame/Assets/Scripts/ArraySpawn1.cs" relfile="Assets/Scripts/ArraySpawn1.cs" line="28" column="1" />

@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235611c3aa7ea49a8a6c01e8cadddd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRooms: 50
+  numberOfRooms: 7
   roomPrefab: {fileID: 7729598459240103604, guid: bcb2c93465df3401d99590f6e36c6e77, type: 3}
   doorPositions:
   - {fileID: 1399891913}
@@ -2416,6 +2416,7 @@ MonoBehaviour:
   - {fileID: 1870468846877537177, guid: 17a9d45e78e6341d7b68eb764fe827cf, type: 3}
   - {fileID: 5732549921617572520, guid: 08ddf722f16fe4dd3a7ae5fc8651cc76, type: 3}
   - {fileID: 5231255001682754945, guid: f9c9894cb901146daa27d523ef2d85bc, type: 3}
+  - {fileID: 7678264924581804028, guid: 0ae7f77c0a78f41a6a985ca1459224ca, type: 3}
   bossroomPrefabs: []
   levelPrefab: {fileID: 0}
   cameraTransitionPosition:
