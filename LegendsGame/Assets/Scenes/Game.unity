@@ -4726,9 +4726,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1372017994120439329, guid: 7818f4649421b47308bab5d411d08e30, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372017994859750288, guid: 7818f4649421b47308bab5d411d08e30, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1372017994859750288, guid: 7818f4649421b47308bab5d411d08e30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4773,6 +4777,10 @@ PrefabInstance:
     - target: {fileID: 1372017994859750303, guid: 7818f4649421b47308bab5d411d08e30, type: 3}
       propertyPath: m_Name
       value: LevelChanger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372017994859750303, guid: 7818f4649421b47308bab5d411d08e30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7818f4649421b47308bab5d411d08e30, type: 3}
@@ -5084,7 +5092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7762319532040666140, guid: dba1d1fdf070de1479349f3b9f3aca10, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7762319532040666140, guid: dba1d1fdf070de1479349f3b9f3aca10, type: 3}
       propertyPath: m_AnchorMax.x

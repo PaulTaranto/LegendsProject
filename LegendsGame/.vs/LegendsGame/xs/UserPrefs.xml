@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{00945EC6-0021-B609-A472-4ADC99602836}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Rangedgoblin.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/PauseMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" />
       <File FileName="Assets/Scripts/Map1.cs" />
       <File FileName="Assets/Scripts/enemyplayertracking.cs" />
-      <File FileName="Assets/Scripts/Rangedgoblin.cs" Line="41" Column="45" />
+      <File FileName="Assets/Scripts/Rangedgoblin.cs" Line="41" Column="43" />
       <File FileName="Assets/Scripts/SwapWeapons.cs" />
       <File FileName="Assets/Scripts/Health.cs" />
       <File FileName="Assets/Scripts/MapManager.cs" />
@@ -18,7 +19,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fffa1623-e6f3-4392-8d5b-6723106588bb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c1b7aa97-f7b8-4f41-afeb-a575f15d927e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/aidenmazik/Documents/GitHub/LegendsProject/LegendsGame/Assets/Scripts/ArraySpawn1.cs" relfile="Assets/Scripts/ArraySpawn1.cs" line="28" column="1" />
