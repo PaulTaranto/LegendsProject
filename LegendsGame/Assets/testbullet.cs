@@ -29,13 +29,13 @@ public class testbullet : MonoBehaviour
         if (collision.gameObject.tag == "Dragon")
         {
             Health health = collision.transform.root.GetComponentInChildren<Health>();
-            health.GiveDamage(bulletDamage);
+            health.GiveDamage(bulletDamage, transform.position);
             Destroy(gameObject);//Destrosy the bullet
         }
         if (collision.gameObject.tag == "slime")
         {
             Health health = collision.transform.root.GetComponentInChildren<Health>();
-            health.GiveDamage(bulletDamage);
+            health.GiveDamage(bulletDamage, transform.position);
             Destroy(gameObject);
         }
     }

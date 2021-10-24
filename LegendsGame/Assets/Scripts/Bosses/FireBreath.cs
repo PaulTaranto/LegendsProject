@@ -17,7 +17,7 @@ public class FireBreath : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Health>().GiveDamage(fireDamage);
+            other.GetComponent<Health>().GiveDamage(fireDamage, transform.position);
         }
     }
 

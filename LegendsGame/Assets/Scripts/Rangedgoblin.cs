@@ -30,29 +30,27 @@ public class Rangedgoblin : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Wall"))
+        if (other.gameObject.tag == "Wall" || other.gameObject.tag == "Hole" || other.gameObject.tag == "Slime" || other.gameObject.tag == "Goblin")
         {
-            calcuateNewMovementVector();
+            ContactPoint2D[] contacts = new ContactPoint2D[2];
+            other.GetContacts(contacts);
+            reflectVector();
+            //calcuateNewMovementVector();
         }
-        //if (other.CompareTag("WallEast"))
-        //{
-        //    calcuateNewMovementVector();
-        //}
-        //if (other.CompareTag("WallSouth"))
-        //{
-        //    calcuateNewMovementVector();
-        //}
-        //if (other.CompareTag("WallWest"))
-        //{
-        //    calcuateNewMovementVector();
-        //}
     }
 
     void calcuateNewMovementVector()
     {
         movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+        movementPerSecond = movementDirection * characterVelocity;
+    }
+
+    void reflectVector()
+    {
+        //movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
+        movementDirection = -movementDirection;
         movementPerSecond = movementDirection * characterVelocity;
     }
 

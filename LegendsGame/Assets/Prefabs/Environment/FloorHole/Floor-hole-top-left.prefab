@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8452656278994206013}
   - component: {fileID: 4416048363675585428}
   m_Layer: 0
-  m_Name: Floor-hole
-  m_TagString: Untagged
+  m_Name: Floor-hole-top-left
+  m_TagString: Hole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

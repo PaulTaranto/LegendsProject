@@ -46,7 +46,7 @@ public class GoblinScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
-            other.gameObject.GetComponent<Health>().GiveDamage(2);            
+            other.gameObject.GetComponent<Health>().GiveDamage(2, transform.position);            
         }
         if (other.CompareTag("WallNorth"))
         {

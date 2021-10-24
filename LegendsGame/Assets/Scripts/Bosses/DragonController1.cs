@@ -43,7 +43,7 @@ public class DragonController1 : MonoBehaviour
         dialogueManagerInstance = Instantiate(dialogueManagerPrefab);
         //The below line of code, as bad as it is.  Sets the transform of the dialogue canvas instantiated above to the empty gameobject representing the currentroom
         //Its only run once so it's fine.
-        dialogueManagerInstance.transform.SetParent(GameObject.Find(GameObject.Find("generators").GetComponent<Map1>().GetPlayerCoords().ToString()).transform);
+        //dialogueManagerInstance.transform.SetParent(GameObject.Find(GameObject.Find("generators").GetComponent<Map1>().GetPlayerCoords().ToString()).transform);
         dragonDialogueManagerInstance = Instantiate(dragonDialogueManagerPrefab);
         dragonDialogueManagerInstance.GetComponent<DragonCinematicManager>().StartDragonDialogue();
 

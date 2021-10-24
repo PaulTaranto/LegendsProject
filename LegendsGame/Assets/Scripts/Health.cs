@@ -17,9 +17,15 @@ public class Health : MonoBehaviour
 
     [SerializeField] private GameObject gameOverScreen;
     private bool isGameOver = false;
-    
+
+    bool knockback = false;
+
+    float timer, maxTimer = 0.1f;
+
     void Start()
     {
+        timer = maxTimer;
+
         invulnerableTimer = maxInvulnerableTimer;
         if(gameObject.tag=="Player")
         {
@@ -36,7 +42,21 @@ public class Health : MonoBehaviour
     // Move to take damage method?
     void Update()
     {
-        if(isInvulnerable)
+        //Debug.Log(GetComponent<Rigidbody2D>().velocity);
+
+        if ((GetComponent<Rigidbody2D>().velocity.x < 0.1f && GetComponent<Rigidbody2D>().velocity.y < 0.1f) && knockback)
+        {
+            timer -= Time.deltaTime;
+
+            if(timer <= 0)
+            {
+                GetComponent<PlayerMovement>().moveSpeed = 7;
+                GetComponent<PlayerMovement>().SetPlayerControl(true);
+                knockback = false;
+            }
+        }
+
+        if (isInvulnerable)
         {
             invulnerableTimer -= Time.deltaTime;
         }
@@ -93,7 +113,7 @@ public class Health : MonoBehaviour
     //Take damage
     //Include SFX and visual effect to know the player is damaged and invulnerable
     //Take knockback????
-    void TakeDamage(int damage) {
+    void TakeDamage(int damage, Vector3 enemyPosition) {
         if(!isInvulnerable)
         {
             health -= damage;
@@ -107,13 +127,36 @@ public class Health : MonoBehaviour
                 isInvulnerable = true;
                 invulnerableTimer = maxInvulnerableTimer;
             }
+
+            if(gameObject.tag == "Player")
+            {
+                TakeKnockback(enemyPosition);
+            }
         }
     }
 
-    //Method exists for encapsulation reasons
     public void GiveDamage(int damage)
     {
-        TakeDamage(damage);
+        if (damage == -1)
+        {
+            health -= damage;
+        }
+    }
+
+    void TakeKnockback(Vector3 enemyPosition)
+    {
+        GetComponent<PlayerMovement>().SetPlayerControl(false);
+        GetComponent<PlayerMovement>().moveSpeed = 0;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().AddForce((transform.position - enemyPosition) * 500000);
+        knockback = true;
+        timer = maxTimer;
+    }
+
+    //Method exists for encapsulation reasons
+    public void GiveDamage(int damage, Vector3 enemyPosition)
+    {
+        TakeDamage(damage, enemyPosition);
     }
 
     public void OnCollisionStay2D(Collision2D collision)
@@ -122,7 +165,7 @@ public class Health : MonoBehaviour
         {
             if (collision.gameObject.tag == "Goblin" || collision.gameObject.tag == "Slime")
             {
-                TakeDamage(1);
+                TakeDamage(1, collision.gameObject.transform.position);
             }
         }
     }
@@ -134,7 +177,7 @@ public class Health : MonoBehaviour
             if (collision.gameObject.tag == "Dragon")
             {
                 Dragon dragon = collision.transform.root.GetComponentInChildren<Dragon>();
-                TakeDamage(dragon.touchDamage);
+                TakeDamage(dragon.touchDamage, collision.gameObject.transform.position);
             }
         }
 
@@ -143,7 +186,7 @@ public class Health : MonoBehaviour
             if (collision.gameObject.tag == "Bullet")
             {
                 Destroy(collision.gameObject);
-                TakeDamage(1);
+                TakeDamage(1, collision.gameObject.transform.position);
             }
         }
         //else if(gameObject.tag == "Bullet")

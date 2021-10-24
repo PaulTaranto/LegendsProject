@@ -40,7 +40,7 @@ public class GoblinBullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
             this.DestroyProjectile();
-            other.gameObject.GetComponent<Health>().GiveDamage(2);            
+            other.gameObject.GetComponent<Health>().GiveDamage(2, transform.position);            
         }
     }
     void DestroyProjectile(){

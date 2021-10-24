@@ -31,6 +31,8 @@ TagManager:
   - Slime
   - Goblin Toe
   - GoblinBullet
+  - Crystal
+  - Hole
   layers:
   - Default
   - TransparentFX

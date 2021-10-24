@@ -35,7 +35,7 @@ public class enemyplayertracking : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other)
     {
         if(other.CompareTag("Player")){
-            other.gameObject.GetComponent<Health>().GiveDamage(2);
+            other.gameObject.GetComponent<Health>().GiveDamage(2, transform.position);
             animator.SetTrigger("Attack");
         }
 
