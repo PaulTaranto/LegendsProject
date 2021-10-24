@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8369405813744508016}
   - component: {fileID: 4534982995818471248}
   - component: {fileID: -3915246614106420393}
+  - component: {fileID: 7279167577554831455}
   m_Layer: 0
   m_Name: Goblin Toe
   m_TagString: Goblin Toe
@@ -96,3 +97,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPickup: {fileID: 5484804574091047992}
+--- !u!58 &7279167577554831455
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5484804574091047992}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.28
