@@ -104,6 +104,7 @@
     <Compile Include="Assets/Scripts/MainMenu.cs" />
     <Compile Include="Assets/Scripts/GoblinBullet.cs" />
     <Compile Include="Assets/Scripts/Weapons/spells/Wings.cs" />
+    <Compile Include="Assets/Scripts/GameOverMenu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

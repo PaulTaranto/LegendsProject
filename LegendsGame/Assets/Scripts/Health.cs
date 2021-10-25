@@ -106,8 +106,10 @@ public class Health : MonoBehaviour
             isGameOver = true;
         }
 
-        if (isGameOver) {
-            SceneManager.LoadScene("GameOver");
+        if (isGameOver)
+        {
+            GameObject.Find("LevelChanger").GetComponent<LevelChanger>().FadeToLevel("GameOver");
+            //SceneManager.LoadScene("GameOver");
         }
     }
 

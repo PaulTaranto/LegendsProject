@@ -1,24 +1,24 @@
 ﻿<Properties StartupConfiguration="{00945EC6-0021-B609-A472-4ADC99602836}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelChanger.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Map1.cs">
     <Files>
       <File FileName="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PauseMenu.cs" Line="31" Column="18" />
-      <File FileName="Assets/Scripts/Map1.cs" Line="228" Column="26" />
-      <File FileName="Assets/Scripts/MapManager.cs" Line="158" Column="32" />
-      <File FileName="Assets/Scripts/Script.cs" Line="28" Column="28" />
-      <File FileName="Assets/Scripts/Inventory.cs" Line="17" Column="59" />
-      <File FileName="Assets/Scripts/Cinematics and Dialogue/DragonCinematicManager.cs" Line="13" Column="76" />
-      <File FileName="Assets/BasicObjectLauncher.cs" Line="48" Column="6" />
-      <File FileName="Assets/Scripts/MoveFoward.cs" Line="39" Column="33" />
-      <File FileName="Assets/Scripts/Health.cs" Line="124" Column="14" />
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="24" Column="21" />
-      <File FileName="Assets/Scripts/Bosses/DragonController1.cs" Line="62" Column="75" />
+      <File FileName="Assets/Scripts/PauseMenu.cs" />
+      <File FileName="Assets/Scripts/Map1.cs" Line="228" Column="28" />
+      <File FileName="Assets/Scripts/MapManager.cs" />
+      <File FileName="Assets/Scripts/Script.cs" />
+      <File FileName="Assets/Scripts/Inventory.cs" />
+      <File FileName="Assets/Scripts/Cinematics and Dialogue/DragonCinematicManager.cs" />
+      <File FileName="Assets/BasicObjectLauncher.cs" />
+      <File FileName="Assets/Scripts/MoveFoward.cs" />
+      <File FileName="Assets/Scripts/Health.cs" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" />
+      <File FileName="Assets/Scripts/Bosses/DragonController1.cs" />
       <File FileName="Assets/Scripts/LevelChanger.cs" Line="22" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cb16322d-3d16-42e4-8c5d-d361ad465c56" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0652a49d-432e-4479-afc7-f1f56ff62b1e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/aidenmazik/Documents/GitHub/LegendsProject/LegendsGame/Assets/Scripts/ArraySpawn1.cs" relfile="Assets/Scripts/ArraySpawn1.cs" line="28" column="1" />

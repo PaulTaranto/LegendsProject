@@ -126,7 +126,10 @@ public class Map1 : MonoBehaviour
         Destroy(oldWallInstance);
         mapManager.DisableRoom(oldPlayerCoords);
 
-        Destroy(oldDoors[0].transform.parent.gameObject);
+        if(rooms[currPlayerCoords].roomType != 0)
+        {
+            Destroy(oldDoors[0].transform.parent.gameObject);
+        }
 
         foreach (GameObject g in oldDoors)
         {
@@ -195,12 +198,12 @@ public class Map1 : MonoBehaviour
                     List<int> list = collectableRooms.Values.ToList();
                     int collectableId = mapManager.GetRandomCollectableRoomType(list);
 
-                    Debug.Log(collectableId);
+//                    Debug.Log(collectableId);
 
                     collectableRooms.Add(allRoomCoords[i], collectableId);
                     rooms[allRoomCoords[i]].roomType = collectableId;
 
-                    Debug.Log(collectableRooms.Count);
+                   // Debug.Log(collectableRooms.Count);
                 }
                 else
                 {
@@ -226,11 +229,6 @@ public class Map1 : MonoBehaviour
     private void PopulateCurrentRoom(Room currentRoom)
     {
         Debug.Log("testa");
-        if(currentRoom.roomType == 0)
-        {
-            Debug.Log("test");
-            Destroy(oldDoors[0].transform.parent.gameObject);
-        }
 
         mapManager.PopulateRoom(currentRoom.coordinates, oldPlayerCoords);
 
@@ -362,6 +360,15 @@ public class Map1 : MonoBehaviour
                         doortemp.SetFromTo(currentRoom, rooms[new Coords(currentRoom.coordinates.X - 1, currentRoom.coordinates.Y)]);
                         break;
                 }
+            }
+        }
+
+        if (currentRoom.roomType == 0)
+        {
+            Debug.Log("test");
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Door"))
+            {
+                Destroy(g);
             }
         }
 
