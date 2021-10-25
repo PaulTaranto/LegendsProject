@@ -13,23 +13,21 @@ public class GoblinBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 
+        target = new Vector2(player.position.x, player.position.y);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        target = new Vector2(player.position.x, player.position.y);
-
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
     private void Update()
     {
+
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
         liveTime -= Time.deltaTime;
         if (liveTime <= 0)
         {
