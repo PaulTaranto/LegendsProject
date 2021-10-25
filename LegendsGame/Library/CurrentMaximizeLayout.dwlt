@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1428
     height: 797
-  m_MinSize: {x: 678, y: 492}
+  m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 31102
+  controlID: 36458
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,10 +135,10 @@ MonoBehaviour:
     y: 0
     width: 1091
     height: 797
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 31103
+  controlID: 36459
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,10 +160,10 @@ MonoBehaviour:
     y: 0
     width: 1091
     height: 472
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 31104
+  controlID: 36460
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,8 +183,8 @@ MonoBehaviour:
     y: 0
     width: 381
     height: 472
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -217,9 +217,9 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 199}
-      m_SelectedIDs: 5c630000
-      m_LastClickedID: 0
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 9e38f8ff
+      m_LastClickedID: -509794
       m_ExpandedIDs: 26b9f9ff36b9f9ff46b9f9ff56b9f9ff66b9f9ff76b9f9ff86b9f9ff96b9f9ffa6b9f9ffb6b9f9ffd4b9f9ffe8b9f9fff8b9f9ff08baf9ff18baf9ff28baf9ff38baf9ff48baf9ff58baf9ff68baf9ff78baf9ff96baf9ffacbcf9ff88bdf9ff8cbdf9ff9abdf9ff5ec0f9ff20c6f9ff2ac6f9ff34c6f9ff3ec6f9ff48c6f9ff52c6f9ff92c6f9ff9ac6f9ffa2c6f9ffa6c6f9ffaac6f9ffaec6f9ffb6c6f9ffbac6f9ffc2c6f9ffc6c6f9ffcec6f9ffd2c6f9ffd6c6f9ffe6c6f9fffcc6f9ff20c7f9ff2cc7f9ff38c7f9ff34d4f9ff44d4f9ff54d4f9ff64d4f9ff74d4f9ff84d4f9ff94d4f9ffa4d4f9ffb4d4f9ffc4d4f9ffe2d4f9fff6d4f9ff06d5f9ff16d5f9ff26d5f9ff36d5f9ff46d5f9ff56d5f9ff66d5f9ff76d5f9ff86d5f9ffa4d5f9ffc6d7f9ffa2d8f9ffa6d8f9ffb4d8f9ff7edef9ff88def9ff92def9ff9cdef9ffa6def9ffb0def9fff0def9fff8def9ff00dff9ff04dff9ff08dff9ff0cdff9ff14dff9ff18dff9ff20dff9ff24dff9ff2cdff9ff30dff9ff34dff9ff44dff9ff5adff9ff72dff9ff7edff9ff8adff9ff9808faff1c3bfaff2c3bfaff3c3bfaff4c3bfaff5c3bfaff6c3bfaff7c3bfaff8c3bfaff9c3bfaffac3bfaffcc3bfaffe03bfafff03bfaff003cfaff103cfaff203cfaff303cfaff403cfaff503cfaff603cfaff703cfaff903cfaffb43ffaff9040faff9440faffae40faff4e47faff6447faff8c5bfaffe2d9fafff2d9faff02dafaff12dafaff22dafaff32dafaff42dafaff52dafaff62dafaff72dafaff8edafaffa2dafaffb2dafaffc2dafaffd2dafaffe2dafafff2dafaff02dbfaff12dbfaff22dbfaff32dbfaff2cdcfaff8619fbff9419fbffa219fbffb019fbffbe19fbffcc19fbffda19fbffe819fbfff619fbff041afbff301afbff3e1afbff4c1afbff5a1afbff681afbff761afbff841afbff921afbffa01afbffae1afbff5e3bfbff14dafcff56bafeff5a81ffff82f5ffff6af9ffff72f9ffff40fbffffe040000060410000644100008c410000a8410000c8410000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -452,21 +452,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Prefabs/Environment
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Prefabs/Environment
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/aidenmazik/Documents/GitHub/LegendsProject/LegendsGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 125f0000
-    m_LastClickedID: 24338
+    m_SelectedIDs: 205f0000
+    m_LastClickedID: 24352
     m_ExpandedIDs: 00000000ee5e0000125f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -520,9 +520,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5c630000
-    m_LastClickedInstanceID: 25436
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 9e38f8ff
+    m_LastClickedInstanceID: -509794
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 354
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0

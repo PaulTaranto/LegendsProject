@@ -225,6 +225,13 @@ public class Map1 : MonoBehaviour
 
     private void PopulateCurrentRoom(Room currentRoom)
     {
+        Debug.Log("testa");
+        if(currentRoom.roomType == 0)
+        {
+            Debug.Log("test");
+            Destroy(oldDoors[0].transform.parent.gameObject);
+        }
+
         mapManager.PopulateRoom(currentRoom.coordinates, oldPlayerCoords);
 
         GameObject environmentInstance = Instantiate(environmentParent);

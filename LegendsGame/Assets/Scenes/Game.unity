@@ -5152,7 +5152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5858260242351950115, guid: 93207d30913b44d089a5a33c2d658c53, type: 3}
       propertyPath: numberOfRooms
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5858260242351950115, guid: 93207d30913b44d089a5a33c2d658c53, type: 3}
       propertyPath: doorPositions.Array.data[0]

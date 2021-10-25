@@ -70,6 +70,8 @@ public class DragonController1 : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log("There are " + aliveDragonCount + " dragons left");
+
         //Debug.Log("dragons:" + hasGeneratedDragons);
         //Debug.Log("dioagloe" + dialogueManagerInstance.GetComponentInChildren<DialogueManager>().isFinishedDialogue);
 
