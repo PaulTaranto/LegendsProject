@@ -144,6 +144,38 @@ public class Map1 : MonoBehaviour
         }
     }
 
+    public void ForceDragonRoom()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Coords coords = new Coords();
+            switch (i)
+            {
+                case 0:
+                    coords = new Coords(currPlayerCoords.X, currPlayerCoords.Y + 1);
+                    break;
+                case 1:
+                    coords = new Coords(currPlayerCoords.X + 1, currPlayerCoords.Y);
+                    break;
+                case 2:
+                    coords = new Coords(currPlayerCoords.X, currPlayerCoords.Y - 1);
+                    break;
+                case 3:
+                    coords = new Coords(currPlayerCoords.X - 1, currPlayerCoords.Y);
+                    break;
+            }
+            if(rooms.ContainsKey(coords))
+            {
+                Debug.Log(coords);
+                rooms[coords].roomType = mapManager.GetRandomBossRoomType();
+
+                mapManager.DestoryRoom(coords);
+                mapManager.InstantiateRoom(coords, rooms[coords].roomType);
+                mapManager.DisableRoom(coords);
+            }
+        }
+    }
+
     private void AssignRooms(int id)
     {
         Dictionary<Coords, int> collectableRooms = new Dictionary<Coords, int>();
@@ -177,7 +209,7 @@ public class Map1 : MonoBehaviour
             }
 
             //TODO after last item is collected.  Spawn boss rom next
-            mapManager.InstantiateAllRooms(allRoomCoords[i], rooms[allRoomCoords[i]].roomType);
+            mapManager.InstantiateRoom(allRoomCoords[i], rooms[allRoomCoords[i]].roomType);
             
         }
 

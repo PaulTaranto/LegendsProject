@@ -10,7 +10,7 @@ public class DragonCinematicManager : MonoBehaviour
     public void StartDragonDialogue()
     {
         dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
-        dialogueManager.setcurrentScript(Script.getShortTestScript());
+        dialogueManager.setcurrentScript(Script.getOpeningDragonFightScript());
         //false for now
         dialogueManager.InitialiseDialogueManager(false);
     }

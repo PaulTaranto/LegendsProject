@@ -122,14 +122,15 @@ public class Health : MonoBehaviour
                 playDeathEffect();
                 //Debug.Log("Game Over");
             }
-            if(damage > 0)
-            {
-                isInvulnerable = true;
-                invulnerableTimer = maxInvulnerableTimer;
-            }
 
             if(gameObject.tag == "Player")
             {
+                if (damage > 0)
+                {
+                    isInvulnerable = true;
+                    invulnerableTimer = maxInvulnerableTimer;
+                }
+
                 TakeKnockback(enemyPosition);
             }
         }
@@ -140,6 +141,10 @@ public class Health : MonoBehaviour
         if (damage == -1)
         {
             health -= damage;
+        }
+        else
+        {
+            TakeDamage(damage, transform.position);
         }
     }
 
@@ -189,10 +194,13 @@ public class Health : MonoBehaviour
                 TakeDamage(1, collision.gameObject.transform.position);
             }
         }
-        //else if(gameObject.tag == "Bullet")
+        //else if (collision.gameObject.tag == "Bullet")
         //{
-        //    if(collision.gameObject.tag == "Dragon")
+        //    Debug.Log("test");
+        //    if (gameObject.tag == "Dragon")
         //    {
+
+        //        Debug.Log("cawk");
         //        Health health = collision.transform.root.GetComponentInChildren<Health>();
         //        health.GiveDamage(1);
         //        Destroy(gameObject);//Destrosy the bullet

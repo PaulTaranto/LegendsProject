@@ -70,7 +70,7 @@ MonoBehaviour:
   numberOfNeckSegments: 11
   numberOfDragons: 2
   aliveDragonCount: 0
-  finalItem: {fileID: 7120880218221849352, guid: 73acd0cb89f7d42a499cb895a3e1ea91, type: 3}
+  finalItem: {fileID: 8498969899604341395, guid: 946df45c1d3e0e64cabf5342930dc67c, type: 3}
   finalItemPosition: {fileID: 0}
 --- !u!114 &4635995615097884233
 MonoBehaviour:
@@ -92,5 +92,5 @@ MonoBehaviour:
   numberOfNeckSegments: 12
   numberOfDragons: 2
   aliveDragonCount: 0
-  finalItem: {fileID: 7120880218221849352, guid: 73acd0cb89f7d42a499cb895a3e1ea91, type: 3}
+  finalItem: {fileID: 8498969899604341395, guid: 946df45c1d3e0e64cabf5342930dc67c, type: 3}
   finalItemPosition: {fileID: 0}

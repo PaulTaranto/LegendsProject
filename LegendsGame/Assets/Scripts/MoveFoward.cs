@@ -28,6 +28,21 @@ public class MoveFoward : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Dragon")
+        {
+            Debug.Log("cawk");
+            Health health = collision.transform.root.GetComponentInChildren<Health>();
+            Debug.Log(health.gameObject);
+            health.GiveDamage(1);
+            Destroy(gameObject);//Destrosy the bullet
+        }
+    }
+
+
+
     private IEnumerator Limit()
     {
         yield return new WaitForSeconds(DestroyedTimer);

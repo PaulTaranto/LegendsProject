@@ -149,7 +149,13 @@ public class MapManager : MonoBehaviour
     //    return -(Mathf.Cos(Mathf.PI * x) - 1) / 2;
     //}
 
-    public void InstantiateAllRooms(Coords coord, int roomType)
+    public void DestoryRoom(Coords coords)
+    {
+        Destroy(roomInstances[coords]);
+        roomInstances.Remove(coords);
+    }
+
+    public void InstantiateRoom(Coords coord, int roomType)
     {
         roomInstances.Add(coord, Instantiate(roomPrefabs[roomType]));
         roomInstances[coord].SetActive(true);
@@ -228,6 +234,6 @@ public class MapManager : MonoBehaviour
     public int GetRandomBossRoomType()
     {
         //Return a boss room
-        return bossRooms[0];
+        return 0;
     }
 }
