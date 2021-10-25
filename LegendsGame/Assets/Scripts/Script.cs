@@ -83,7 +83,10 @@ public class Script : MonoBehaviour
             "????: {SFX:DRAGON_BUILDUP} YOU HORRIBLE CHILD.  HOW DARE YOU COME INTO OUR LARE AND MAKE DEMANDS!",
             "????: IT'LL BE THE LAST THING YOU EVER DO!",
             "PLAY: wh-who goes there?",
-            "DRAG: boo"
+            "DRAG: boo",
+            "DRAG: It is I!  The great dragon of this dungeon!  There are very few people I enjoy in this realm, and you don't appear to be one of them",
+            "PLAY: Bruv, Imma need to take your egg, sorry g.  It's just gotta happen!",
+            "DRAG: Fine. {EFX:PAUSE} Then you shal die!"
         };
 
         return script;
@@ -122,7 +125,7 @@ public class Script : MonoBehaviour
         "MAST: Nonesense you foolish rapscallion, the great {NAME} NEVER DIES!!!",
         "PLAY: *quietly to himself* oh my god i nearly died getting those ingredients......................",
         "MAST: Thank you so much! Now, I feel just about ready to give old mate dragon a visit",
-        "MAST: Would be fun to fight and defeat them once and for all!",
+        "MAST: Would be fun to go and play with my dear beloved pet.",
         "PLAY: ..................",
         "{LVL:CREDITS}"
        //"{EFX:FADE_TO_BLACK_CREDITS}"

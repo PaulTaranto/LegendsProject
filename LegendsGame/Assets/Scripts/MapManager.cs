@@ -203,8 +203,27 @@ public class MapManager : MonoBehaviour
         //return type of rooms which are NOT Boss rooms
         // roomType index of 0 is the boss room
         // roomType index of 1 is the starting room
-        return Random.Range(2, roomPrefabs.Length);
+        // roomType indexes 2-6 are the special rooms containing collectables
+        return Random.Range(4, roomPrefabs.Length);
     }
+
+    public int GetRandomCollectableRoomType(List<int> excluding)
+    {
+        //return type of rooms which are NOT Boss rooms
+        // roomType index of 0 is the boss room
+        // roomType index of 1 is the starting room
+        // roomType indexes 2-6 are the special rooms containing collectables
+
+        int roomID = Random.Range(2, 4);
+        if(excluding.Contains(roomID))
+        {
+            roomID = GetRandomCollectableRoomType(excluding);
+        }
+
+        return roomID;
+    }
+
+
 
     public int GetRandomBossRoomType()
     {

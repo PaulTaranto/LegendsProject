@@ -6,7 +6,7 @@ public class WeaponRecharge : MonoBehaviour
 {
     public GameObject Firepoint;
     public float time = 6;
-    private bool BLJ = true;
+//    private bool BLJ = true;
     private float Minb = 0;
     public GameObject Bar;
     public GameObject projectilePrefab;
@@ -45,6 +45,6 @@ public class WeaponRecharge : MonoBehaviour
             Minb = Minb + 1;
 //            Bar.gameObject.transform.localScale = new Vector3(Minb / 100, Minb / 100, Minb / 100);
         }
-        BLJ = true;
+//        BLJ = true;
     }
 }

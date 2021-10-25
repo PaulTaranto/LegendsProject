@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Map1 : MonoBehaviour
@@ -145,6 +146,8 @@ public class Map1 : MonoBehaviour
 
     private void AssignRooms(int id)
     {
+        Dictionary<Coords, int> collectableRooms = new Dictionary<Coords, int>();
+        
         for (int i = 0; i < allRoomCoords.Count; i++)
         {
             //First assign all rooms except the boss room.
@@ -155,7 +158,22 @@ public class Map1 : MonoBehaviour
             }
             else
             {
-                rooms[allRoomCoords[i]].roomType = mapManager.GetRandomRoomType();
+                if(collectableRooms.Count < 2)
+                {
+                    List<int> list = collectableRooms.Values.ToList();
+                    int collectableId = mapManager.GetRandomCollectableRoomType(list);
+
+                    Debug.Log(collectableId);
+
+                    collectableRooms.Add(allRoomCoords[i], collectableId);
+                    rooms[allRoomCoords[i]].roomType = collectableId;
+
+                    Debug.Log(collectableRooms.Count);
+                }
+                else
+                {
+                    rooms[allRoomCoords[i]].roomType = mapManager.GetRandomRoomType();
+                }
             }
 
             //TODO after last item is collected.  Spawn boss rom next
