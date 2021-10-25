@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -106,7 +107,7 @@ public class Health : MonoBehaviour
         }
 
         if (isGameOver) {
-            gameOverScreen.SetActive(true);
+            SceneManager.LoadScene("GameOver");
         }
     }
 
