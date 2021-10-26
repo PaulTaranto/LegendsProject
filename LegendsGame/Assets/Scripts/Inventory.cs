@@ -20,6 +20,12 @@ public class Inventory : MonoBehaviour
 
     bool generatedDragonRooms = false;
 
+    public void GiveAllItems()
+    {
+        collectibles.Add("Goblin Toe");
+        collectibles.Add("Crystal");
+    }
+
     private void Start()
     {
         itemList = new List<Item>();

@@ -1,21 +1,23 @@
-﻿<Properties StartupConfiguration="{00945EC6-0021-B609-A472-4ADC99602836}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Inventory.cs">
     <Files>
       <File FileName="Assets/Scripts/Weapons/spells/FireBall.cs" Line="6" Column="1" />
-      <File FileName="Assets/Scripts/Weapons/WeaponRecharge.cs" Line="25" Column="21" />
+      <File FileName="Assets/Scripts/Weapons/WeaponRecharge.cs" />
       <File FileName="Assets/Scripts/Weapons/WeaponCharges.cs" />
       <File FileName="Assets/Scripts/Weapons/spells/FireBallExplosion.cs" />
       <File FileName="Assets/Scripts/Weapons/spells/WaveSong.cs" />
       <File FileName="Assets/Scripts/Weapons/spells/EarthBullet.cs" />
-      <File FileName="Assets/Scripts/MapManager.cs" Line="213" Column="43" />
-      <File FileName="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs" Line="57" Column="28" />
-      <File FileName="Assets/Scripts/Cinematics and Dialogue/OpeningCinematicManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Script.cs" Line="66" Column="25" />
+      <File FileName="Assets/Scripts/MapManager.cs" />
+      <File FileName="Assets/Scripts/Cinematics and Dialogue/DialogueManager.cs" />
+      <File FileName="Assets/Scripts/Cinematics and Dialogue/OpeningCinematicManager.cs" />
+      <File FileName="Assets/Scripts/Script.cs" />
+      <File FileName="Assets/BasicObjectLauncher.cs" Line="21" Column="18" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="24" Column="38" />
+      <File FileName="Assets/Scripts/Inventory.cs" Line="25" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0ec76eff-7c16-4aaa-8e47-fd85ed71dd9c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
