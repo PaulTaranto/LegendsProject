@@ -5059,6 +5059,10 @@ PrefabInstance:
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5858260242351950112, guid: 93207d30913b44d089a5a33c2d658c53, type: 3}
+      propertyPath: roomPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2953875098047758082, guid: c4514397843d541a290a5d2079e0c5dc, type: 3}
+    - target: {fileID: 5858260242351950112, guid: 93207d30913b44d089a5a33c2d658c53, type: 3}
       propertyPath: roomPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 6614566048911240785, guid: c68aee16c9b15400ab441be56862a9fa, type: 3}

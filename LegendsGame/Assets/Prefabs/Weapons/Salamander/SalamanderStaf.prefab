@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6378819444466556321}
   m_Layer: 0
   m_Name: SalamanderStaf
-  m_TagString: Untagged
+  m_TagString: Wandy Boy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +78,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -128,5 +129,4 @@ MonoBehaviour:
   Firepoint: {fileID: 8098829061172150446}
   time: 6
   Bar: {fileID: 0}
-  projectilePrefab: {fileID: 4507030549444905123, guid: 56e75cf339114584fb1b42ec5d7ee99a,
-    type: 3}
+  projectilePrefab: {fileID: 4507030549444905123, guid: 56e75cf339114584fb1b42ec5d7ee99a, type: 3}

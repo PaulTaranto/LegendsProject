@@ -929,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1578317114710975321, guid: 76202a8b5f7e44abbb11076871be0b03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4870587955464315534, guid: 76202a8b5f7e44abbb11076871be0b03, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: -0.00020503998
@@ -1010,6 +1014,10 @@ PrefabInstance:
     - target: {fileID: 1578317114710975321, guid: 76202a8b5f7e44abbb11076871be0b03, type: 3}
       propertyPath: m_Name
       value: Slime (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578317114710975321, guid: 76202a8b5f7e44abbb11076871be0b03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4870587955464315534, guid: 76202a8b5f7e44abbb11076871be0b03, type: 3}
       propertyPath: m_Bounds.m_Center.x

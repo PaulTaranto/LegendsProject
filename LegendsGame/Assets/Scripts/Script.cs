@@ -75,9 +75,9 @@ public class Script : MonoBehaviour
         string[] script =
         {
             "PLAY: There's nothing here? {EFX:PAUSE} Has this whole journey been a waste?!",
-            "PLAY: Where's the blue essence crystal? I thought for sure this cave would have some!",
+            "PLAY: Where's the egg? I thought for sure this cave would have it!",
             "????: Who's THERE?!",
-            "PLAY: It is I! The great Keith! Don't suppose you can give me blue essence crystal for a laugh?",
+            "PLAY: It is I! The great Keith! Gonna need you to give me an egg for a laugh?",
             "????: {EFX:PAUSE}.{EFX:PAUSE}.{EFX:PAUSE}.",
             "PLAY: {EFX:PAUSE}.{EFX:PAUSE}.{EFX:PAUSE}.",
             "????: {SFX:DRAGON_BUILDUP} YOU HORRIBLE CHILD.  HOW DARE YOU COME INTO OUR LARE AND MAKE DEMANDS!",
@@ -85,7 +85,7 @@ public class Script : MonoBehaviour
             "PLAY: wh-who goes there?",
             "DRAG: boo",
             "DRAG: It is I!  The great dragon of this dungeon!  There are very few people I enjoy in this realm, and you don't appear to be one of them",
-            "PLAY: Bruv, Imma need to take your egg, sorry g.  It's just gotta happen!",
+            "PLAY: Bruv, Imma need to take your egg, sorry bruv.  It's just gotta happen!",
             "DRAG: Fine. {EFX:PAUSE} Then you shall die!"
         };
 

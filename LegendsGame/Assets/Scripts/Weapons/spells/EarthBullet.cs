@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EarthBullet : MonoBehaviour
 {
-    private int speed = 1;
+    private int speed = 5;
     public float DestroyTime;
 
     private void Update()
@@ -16,7 +16,7 @@ public class EarthBullet : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.2f);
-            speed += 1;
+            speed += 10;
         }
     }
     void OnTriggerEnter(Collider other)

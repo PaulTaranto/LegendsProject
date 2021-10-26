@@ -58,7 +58,7 @@ public class Inventory : MonoBehaviour
             Debug.Log("Not enjoying this habit of just try catching my issues away. This shouldn't get an issue so long as the inventory functionality is preserved");
         }
 
-        if(collectibles.Count == 2 && !generatedDragonRooms)
+        if(collectibles.Count >= 2 && !generatedDragonRooms)
         {
             GameObject.Find("generators").GetComponent<Map1>().ForceDragonRoom();
             generatedDragonRooms = true;

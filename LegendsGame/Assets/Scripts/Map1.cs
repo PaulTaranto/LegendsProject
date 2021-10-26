@@ -48,6 +48,55 @@ public class Map1 : MonoBehaviour
         return currPlayerCoords;
     }
 
+
+    //Of all the horrible programming in this game, this takes the cake.
+    float timer, maxTimer = 2;
+    List<GameObject> enemies = new List<GameObject>();
+    private void Update()
+    {
+        //basically the whole point of this Update function is to assess how many enemies are left
+        // and enable the doors if they are all dead
+        // as to not overload the system, this check is only performed every 2 seconds instead of every frame.
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            foreach(GameObject g in GameObject.FindGameObjectsWithTag("Goblin"))
+            {
+                if(!enemies.Contains(g))
+                {
+                    enemies.Add(g);
+                }
+            }
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Slime"))
+            {
+                if (!enemies.Contains(g))
+                {
+                    enemies.Add(g);
+                }
+            }
+
+            GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+
+            if (enemies.Count == 0)
+            {
+                foreach (GameObject door in doors)
+                {
+                    door.GetComponent<Door>().EnableDoor();
+                    door.GetComponent<SpriteRenderer>().sortingOrder = 2;
+                }
+            }
+            else
+            {
+                foreach (GameObject door in doors)
+                {
+                    door.GetComponent<SpriteRenderer>().sortingOrder = -99;
+                }
+            }
+            enemies.Clear();
+            
+        }
+    }
+
     public void SetPlayerCoordsAndMoveRoom(Coords c)
     {
         oldPlayerCoords = currPlayerCoords;
@@ -59,6 +108,7 @@ public class Map1 : MonoBehaviour
 
         int x = currPlayerCoords.X - oldPlayerCoords.X;
         int y = currPlayerCoords.Y - oldPlayerCoords.Y;
+
         Vector2 teleportPos = new Vector2(0,0);
         if (y == 1)
         {
@@ -84,6 +134,10 @@ public class Map1 : MonoBehaviour
         player.transform.position = teleportPos;
 
         PopulateCurrentRoom(rooms[c]);
+
+
+        GameObject[] slimes = GameObject.FindGameObjectsWithTag("Slime");
+        GameObject[] goblins = GameObject.FindGameObjectsWithTag("Goblin");
     }
 
     void Start()
@@ -363,9 +417,13 @@ public class Map1 : MonoBehaviour
             }
         }
 
+        foreach (GameObject door in GameObject.FindGameObjectsWithTag("Door"))
+        {
+            door.GetComponent<Door>().DisableDoor();
+        }
+
         if (currentRoom.roomType == 0)
         {
-            Debug.Log("test");
             foreach (GameObject g in GameObject.FindGameObjectsWithTag("Door"))
             {
                 Destroy(g);

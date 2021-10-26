@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
             //spawn dragon
             GetComponent<Inventory>().GiveAllItems();
         }
-
     }
 
     void FixedUpdate()

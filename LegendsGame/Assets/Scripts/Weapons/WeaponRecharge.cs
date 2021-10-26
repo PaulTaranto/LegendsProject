@@ -12,6 +12,8 @@ public class WeaponRecharge : MonoBehaviour
     public GameObject projectilePrefab;
     AimMouse aim;
     BasicObjectLauncher objectLauncher;
+
+    float reload, maxReload = 0.3f;
     private void Start()
     {
         aim = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<AimMouse>();
@@ -20,9 +22,12 @@ public class WeaponRecharge : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        reload -= Time.deltaTime;
+
+        if (Input.GetMouseButton(1) && reload <= 0)
         {
             Shoot();
+            reload = maxReload;
             //BLJ = false;
             //StartCoroutine(Reloading());
         }

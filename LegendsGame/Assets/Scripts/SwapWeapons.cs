@@ -42,14 +42,25 @@ public class SwapWeapons : MonoBehaviour
 
         try
         {
-            if (!spawned && inventory.currentWand.name == "Fire_wand(Clone)")// == Equiped[Selected % 2])
+            if (!spawned)// == Equiped[Selected % 2])
             {
-                Instantiate(Weapons[0]);
-                spawned = true;
-                //WeaponNumber = Selected % 2;
-                ////your wand creation logic goes here
-                //Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
-                //Equiped[Selected % 2].transform.SetParent(transform);
+                if (inventory.currentWand.name == "Fire_wand(Clone)")
+                {
+                    Destroy(GameObject.FindGameObjectWithTag("Wandy Boy"));
+                    Instantiate(Weapons[0]);
+                    spawned = true;
+                    //WeaponNumber = Selected % 2;
+                    ////your wand creation logic goes here
+                    //Equiped[Selected % 2] = Instantiate(Weapons[WeaponNumber], transform.position, transform.rotation);
+                    //Equiped[Selected % 2].transform.SetParent(transform);
+                }
+                else if (inventory.currentWand.name == "Crystal_wand(Clone)")
+                {
+                    Debug.Log("cawk");
+                    Destroy(GameObject.FindGameObjectWithTag("Wandy Boy"));
+                    Instantiate(Weapons[1]);
+                    spawned = true;
+                }
             }
         }
         catch

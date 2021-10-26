@@ -33,6 +33,9 @@ TagManager:
   - GoblinBullet
   - Crystal
   - Hole
+  - Slime Bladder
+  - Undefined
+  - Wandy Boy
   layers:
   - Default
   - TransparentFX

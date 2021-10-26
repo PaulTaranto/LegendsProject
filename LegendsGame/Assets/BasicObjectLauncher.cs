@@ -8,7 +8,7 @@ public class BasicObjectLauncher : MonoBehaviour
     //just spwns objects on left click
 
     public GameObject projectilePrefab;
-    public float ReloadSpeed = 0.5f;
+    public float ReloadSpeed = 0.35f;
 
     private bool TriggerDown = false;
     private bool Shooting = false;

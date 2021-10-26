@@ -24,6 +24,88 @@ public class MapManager : MonoBehaviour
     Coords currentRoom;
     GameObject player;
 
+    private void Update()
+    {
+        if(!isTransitioning)
+        {
+            GameObject[] slimes = GameObject.FindGameObjectsWithTag("Slime");
+            GameObject[] goblins = GameObject.FindGameObjectsWithTag("Goblin");
+
+            foreach (GameObject slime in slimes)
+            {
+                Debug.Log("wank");
+                while (slime.transform.position.y > 3)
+                {
+                    //Debug.Log("gy");
+                    slime.transform.position -= new Vector3(0, 0.01f);
+                }
+                while (slime.transform.position.y < -3)
+                {
+                    //Debug.Log("ly");
+                    slime.transform.position += new Vector3(0, 0.01f);
+                }
+                while (slime.transform.position.x > 7)
+                {
+                    //Debug.Log("gx");
+                    slime.transform.position -= new Vector3(0.01f, 0);
+                }
+                while (slime.transform.position.x < -7)
+                {
+                    //Debug.Log("lx");
+                    slime.transform.position += new Vector3(0.01f, 0);
+                }
+            }
+
+            foreach (GameObject goblin in goblins)
+            {
+                while (goblin.transform.position.y > 3)
+                {
+                    goblin.transform.position -= new Vector3(0, 0.01f);
+                }
+                while (goblin.transform.position.y < -3)
+                {
+                    //Debug.Log("ly");
+                    goblin.transform.position += new Vector3(0, 0.01f);
+                }
+                while (goblin.transform.position.x > 7)
+                {
+                    //Debug.Log("gx");
+                    goblin.transform.position -= new Vector3(0.01f, 0);
+                }
+                while (goblin.transform.position.x < -7)
+                {
+                    // Debug.Log("lx");
+                    goblin.transform.position += new Vector3(0.01f, 0);
+                }
+            }
+        }
+        else
+        {
+            GameObject[] slimes = GameObject.FindGameObjectsWithTag("Slime");
+            GameObject[] goblins = GameObject.FindGameObjectsWithTag("Goblin");
+
+            foreach (GameObject slime in slimes)
+            {
+                if (Mathf.Abs(slime.transform.position.x - player.transform.position.x) < 1f || Mathf.Abs(slime.transform.position.y - player.transform.position.y) < 1f)
+                {
+                    Debug.Log("oo");
+                    slime.transform.position -= player.transform.position.normalized * 2f;
+                }
+            }
+
+            foreach (GameObject goblin in goblins)
+            {
+                if (Mathf.Abs(goblin.transform.position.x - player.transform.position.x) < 1f || Mathf.Abs(goblin.transform.position.y - player.transform.position.y) < 1f)
+                {
+                    Debug.Log("ps");
+
+                    goblin.transform.position -= player.transform.position.normalized * 2f;
+                }
+            }
+        }
+    }
+
+
     private void Start()
     {
         mainCamera = Camera.main.gameObject;
@@ -53,6 +135,7 @@ public class MapManager : MonoBehaviour
                 player.GetComponent<PlayerMovement>().SetPlayerControl(true);
                 mainCamera.transform.position = new Vector3(0, 0, mainCamera.transform.position.z);
                 roomInstances[currentRoom].transform.position = new Vector3(0, 0, roomInstances[currentRoom].transform.position.z + 1);//DONT REMOVE THIS +1
+
                 map.DeleteOldEnvironment();
             }
         }
