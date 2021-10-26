@@ -86,7 +86,7 @@ public class Script : MonoBehaviour
             "DRAG: boo",
             "DRAG: It is I!  The great dragon of this dungeon!  There are very few people I enjoy in this realm, and you don't appear to be one of them",
             "PLAY: Bruv, Imma need to take your egg, sorry g.  It's just gotta happen!",
-            "DRAG: Fine. {EFX:PAUSE} Then you shal die!"
+            "DRAG: Fine. {EFX:PAUSE} Then you shall die!"
         };
 
         return script;
@@ -122,7 +122,7 @@ public class Script : MonoBehaviour
         "PLAY: ...what?",
         "MAST: PRESENTING: THE SORCERER'S HANGOVER CURE!  IT'S BEEN PASSED DOWN FOR GENERATIONS AND NOW, YOU KNOW OF IT!",
         "PLAY: ... I thought you were dying",
-        "MAST: Nonesense you foolish rapscallion, the great {NAME} NEVER DIES!!!",
+        "MAST: Nonesense you foolish rapscallion, the great Keith NEVER DIES!!!",
         "PLAY: *quietly to himself* oh my god i nearly died getting those ingredients......................",
         "MAST: Thank you so much! Now, I feel just about ready to give old mate dragon a visit",
         "MAST: Would be fun to go and play with my dear beloved pet.",
