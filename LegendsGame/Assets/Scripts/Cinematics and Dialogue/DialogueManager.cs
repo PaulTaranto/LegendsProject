@@ -40,6 +40,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     int currentScriptCount = 0;
+    float timer;
+
     //Call this from another scripts update function when ready
     public void UpdateLogic()
     {
@@ -48,8 +50,29 @@ public class DialogueManager : MonoBehaviour
             isFinishedDialogue = true;
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            timer += Time.deltaTime;
+            Debug.Log(timer);
+            if (timer >= 2)
+            {
+                Debug.Log("time done");
+                count = 0;
+                currentScriptCount = currentScript.Length-1;
+                currentLine = currentScript[currentScriptCount];
+                isFinishedDialogue = true;
+                RenderScript();
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            timer = 0;
+        }
+         
         if (!isFinishedWritingText)
         {
+
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
                 timeInbetweenChar = 0;
