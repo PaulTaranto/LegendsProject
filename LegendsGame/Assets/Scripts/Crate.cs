@@ -7,6 +7,11 @@ public class Crate : MonoBehaviour
     bool isDestroyed = false;
     float randomChance = 0.5f;
     Animator animator;
+    AudioSource audio;
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();  
+    }    
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -41,6 +46,7 @@ public class Crate : MonoBehaviour
         {
             Destroy(collision.gameObject);
             SetDestroyed();
+            audio.Play();            
         }
     }
 }

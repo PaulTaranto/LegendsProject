@@ -11,6 +11,7 @@ public class GoblinScript : MonoBehaviour
     private float characterVelocity = 2f;
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
+    AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,9 @@ public class GoblinScript : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").transform; 
         latestDirectionChangeTime = 0f;
-        calcuateNewMovementVector();             
+        calcuateNewMovementVector();            
+
+        audio = GetComponent<AudioSource>();      
 
     }
 
@@ -46,6 +49,7 @@ public class GoblinScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
+            audio.Play();
             other.gameObject.GetComponent<Health>().GiveDamage(2, transform.position);            
         }
         if (other.CompareTag("WallNorth"))

@@ -11,9 +11,11 @@ public class enemyplayertracking : MonoBehaviour
 
     public Animator animator;
 
+    AudioSource audio;    
+
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();  
             
     }
 
@@ -37,6 +39,7 @@ public class enemyplayertracking : MonoBehaviour
         if(other.CompareTag("Player")){
             other.gameObject.GetComponent<Health>().GiveDamage(2, transform.position);
             animator.SetTrigger("Attack");
+            audio.Play();            
         }
 
     }    

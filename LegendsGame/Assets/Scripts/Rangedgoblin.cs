@@ -19,6 +19,9 @@ public class Rangedgoblin : MonoBehaviour
 
     public Animator animator;
 
+    AudioSource audio;
+
+
 
     void Start()
     {
@@ -26,7 +29,9 @@ public class Rangedgoblin : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").transform; 
         latestDirectionChangeTime = 0f;
-        calcuateNewMovementVector();             
+        calcuateNewMovementVector();     
+
+        audio = GetComponent<AudioSource>();        
 
     }
 
@@ -77,6 +82,8 @@ public class Rangedgoblin : MonoBehaviour
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 timeBtwShots = startTimeBtwShots;
                 // animator.SetTrigger("Attack");
+
+                audio.Play();
             }
             else
             {
