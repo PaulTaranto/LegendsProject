@@ -15,8 +15,8 @@ public class EarthBullet : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.2f);
-            speed += 10;
+            yield return new WaitForSeconds(0.05f);
+            speed += 14;
         }
     }
     void OnTriggerEnter(Collider other)

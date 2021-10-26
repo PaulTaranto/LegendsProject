@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
         if(hasControl)
         {
             Vector2 move = transform.position;

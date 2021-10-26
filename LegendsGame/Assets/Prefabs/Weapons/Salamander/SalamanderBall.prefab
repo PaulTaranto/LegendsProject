@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5663270501277796770}
   - component: {fileID: 1064835668688005541}
   - component: {fileID: 5864474851177696985}
+  - component: {fileID: -7269271242538990686}
   m_Layer: 0
   m_Name: SalamanderBall
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,4 +114,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  DestroyTime: 10
   explosion: {fileID: 2102415523070041034, guid: ab83b93d4717e3b40865023a555ae9a7, type: 3}
+--- !u!50 &-7269271242538990686
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507030549444905123}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

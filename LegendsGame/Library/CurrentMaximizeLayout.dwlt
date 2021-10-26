@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1427
     height: 797
-  m_MinSize: {x: 880, y: 492}
-  m_MaxSize: {x: 16005, y: 14042}
+  m_MinSize: {x: 881, y: 492}
+  m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 47460
+  controlID: 52361
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -48,7 +48,7 @@ MonoBehaviour:
     x: 654
     y: 83
     width: 434
-    height: 451
+    height: 450
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 434, y: 430}
+  m_TargetSize: {x: 434, y: 429}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -73,8 +73,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -108.5
     m_HBaseRangeMax: 108.5
-    m_VBaseRangeMin: -107.5
-    m_VBaseRangeMax: 107.5
+    m_VBaseRangeMin: -107.25
+    m_VBaseRangeMax: 107.25
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -93,9 +93,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 434
-      height: 430
+      height: 429
     m_Scale: {x: 2, y: 2}
-    m_Translation: {x: 217, y: 215}
+    m_Translation: {x: 217, y: 214.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -103,12 +103,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -108.5
-      y: -107.5
+      y: -107.25
       width: 217
-      height: 215
+      height: 214.5
     m_MinimalGUI: 1
   m_defaultScale: 2
-  m_LastWindowPixelSize: {x: 868, y: 902}
+  m_LastWindowPixelSize: {x: 868, y: 900}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 47461
+  controlID: 52362
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,11 +160,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1090
-    height: 472
+    height: 471
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 47462
+  controlID: 52363
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,7 +183,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 269
-    height: 472
+    height: 471
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
@@ -214,13 +214,13 @@ MonoBehaviour:
     x: 0
     y: 83
     width: 268
-    height: 451
+    height: 450
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 18e60000
-      m_LastClickedID: 58904
+      m_SelectedIDs: a6e60000
+      m_LastClickedID: 59046
       m_ExpandedIDs: 7ceaecff34ffecffccecf1ffe0ecf1fff814f2ffa828f2ffde29f2ff9a2ff2ff7634f2ffc251f2ff0aaef2ff1aaef2ffb6aff2ffc6aff2ff9cb0f2fff644f3ff0a45f3ffe6eef3ff44eff3ff30fbf3ff42fcf3ff3a35f4ff4a35f4ff7a38f4ff8a38f4ff0639f4ff7259f4ff8259f4ff8a5af4ff369cf4ff20bcf7ff0efdf7ff08dffcff1869fdfff469fdff6e86fdffd29dfdfff2b8fdff16faffff14d6000052d600005cd60000eed60000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
     x: 269
     y: 0
     width: 385
-    height: 472
+    height: 471
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 8}
@@ -295,7 +295,7 @@ MonoBehaviour:
     x: 269
     y: 83
     width: 383
-    height: 451
+    height: 450
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
@@ -501,7 +501,7 @@ MonoBehaviour:
     x: 654
     y: 0
     width: 436
-    height: 472
+    height: 471
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 472
+    y: 471
     width: 1090
-    height: 325
+    height: 326
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
@@ -557,9 +557,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 555
+    y: 554
     width: 1089
-    height: 304
+    height: 305
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -574,22 +574,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Environment
+    - Assets/Prefabs/Weapons/Gnome
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Environment
+  - Assets/Prefabs/Weapons/Gnome
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/aidenmazik/Documents/GitHub/LegendsProject/LegendsGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3e740000
-    m_LastClickedID: 29758
-    m_ExpandedIDs: 00000000fa73000002740000
+    m_SelectedIDs: 22750000
+    m_LastClickedID: 29986
+    m_ExpandedIDs: 00000000fa7300000274000044740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,9 +642,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c8420000
-    m_LastClickedInstanceID: 17096
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -717,8 +717,8 @@ MonoBehaviour:
     y: 0
     width: 337
     height: 797
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}

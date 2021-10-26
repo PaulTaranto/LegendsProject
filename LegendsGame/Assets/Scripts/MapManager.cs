@@ -86,20 +86,20 @@ public class MapManager : MonoBehaviour
 
             foreach (GameObject slime in slimes)
             {
-                if (Mathf.Abs(slime.transform.position.x - player.transform.position.x) < 1f || Mathf.Abs(slime.transform.position.y - player.transform.position.y) < 1f)
+                if (Mathf.Abs(slime.transform.position.x - player.transform.position.x) < 0.5f || Mathf.Abs(slime.transform.position.y - player.transform.position.y) < 0.5f)
                 {
                     Debug.Log("oo");
-                    slime.transform.position -= player.transform.position.normalized * 2f;
+                    slime.transform.position -= player.transform.position.normalized * 1f;
                 }
             }
 
             foreach (GameObject goblin in goblins)
             {
-                if (Mathf.Abs(goblin.transform.position.x - player.transform.position.x) < 1f || Mathf.Abs(goblin.transform.position.y - player.transform.position.y) < 1f)
+                if (Mathf.Abs(goblin.transform.position.x - player.transform.position.x) < 0.5f || Mathf.Abs(goblin.transform.position.y - player.transform.position.y) < 0.5f)
                 {
                     Debug.Log("ps");
 
-                    goblin.transform.position -= player.transform.position.normalized * 2f;
+                    goblin.transform.position -= player.transform.position.normalized * 1f;
                 }
             }
         }
