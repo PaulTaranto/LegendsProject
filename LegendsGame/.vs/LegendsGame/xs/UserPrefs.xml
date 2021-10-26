@@ -1,8 +1,18 @@
 ﻿<Properties StartupConfiguration="{00945EC6-0021-B609-A472-4ADC99602836}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MapManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Weapons/spells/FireBall.cs" Line="6" Column="1" />
+      <File FileName="Assets/Scripts/Weapons/WeaponRecharge.cs" Line="25" Column="21" />
+      <File FileName="Assets/Scripts/Weapons/WeaponCharges.cs" />
+      <File FileName="Assets/Scripts/Weapons/spells/FireBallExplosion.cs" />
+      <File FileName="Assets/Scripts/Weapons/spells/WaveSong.cs" />
+      <File FileName="Assets/Scripts/Weapons/spells/EarthBullet.cs" />
+      <File FileName="Assets/Scripts/MapManager.cs" Line="213" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c5d8ef4a-48a8-423d-84f1-8ee87c6d5f2d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0ec76eff-7c16-4aaa-8e47-fd85ed71dd9c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
