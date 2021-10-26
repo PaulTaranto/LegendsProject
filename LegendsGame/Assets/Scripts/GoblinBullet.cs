@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoblinBullet : MonoBehaviour
 {
     public float speed;
+    public float rotationSpeed = 8;
 
     float liveTime = 6;    
     private Transform player;
@@ -27,6 +28,7 @@ public class GoblinBullet : MonoBehaviour
     {
 
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, -rotationSpeed));
 
         liveTime -= Time.deltaTime;
         if (liveTime <= 0)
