@@ -68,7 +68,6 @@ public class Rangedgoblin : MonoBehaviour
             {
                 latestDirectionChangeTime = Time.time;
                 calcuateNewMovementVector();
-                // animator.SetBool("Moving", true);
             }
 
             //move the goblin 
@@ -81,7 +80,7 @@ public class Rangedgoblin : MonoBehaviour
             {
                 Instantiate(projectile, transform.position, Quaternion.identity);
                 timeBtwShots = startTimeBtwShots;
-                // animator.SetTrigger("Attack");
+                animator.SetTrigger("Attack");
 
                 audio.Play();
             }
