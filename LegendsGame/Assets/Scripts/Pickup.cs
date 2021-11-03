@@ -6,7 +6,7 @@ public class Pickup : MonoBehaviour
 {
 
     private Inventory inventory;
-    public GameObject itemPickup;
+    public GameObject itemPickup, itemDrop;
     private bool canPickupWand;
 
     // Start is called before the first frame update
@@ -126,6 +126,14 @@ public class Pickup : MonoBehaviour
                         break;
                     }
 
+                }
+                //if both slots are full replace slot 0 with wand on ground
+                else if (inventory.isFull[0] && inventory.isFull[1])
+                {
+                    Destroy(inventory.slots[0].transform.GetChild(0).gameObject);
+                    itemPickup = (GameObject)Instantiate(itemPickup, inventory.slots[i].transform, false);
+                    Destroy(gameObject);
+                    break;
                 }
             }
         }
