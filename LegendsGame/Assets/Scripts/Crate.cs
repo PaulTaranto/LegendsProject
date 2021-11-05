@@ -5,7 +5,7 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
     bool isDestroyed = false;
-    float randomChance = 0.5f;
+    float randomChance = 0.1f;
     Animator animator;
     AudioSource audio;
     void Start()

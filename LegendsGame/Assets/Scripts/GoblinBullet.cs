@@ -30,6 +30,11 @@ public class GoblinBullet : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         transform.Rotate(new Vector3(0, 0, -rotationSpeed));
 
+        if(Mathf.Abs(target.x - transform.position.x) < 0.1f && Mathf.Abs(target.y - transform.position.y) < 0.1f)
+        {
+            DestroyProjectile();
+        }
+
         liveTime -= Time.deltaTime;
         if (liveTime <= 0)
         {
@@ -41,6 +46,10 @@ public class GoblinBullet : MonoBehaviour
         if(other.CompareTag("Player")){
             this.DestroyProjectile();
             other.gameObject.GetComponent<Health>().GiveDamage(2, transform.position);            
+        }
+        else if(other.CompareTag("Wall"))
+        {
+            this.DestroyProjectile();
         }
     }
     void DestroyProjectile(){

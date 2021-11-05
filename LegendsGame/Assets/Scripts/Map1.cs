@@ -247,7 +247,7 @@ public class Map1 : MonoBehaviour
             }
             else
             {
-                if(collectableRooms.Count < 2)
+                if(collectableRooms.Count < 3)
                 {
                     List<int> list = collectableRooms.Values.ToList();
                     int collectableId = mapManager.GetRandomCollectableRoomType(list);
@@ -282,8 +282,6 @@ public class Map1 : MonoBehaviour
 
     private void PopulateCurrentRoom(Room currentRoom)
     {
-        Debug.Log("testa");
-
         mapManager.PopulateRoom(currentRoom.coordinates, oldPlayerCoords);
 
         GameObject environmentInstance = Instantiate(environmentParent);

@@ -19,13 +19,16 @@ public class DialogueManager : MonoBehaviour
     public GameObject masterHeadSprite;
     public GameObject dragonheadSprite;
     public GameObject dragonheadSpriteMystery;
-    AudioSource audio;
+    AudioSource audio, musicAudio;
+
+    public AudioClip[] bossBuildUp;
 
     public bool isFinishedDialogue = false;
 
     public void InitialiseDialogueManager(bool spawnPlayer)
     {
         audio = GetComponent<AudioSource>();
+        musicAudio = GetComponentInChildren<AudioSource>();
         levelChanger = GameObject.Find("LevelChanger").GetComponent<LevelChanger>();
         //TODO make spawn in better position if it doesn't look good
         if(spawnPlayer)
@@ -53,10 +56,8 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             timer += Time.deltaTime;
-            Debug.Log(timer);
             if (timer >= 2)
             {
-                Debug.Log("time done");
                 count = 0;
                 currentScriptCount = currentScript.Length-1;
                 currentLine = currentScript[currentScriptCount];
@@ -227,11 +228,24 @@ public class DialogueManager : MonoBehaviour
         }
         else if (effect.Substring(0, 3).Equals("SFX"))
         {
+            /*
             switch (effect.Substring(4))
             {
                 case "DRAGON_BUILDUP":
+                    Debug.Log("asdasdad");
+                    musicAudio.clip = bossBuildUp[0];
+                    musicAudio.Play();
+                    break;
+                case "DRAGON_BUILDUP_INTENSE":
+                    musicAudio.clip = bossBuildUp[1];
+                    musicAudio.Play();
+                    break;
+                case "DRAGON_FIGHT":
+                    musicAudio.clip = bossBuildUp[2];
+                    musicAudio.Play();
                     break;
             }
+            musicAudio.loop = true;*/
         }
     }
 }

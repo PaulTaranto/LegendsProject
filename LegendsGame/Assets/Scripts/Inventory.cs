@@ -24,6 +24,7 @@ public class Inventory : MonoBehaviour
     {
         collectibles.Add("Goblin Toe");
         collectibles.Add("Crystal");
+        collectibles.Add("Slime Bladder");
     }
 
     private void Start()
@@ -58,7 +59,9 @@ public class Inventory : MonoBehaviour
             Debug.Log("Not enjoying this habit of just try catching my issues away. This shouldn't get an issue so long as the inventory functionality is preserved");
         }
 
-        if(collectibles.Count >= 2 && !generatedDragonRooms)
+        Debug.Log(currentWand);
+
+        if(collectibles.Count >= 3 && !generatedDragonRooms)
         {
             GameObject.Find("generators").GetComponent<Map1>().ForceDragonRoom();
             generatedDragonRooms = true;

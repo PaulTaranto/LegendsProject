@@ -13,7 +13,6 @@ public class SwapWeapons : MonoBehaviour
     public Inventory inventory;
 
     bool spawned = false;
-    
 
     // Update is called once per frame
     void Update()
@@ -40,6 +39,11 @@ public class SwapWeapons : MonoBehaviour
         //    Selected += 1;
         //}
 
+        if(Input.GetMouseButtonDown(1))
+        {
+            spawned = false;
+        }
+
         try
         {
             if (!spawned)// == Equiped[Selected % 2])
@@ -56,7 +60,6 @@ public class SwapWeapons : MonoBehaviour
                 }
                 else if (inventory.currentWand.name == "Crystal_wand(Clone)")
                 {
-                    Debug.Log("cawk");
                     Destroy(GameObject.FindGameObjectWithTag("Wandy Boy"));
                     Instantiate(Weapons[1]);
                     spawned = true;

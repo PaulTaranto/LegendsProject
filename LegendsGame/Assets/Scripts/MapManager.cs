@@ -33,7 +33,6 @@ public class MapManager : MonoBehaviour
 
             foreach (GameObject slime in slimes)
             {
-                Debug.Log("wank");
                 while (slime.transform.position.y > 3)
                 {
                     //Debug.Log("gy");
@@ -88,7 +87,7 @@ public class MapManager : MonoBehaviour
             {
                 if (Mathf.Abs(slime.transform.position.x - player.transform.position.x) < 0.5f || Mathf.Abs(slime.transform.position.y - player.transform.position.y) < 0.5f)
                 {
-                    Debug.Log("oo");
+             //       Debug.Log("oo");
                     slime.transform.position -= player.transform.position.normalized * 1f;
                 }
             }
@@ -97,7 +96,7 @@ public class MapManager : MonoBehaviour
             {
                 if (Mathf.Abs(goblin.transform.position.x - player.transform.position.x) < 0.5f || Mathf.Abs(goblin.transform.position.y - player.transform.position.y) < 0.5f)
                 {
-                    Debug.Log("ps");
+//                    Debug.Log("ps");
 
                     goblin.transform.position -= player.transform.position.normalized * 1f;
                 }
@@ -303,7 +302,7 @@ public class MapManager : MonoBehaviour
         // roomType index of 1 is the starting room
         // roomType indexes 2-6 are the special rooms containing collectables
 
-        int roomID = Random.Range(2, 4);
+        int roomID = Random.Range(2, 5);
         if(excluding.Contains(roomID))
         {
             roomID = GetRandomCollectableRoomType(excluding);

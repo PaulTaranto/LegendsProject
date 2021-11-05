@@ -47,8 +47,6 @@ public class PlayerMenu : MonoBehaviour
 
         if (transform.position.x > 12 && !finishedMoving)
         {
-            Debug.Log(temp);
-            Debug.Log("ween");
             temp = 0;
             finishedMoving = true;
             right = false;

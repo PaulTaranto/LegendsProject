@@ -9,20 +9,20 @@ public class PlayerMovement : MonoBehaviour
     bool hasControl = true;
     public Animator animator;
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.L))
-        {
-            //reload scene
-            SceneManager.LoadSceneAsync("Game");
-        }
+    //private void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.L))
+    //    {
+    //        //reload scene
+    //        SceneManager.LoadSceneAsync("Game");
+    //    }
 
-        if (Input.GetKey(KeyCode.M))
-        {
-            //spawn dragon
-            GetComponent<Inventory>().GiveAllItems();
-        }
-    }
+    //    if (Input.GetKey(KeyCode.M))
+    //    {
+    //        //spawn dragon
+    //        GetComponent<Inventory>().GiveAllItems();
+    //    }
+    //}
 
     void FixedUpdate()
     {

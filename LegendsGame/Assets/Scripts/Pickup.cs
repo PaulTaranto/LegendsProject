@@ -67,7 +67,7 @@ public class Pickup : MonoBehaviour
                 canPickupWand = true;
             }
             else {
-                Debug.Log("yeet");
+//                Debug.Log("yeet");
                 //string s = itemPickup.tag;
                 //Debug.Log(s);
                 if(!inventory.collectibles.Contains(this.tag))
