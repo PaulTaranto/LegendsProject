@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
         //TODO make spawn in better position if it doesn't look good
         if(spawnPlayer)
         {
-            playerInstance = Instantiate(player);
+            //playerInstance = Instantiate(player);
         }
         //Hardcoded 0 value to ensure no bullshit
         scriptText.text = "";

@@ -11,7 +11,6 @@ ScriptsOnlyBuild:
     - Dragon
     - Dragon1
     - DragonCinematicManager
-    - DragonController
     - DragonController1
     - EarthBullet
     - FinalCinematicManager
@@ -46,6 +45,7 @@ ScriptsOnlyBuild:
     - UnityEngine.U2D.Animation.SpriteSkin
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     - UnityEngine.U2D.IK.CCDSolver2D
@@ -53,6 +53,8 @@ ScriptsOnlyBuild:
     - UnityEngine.U2D.IK.LimbSolver2D
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -65,6 +67,12 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -164,18 +172,34 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1464}
     - Class: 114
       Script: {instanceID: 1466}
     - Class: 114
+      Script: {instanceID: 1582}
+    - Class: 114
       Script: {instanceID: 1640}
+    - Class: 114
+      Script: {instanceID: 1644}
+    - Class: 114
+      Script: {instanceID: 1712}
     - Class: 114
       Script: {instanceID: 1800}
     - Class: 114
+      Script: {instanceID: 1944}
+    - Class: 114
       Script: {instanceID: 2186}
+    - Class: 114
+      Script: {instanceID: 2340}
+    - Class: 114
+      Script: {instanceID: 2500}
     - Class: 114
       Script: {instanceID: 2504}
     - Class: 114
@@ -185,17 +209,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2754}
     - Class: 114
+      Script: {instanceID: 2908}
+    - Class: 114
       Script: {instanceID: 3050}
     - Class: 114
       Script: {instanceID: 3326}
     - Class: 114
       Script: {instanceID: 3408}
     - Class: 114
+      Script: {instanceID: 3658}
+    - Class: 114
+      Script: {instanceID: 3718}
+    - Class: 114
       Script: {instanceID: 3894}
     - Class: 114
       Script: {instanceID: 3896}
     - Class: 114
+      Script: {instanceID: 4072}
+    - Class: 114
       Script: {instanceID: 4164}
+    - Class: 114
+      Script: {instanceID: 4232}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -253,7 +287,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1464}
@@ -261,8 +299,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1466}
     - Class: 114
       Script: {instanceID: 1502}
-    - Class: 114
-      Script: {instanceID: 1532}
     - Class: 114
       Script: {instanceID: 1582}
     - Class: 114
@@ -457,7 +493,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1464}
@@ -552,16 +592,32 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1464}
     - Class: 114
       Script: {instanceID: 1466}
     - Class: 114
+      Script: {instanceID: 1582}
+    - Class: 114
+      Script: {instanceID: 1644}
+    - Class: 114
+      Script: {instanceID: 1712}
+    - Class: 114
       Script: {instanceID: 1800}
     - Class: 114
+      Script: {instanceID: 1944}
+    - Class: 114
       Script: {instanceID: 2186}
+    - Class: 114
+      Script: {instanceID: 2340}
+    - Class: 114
+      Script: {instanceID: 2500}
     - Class: 114
       Script: {instanceID: 2504}
     - Class: 114
@@ -569,9 +625,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2754}
     - Class: 114
+      Script: {instanceID: 2908}
+    - Class: 114
       Script: {instanceID: 3326}
     - Class: 114
       Script: {instanceID: 3408}
+    - Class: 114
+      Script: {instanceID: 3658}
+    - Class: 114
+      Script: {instanceID: 3718}
     - Class: 114
       Script: {instanceID: 3878}
     - Class: 114
@@ -579,7 +641,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3896}
     - Class: 114
+      Script: {instanceID: 4072}
+    - Class: 114
       Script: {instanceID: 4164}
+    - Class: 114
+      Script: {instanceID: 4232}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -841,7 +907,7 @@ ScriptsOnlyBuild:
     className: EnemyShooting
   - hash:
       serializedVersion: 2
-      Hash: 24a08f5762499e12dc98a89d70593fcc
+      Hash: 6396be683b951c8ade6b787e87870ac7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Pickup
@@ -1195,7 +1261,7 @@ ScriptsOnlyBuild:
     className: PlayerMovement
   - hash:
       serializedVersion: 2
-      Hash: 323ddc0bfc94efebc1626107b486f19d
+      Hash: 9e7c311c738b7af770b11adcf990ff0d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DialogueManager
@@ -1387,7 +1453,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: 0ad3d241a23d0d8f9b37d94c649098c1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GoblinBullet
@@ -1411,4 +1477,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/OpeningScene.unity
   - Assets/Scenes/Credits.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: /Users/aidenmazik/Documents/GitHub/LegendsBuilds/Build 1.2/LegendsGame.exe
+  playerPath: /Users/aidenmazik/Downloads/Legends/Build/Build v1.5/LegendsGame.exe

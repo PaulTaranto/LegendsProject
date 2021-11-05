@@ -57,7 +57,7 @@ public class Script : MonoBehaviour
             "MAST: Venture forth, into the depths of the dungeons",
             "MAST: Bring me the ingredients to make a cure",
             "PLAY: Yes, master! What do you need?",
-            "MAST: Bring me the following: One apple, {EFX:PAUSE} One Large egg",
+            "MAST: Bring me the following: {EFX:PAUSE} One Large egg",
             "MAST: One goblin's toe, the big toe of course, from the right foot!",
             "PLAY: One goblin's wha-",
             //possibly remove mushroom item
@@ -65,7 +65,7 @@ public class Script : MonoBehaviour
             "PLAY: I don't{EFX:PAUSE} see how these items make a 'cure'",
             "MAST: Of course, the slime bladder of an ooze",
             "PLAY: That's disgus-",
-            "MAST: -and some fresh blue essence crystal, finely crushed, I do like a bit of crunch!",
+            "MAST: -and some fresh purple essence crystal, finely crushed, I do like a bit of crunch!",
             "PLAY: Are you sure these will help?",
             "PLAY: Master, you never cease to amaze me with your wealth of knowledge. I'll go fetch those from the caves at once.",
             "MAST: Time is of the essence, Keith! Hurry!",
