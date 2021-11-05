@@ -68,7 +68,7 @@ public class SwapWeapons : MonoBehaviour
         }
         catch
         {
-            Debug.Log("Nothing in inventory");
+//            Debug.Log("Nothing in inventory");
         }
     }
     

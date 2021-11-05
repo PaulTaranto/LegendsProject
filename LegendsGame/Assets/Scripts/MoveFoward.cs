@@ -33,9 +33,7 @@ public class MoveFoward : MonoBehaviour
     {
         if (collision.gameObject.tag == "Dragon")
         {
-            Debug.Log("cawk");
             Health health = collision.transform.root.GetComponentInChildren<Health>();
-            Debug.Log(health.gameObject);
             health.GiveDamage(1);
             Destroy(gameObject);//Destrosy the bullet
         }

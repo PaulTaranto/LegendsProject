@@ -1261,7 +1261,7 @@ ScriptsOnlyBuild:
     className: PlayerMovement
   - hash:
       serializedVersion: 2
-      Hash: 9e7c311c738b7af770b11adcf990ff0d
+      Hash: 7e8576d8338c625bd69a791ce690d3d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DialogueManager
@@ -1477,4 +1477,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/OpeningScene.unity
   - Assets/Scenes/Credits.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: /Users/aidenmazik/Downloads/Legends/Build/Build v1.5/LegendsGame.exe
+  playerPath: /Users/aidenmazik/Downloads/Legends/Build/Build v1.6/LegendsGame.exe

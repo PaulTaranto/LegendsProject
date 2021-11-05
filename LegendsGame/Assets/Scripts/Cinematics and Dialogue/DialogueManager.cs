@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     LevelChanger levelChanger;
     public TMP_Text scriptText;
-    public GameObject player;
+    GameObject player;
     //Just in case
     GameObject playerInstance;
     bool isFinishedWritingText = false;
@@ -208,6 +208,18 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case "PAUSE":
                     timeInbetweenChar = 0.9f;
+                    break;
+                case "TELEPORT":
+                    playerInstance = GameObject.FindGameObjectWithTag("Player");
+                    //playerInstance.GetComponent<PlayerMovement>().TogglePlayerControl();
+                    //playerInstance.GetComponentInChildren<BasicObjectLauncher>().ToggleEnabled();
+                    playerInstance.transform.position = new Vector2(-6.249559f, 0);
+
+                    count = 0;
+                    currentScriptCount = currentScript.Length - 1;
+                    currentLine = currentScript[currentScriptCount];
+                    isFinishedDialogue = true;
+                    RenderScript();
                     break;
             }
         }

@@ -99,6 +99,7 @@ public class Script : MonoBehaviour
             "DRAG: HA {EFX:PAUSE} HA {EFX:PAUSE} HA {EFX:PAUSE}.",
             "DRAG: LEAVE HERE! OR I SHALL DISPOSE OF YOU!",
             "PLAY: {SFX:DRAGON_FIGHT} N... No! I will defeat you!",
+            "PLAY: {EFX:TELEPORT}"
             //"DRAG: boo",
             //"DRAG: It is I!  The great dragon of this dungeon!  There are very few people I enjoy in this realm, and you don't appear to be one of them",
             //"PLAY: Bruv, Imma need to take your egg, sorry bruv.  It's just gotta happen!",

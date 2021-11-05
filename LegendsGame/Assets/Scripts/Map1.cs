@@ -223,7 +223,7 @@ public class Map1 : MonoBehaviour
             }
             if(rooms.ContainsKey(coords))
             {
-                Debug.Log(coords);
+//                Debug.Log(coords);
                 rooms[coords].roomType = mapManager.GetRandomBossRoomType();
 
                 mapManager.DestoryRoom(coords);

@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
             Debug.Log("Not enjoying this habit of just try catching my issues away. This shouldn't get an issue so long as the inventory functionality is preserved");
         }
 
-        Debug.Log(currentWand);
+//        Debug.Log(currentWand);
 
         if(collectibles.Count >= 3 && !generatedDragonRooms)
         {

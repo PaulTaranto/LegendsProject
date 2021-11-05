@@ -20,6 +20,15 @@ public class BasicObjectLauncher : MonoBehaviour
 
     AimMouse aim;
 
+    bool enabled = true;
+
+    public bool GetEnabled() => enabled;
+
+    public void ToggleEnabled()
+    {
+        Debug.Log("pen");
+        enabled = !enabled;
+    }
 
     private void Start()
     {
@@ -30,16 +39,20 @@ public class BasicObjectLauncher : MonoBehaviour
 
     void Update()
     {
-        InvokeRepeating("Shoot", 0f, 0f);
+        Debug.Log("enabled" + enabled);
+        if(enabled)
+        {
+            InvokeRepeating("Shoot", 0f, 0f);
 
-        //trigger
-        if (Input.GetMouseButtonDown(0))
-        {
-            TriggerDown = true;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            TriggerDown = false;
+            //trigger
+            if (Input.GetMouseButtonDown(0))
+            {
+                TriggerDown = true;
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                TriggerDown = false;
+            }
         }
     }
 
